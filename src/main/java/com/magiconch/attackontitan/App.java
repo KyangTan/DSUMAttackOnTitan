@@ -1,8 +1,18 @@
 package com.magiconch.attackontitan;
 
+import com.magiconch.backend.Graph;
+import com.magiconch.backend.HamiltonianCycle;
+import com.magiconch.backend.Vertex;
+import com.magiconch.backend.VertexType;
+import com.magiconch.backend.WeightMode;
+import com.magiconch.utility.fileReader;
+import com.magiconch.controllers.SceneController;
 import com.magiconch.utility.CommonMethod;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.scene.Group;
@@ -20,6 +30,8 @@ public class App extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
+        // set Primary Stage
+        SceneController.setPrimaryStage(primaryStage);
 
         //Instantiating Media class  
         String vidPath = "src/main/resources/com/magiconch/attackontitan/assets/videos/opening.mp4";
@@ -33,10 +45,10 @@ public class App extends Application {
 
         //by setting this property to true, the Video will be played   
         mediaPlayer.setAutoPlay(true);
-        
+
         // static waiting screen
         ImageView img = new ImageView(new Image(method.getPathToResources("assets/images/opening.png")));
-        
+
         //setting group and scene   
         Group root = new Group();
         root.getChildren().add(mediaView);
@@ -44,12 +56,16 @@ public class App extends Application {
             // switch to static
             root.getChildren().add(img);
         });
-        
-        root.setOnMouseClicked(e->{
-            // nav to main screen
-            System.out.println("yay");
+
+        root.setOnMouseClicked(e -> {
+            try {
+                mediaPlayer.stop();
+                new SceneController().switchToScoutingScene(e);
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
         });
-        
+
         Scene scene = new Scene(root, 1280, 720);
         primaryStage.setScene(scene);
         primaryStage.centerOnScreen();
@@ -60,6 +76,13 @@ public class App extends Application {
     }
 
     public static void main(String[] args) throws Exception {
-        launch();
+        String jsonString = fileReader.readFile("C:\\Users\\User\\Documents\\Git Netbeans\\attackontitan\\src\\main\\resources\\com\\magiconch\\attackontitan\\assets\\images\\simplemap.json");
+        Graph graph = fileReader.readGraphFromJSON(jsonString, WeightMode.NO_WEIGHT);
+        ArrayList<String> paths = new HamiltonianCycle().hamCycle(graph.getAdjacencyMatrix(), 0);
+        for (String s : paths) {
+            System.out.println(s);
+        }
+
+//        launch();
     }
 }

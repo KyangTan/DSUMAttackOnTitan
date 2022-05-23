@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="130.0" prefWidth="754.0" style="-fx-background-color: transparent;" stylesheets="@../stylesheet/root.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17">
+   <children>
+      <Rectangle arcHeight="30.0" arcWidth="30.0" fill="DODGERBLUE" height="90.0" stroke="BLACK" strokeType="INSIDE" styleClass="card" width="754.0" />
+      <ImageView fitHeight="50.0" fitWidth="308.0" layoutX="40.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../com/magiconch/attackontitan/assets/images/eren_compressed.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="360.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="Eren Yeager" />
+      <Text layoutX="360.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h4" text="Strength: 10" />
+   </children>
+</AnchorPane>
