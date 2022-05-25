@@ -4,11 +4,15 @@
  */
 package com.magiconch.utility;
 
-import com.magiconch.backend.Graph;
-import com.magiconch.backend.WeightMode;
+import com.magiconch.backend.GraphRelated.Graph;
+import com.magiconch.backend.LinkedList;
+import com.magiconch.backend.Member;
+import com.magiconch.backend.Music;
+import com.magiconch.backend.GraphRelated.WeightMode;
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 /**
@@ -41,7 +45,7 @@ public class fileReader {
         for (int i = 0; i < dim; i++) {
             Object[] edges = json.getJSONObject(Integer.toString(i)).getJSONArray("edge").toList().toArray();
             graph.setWeight(i, edges);
-            
+
             // custom weight mode only
             if (WeightMode.CUSTOM_WEIGHT == weightMode) {
                 Object[] weights = json.getJSONObject(Integer.toString(i)).getJSONArray("weight").toList().toArray();
@@ -50,6 +54,35 @@ public class fileReader {
         }
 
         return graph;
+    }
+
+    public static LinkedList<Music> getBGMQueueFromJSON(String jsonString) {
+        JSONObject json = new JSONObject(jsonString);
+        LinkedList<Music> queue = new LinkedList<>();
+        for (String key : json.keySet()) {
+            queue.add(new Music(key, json.get(key).toString()));
+        }
+        queue.makeCircular();
+        return queue;
+    }
+
+    public static LinkedList<Member> getMembersFromJSON(String jsonString) {
+        JSONArray json = new JSONArray(jsonString);
+        LinkedList<Member> characterList = new LinkedList<>();
+        
+        for (Object obj : json) {
+            JSONObject jObj = (JSONObject) obj;
+            characterList.add(new Member(jObj.get("Name").toString(), 
+                    Integer.parseInt(jObj.get("Height").toString()), 
+                    Integer.parseInt(jObj.get("Weight").toString()), 
+                    Integer.parseInt(jObj.get("Strength").toString()), 
+                    Integer.parseInt(jObj.get("Agility").toString()), 
+                    Integer.parseInt(jObj.get("Intelligence").toString()), 
+                    Integer.parseInt(jObj.get("Coordination").toString()), 
+                    Integer.parseInt(jObj.get("Leadership").toString())));
+        }
+        
+        return characterList;
     }
 
 }

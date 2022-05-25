@@ -1,18 +1,16 @@
 package com.magiconch.attackontitan;
 
-import com.magiconch.backend.Graph;
-import com.magiconch.backend.HamiltonianCycle;
-import com.magiconch.backend.Vertex;
-import com.magiconch.backend.VertexType;
-import com.magiconch.backend.WeightMode;
+import com.magiconch.backend.Attribute;
+import com.magiconch.backend.BGMPlayer;
+import com.magiconch.backend.LinkedList;
+import com.magiconch.backend.Member;
+import com.magiconch.backend.Music;
+import com.magiconch.backend.Operations;
 import com.magiconch.utility.fileReader;
 import com.magiconch.controllers.SceneController;
 import com.magiconch.utility.CommonMethod;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.scene.Group;
@@ -60,6 +58,11 @@ public class App extends Application {
         root.setOnMouseClicked(e -> {
             try {
                 mediaPlayer.stop();
+                mediaPlayer.dispose();
+                String jsonString = fileReader.readFile("C:/Users/User/Documents/Git Netbeans/attackontitan/src/main/resources/com/magiconch/attackontitan/json/bgmList.json");
+                LinkedList<Music> queue = fileReader.getBGMQueueFromJSON(jsonString);
+                BGMPlayer.initPlayer(queue);
+                BGMPlayer.startPlayer();
                 new SceneController().switchToScoutingScene(e);
             } catch (IOException ex) {
                 ex.printStackTrace();
@@ -76,11 +79,31 @@ public class App extends Application {
     }
 
     public static void main(String[] args) throws Exception {
-        String jsonString = fileReader.readFile("C:\\Users\\User\\Documents\\Git Netbeans\\attackontitan\\src\\main\\resources\\com\\magiconch\\attackontitan\\assets\\images\\simplemap.json");
-        Graph graph = fileReader.readGraphFromJSON(jsonString, WeightMode.NO_WEIGHT);
-        ArrayList<String> paths = new HamiltonianCycle().hamCycle(graph.getAdjacencyMatrix(), 0);
-        for (String s : paths) {
-            System.out.println(s);
+//        Graph graph = fileReader.readGraphFromJSON(jsonString, WeightMode.NO_WEIGHT);
+//        ArrayList<String> paths = new HamiltonianCycle().hamCycle(graph.getAdjacencyMatrix(), 0);
+//        for (String s : paths) {
+//            System.out.println(s);
+//        }
+//        for(Music music : queue){
+//            System.out.println(music.getSongName());
+//            System.out.println(music.getSongPath());
+//        }
+
+        String jsonString = fileReader.readFile("C:/Users/User/Documents/Git Netbeans/attackontitan/src/main/resources/com/magiconch/attackontitan/json/members.json");
+        LinkedList<Member> members = fileReader.getMembersFromJSON(jsonString);
+        Member[] sorted = Operations.sortBy(Attribute.STRENGTH, members, true);
+        for (Member member : sorted) {
+            System.out.printf("%s %d\n", member.getName(), member.getStrength());
+        }
+
+        Member[] matched = Operations.search(Attribute.STRENGTH, members, 1);
+        
+        if (matched == null) {
+            System.out.println("No result is found");
+        } else {
+            for (Member member : matched) {
+                System.out.printf("%s %d\n", member.getName(), member.getStrength());
+            }
         }
 
 //        launch();
