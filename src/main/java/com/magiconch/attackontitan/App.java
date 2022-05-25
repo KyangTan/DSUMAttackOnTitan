@@ -89,23 +89,23 @@ public class App extends Application {
 //            System.out.println(music.getSongPath());
 //        }
 
-        String jsonString = fileReader.readFile("C:/Users/User/Documents/Git Netbeans/attackontitan/src/main/resources/com/magiconch/attackontitan/json/members.json");
-        LinkedList<Member> members = fileReader.getMembersFromJSON(jsonString);
-        Member[] sorted = Operations.sortBy(Attribute.STRENGTH, members, true);
-        for (Member member : sorted) {
-            System.out.printf("%s %d\n", member.getName(), member.getStrength());
-        }
+//        String jsonString = fileReader.readFile("C:/Users/User/Documents/Git Netbeans/attackontitan/src/main/resources/com/magiconch/attackontitan/json/members.json");
+//        LinkedList<Member> members = fileReader.getMembersFromJSON(jsonString);
+//        Member[] sorted = Operations.sortBy(Attribute.STRENGTH, members, true);
+//        for (Member member : sorted) {
+//            System.out.printf("%s %d\n", member.getName(), member.getStrength());
+//        }
+//
+//        Member[] matched = Operations.search(Attribute.STRENGTH, members, 1);
+//        
+//        if (matched == null) {
+//            System.out.println("No result is found");
+//        } else {
+//            for (Member member : matched) {
+//                System.out.printf("%s %d\n", member.getName(), member.getStrength());
+//            }
+//        }
 
-        Member[] matched = Operations.search(Attribute.STRENGTH, members, 1);
-        
-        if (matched == null) {
-            System.out.println("No result is found");
-        } else {
-            for (Member member : matched) {
-                System.out.printf("%s %d\n", member.getName(), member.getStrength());
-            }
-        }
-
-//        launch();
+        launch();
     }
 }

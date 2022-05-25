@@ -58,6 +58,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-text-alignment: left;
 }
 
+.h4-center{
+    -fx-font-family: "Poppins", sans-serif;
+    -fx-font-size: 12.8px;
+    -fx-fill: -fx-yellow;
+    -fx-font-weight: 300;
+    -fx-text-alignment: center;
+}
+
 .card{
     -fx-fill: -fx-dark-red;
     -fx-arc-height: 20;
@@ -110,15 +118,73 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-text-fill: -fx-beige;
 }
 
+.nav-button-container {
+    -fx-fill: -fx-yellow;
+}
+
+.radio-button {
+    -fx-font-family: "Poppins", sans-serif;
+    -fx-font-size: 40px;
+    -fx-text-fill: -fx-yellow;
+    -fx-font-weight: 400;
+    -fx-text-alignment: center;
+    -fx-background-color: -fx-dark-brown;
+    -fx-border-color: -fx-yellow;
+    -fx-border-width: 4;
+    -fx-background-image: '/attackontitan/src/main/resources/com/magiconch/attackontitan/assets/images/scouting_background.png';
+}
+
+.check-box .box {
+    -fx-background-color: transparent;
+}
+
+.check-box:selected .mark {
+    -fx-background-color: -fx-yellow;
+}
+
+.check-box:selected .box {
+    -fx-background-color: -fx-yellow;
+}
+
+.toggle-button {
+    -fx-background-color: -fx-dark-red;
+    -fx-border-color: -fx-beige;
+    -fx-border-radius: 2px; 
+    -fx-font-family: "Poppins", sans-serif;
+    -fx-font-size: 12.8px;
+    -fx-text-fill: -fx-beige;
+    -fx-font-weight: 300;
+    -fx-text-alignment: left;
+}
+
+.toggle-button:selected {
+    -fx-background-color: -fx-yellow;
+}
+
+.nav-toggle-button {
+    -fx-background-color: -fx-yellow;
+    -fx-border-radius: 0px; 
+    -fx-font-family: "Poppins", sans-serif;
+    -fx-font-size: 12.8px;
+    -fx-text-fill: -fx-beige;
+    -fx-font-weight: 300;
+    -fx-text-alignment: left;
+    -fx-background-radius:100;
+    -fx-border-radius: 100;
+}
+
+.nav-toggle-button:selected {
+    -fx-background-color: -fx-red;
+}
 
 /*Below use to hide scrollBar*/
 /*scrollPane.setHbarPolicy(ScrollBarPolicy.NEVER);
 scrollPane.setVbarPolicy(ScrollBarPolicy.NEVER);*/
 
 .scroll-pane{
-   -fx-background-color:transparent;
+    -fx-background-color: transparent;
 }
 
 .scroll-pane .viewport {
-       -fx-background-color: transparent;
+    -fx-background-color: transparent;
 }

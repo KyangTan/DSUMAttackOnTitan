@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="560.0" stylesheets="@../stylesheet/root.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="600.0" stroke="BLACK" strokeType="INSIDE" styleClass="darkCard" width="560.0" />
+      <Text layoutX="218.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h1" text="Layers" />
+      <Text layoutX="85.0" layoutY="560.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="Weakest part of the wall is at position 8" />
+      <ScrollPane layoutX="89.0" layoutY="125.0" prefHeight="380.0" prefWidth="383.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="377.0" prefWidth="381.0">
+               <children>
+                  <VBox prefHeight="380.0" prefWidth="381.0" />
+               </children></AnchorPane>
+        </content>
+      </ScrollPane>
+      <ImageView fitHeight="27.0" fitWidth="41.0" layoutX="20.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../com/magiconch/attackontitan/assets/images/back_button.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

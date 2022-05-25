@@ -67,7 +67,7 @@ public class SceneController {
         primaryStage.setResizable(false);
         SceneController.primaryStage.show();
     }
-
+    
     private void switchScene(MouseEvent event, String fxmlFile) throws IOException {
         Parent root = FXMLLoader.load(App.class.getResource(fxmlFile));
         
@@ -79,11 +79,11 @@ public class SceneController {
     }
 
     public void switchToScoutingScene(ActionEvent event) throws IOException {
-        switchScene(event, "character.fxml");
+        switchScene(event, "characterPage.fxml");
     }
 
     public void switchToScoutingScene(MouseEvent event) throws IOException {
-        switchScene(event, "character.fxml");
+        switchScene(event, "characterPage.fxml");
     }
 
     public static void closeSplashStage() {
