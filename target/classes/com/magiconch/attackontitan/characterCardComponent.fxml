@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="350.0" prefWidth="290.0" style="-fx-background-color: transparent;" stylesheets="@../stylesheet/root.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="350.0" prefWidth="290.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="315.0" stroke="BLACK" strokeType="INSIDE" styleClass="card" width="270.0" />
       <ImageView fitHeight="210.0" fitWidth="230.0" layoutX="20.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../com/magiconch/attackontitan/assets/images/eren_mock.png" />
+            <Image url="@assets/images/eren_mock.png" />
          </image>
       </ImageView>
       <Text layoutX="75.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="Eren Yeager" textAlignment="CENTER" />
    </children>
+   <stylesheets>
+      <URL value="@../stylesheet/root.css" />
+      <URL value="@../../../stylesheet/root.css" />
+   </stylesheets>
 </AnchorPane>

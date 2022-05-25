@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="54.0" prefWidth="381.0" stylesheets="@../stylesheet/root.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17">
+<AnchorPane id="AnchorPane" prefHeight="54.0" prefWidth="381.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6e4643" height="54.0" stroke="TRANSPARENT" strokeType="INSIDE" width="381.0" />
       <CheckBox layoutX="16.0" mnemonicParsing="false" styleClass="h2" />
@@ -30,4 +30,8 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ab5953" height="31.0" layoutX="315.0" stroke="TRANSPARENT" strokeType="INSIDE" width="31.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ab5953" height="31.0" layoutX="350.0" stroke="TRANSPARENT" strokeType="INSIDE" width="31.0" />
    </children>
+   <stylesheets>
+      <URL value="@../stylesheet/root.css" />
+      <URL value="@../../../stylesheet/root.css" />
+   </stylesheets>
 </AnchorPane>

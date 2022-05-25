@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -8,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
 
-<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" stylesheets="@../stylesheet/root.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.magiconch.controllers.navBarController">
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.magiconch.controllers.navBarController">
    <children>
       <Rectangle fill="#3e2928" height="720.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="60.0" />
       <VBox layoutX="10.0" layoutY="150.0" prefHeight="420.0" prefWidth="41.0" spacing="35.0">
@@ -19,7 +20,7 @@
                      <graphic>
                         <ImageView fitHeight="23.5" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" style="-fx-blend-mode: differnece;">
                            <image>
-                              <Image url="@../com/magiconch/attackontitan/assets/images/nav_user.png" />
+                              <Image url="@assets/images/nav_user.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -32,7 +33,7 @@
                      <graphic>
                         <ImageView fitHeight="150.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../com/magiconch/attackontitan/assets/images/nav_search.png" />
+                              <Image url="@assets/images/nav_search.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -45,7 +46,7 @@
                      <graphic>
                         <ImageView fitHeight="150.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../com/magiconch/attackontitan/assets/images/nav_battle.png" />
+                              <Image url="@assets/images/nav_battle.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -58,7 +59,7 @@
                      <graphic>
                         <ImageView fitHeight="150.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../com/magiconch/attackontitan/assets/images/nav_lock.png" />
+                              <Image url="@assets/images/nav_lock.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -71,7 +72,7 @@
                      <graphic>
                         <ImageView fitHeight="150.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../com/magiconch/attackontitan/assets/images/nav_dechiper.png" />
+                              <Image url="@assets/images/nav_dechiper.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -84,7 +85,7 @@
                      <graphic>
                         <ImageView fitHeight="150.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../com/magiconch/attackontitan/assets/images/nav_wall.png" />
+                              <Image url="@assets/images/nav_wall.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -95,4 +96,8 @@
       </VBox>
       <StackPane fx:id="pageContainer" layoutX="60.0" prefHeight="720.0" prefWidth="1220.0" />
    </children>
+   <stylesheets>
+      <URL value="@../stylesheet/root.css" />
+      <URL value="@../../../stylesheet/root.css" />
+   </stylesheets>
 </AnchorPane>

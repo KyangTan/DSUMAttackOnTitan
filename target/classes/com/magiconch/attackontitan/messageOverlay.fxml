@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="560.0" stylesheets="@../stylesheet/root.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.magiconch.controllers.messageOverlayController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="600.0" stroke="BLACK" strokeType="INSIDE" styleClass="darkCard" width="560.0" />
-      <Text layoutX="110.0" layoutY="242.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h1" text="Character added&#10;successfully&#10;" />
-      <Button layoutX="173.0" layoutY="349.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="215.0" text="Back" />
+      <Text fx:id="messageText" layoutX="110.0" layoutY="242.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h1" text="Character added&#10;successfully&#10;" />
+      <Button fx:id="returnButton" layoutX="173.0" layoutY="349.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="215.0" text="Return" />
    </children>
+   <stylesheets>
+      <URL value="@../stylesheet/root.css" />
+      <URL value="@../../../stylesheet/root.css" />
+   </stylesheets>
 </AnchorPane>

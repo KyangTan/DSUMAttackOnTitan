@@ -1,20 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1220.0" stylesheets="@../stylesheet/root.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1220.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.magiconch.controllers.titansCardPageController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#462c2a" height="720.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1220.0" />
       <Text layoutX="552.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h1" text="Titans" />
-      <ScrollPane layoutX="40.0" layoutY="115.0" prefHeight="500.0" prefWidth="1140.0">
+      <ScrollPane layoutX="40.0" layoutY="109.0" prefHeight="507.0" prefWidth="1140.0">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="505.0" prefWidth="1128.0">
+               <children>
+                  <HBox fx:id="titansCardHBox" prefHeight="500.0" prefWidth="1162.0" />
+               </children></AnchorPane>
         </content>
       </ScrollPane>
-      <Button layoutX="561.0" layoutY="636.0" mnemonicParsing="false" text="Kill Them!" />
+      <Button fx:id="killTitansButton" layoutX="491.0" layoutY="636.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="238.0" text="Kill Them!" />
    </children>
+   <stylesheets>
+      <URL value="@../stylesheet/root.css" />
+      <URL value="@../../../stylesheet/root.css" />
+   </stylesheets>
 </AnchorPane>
