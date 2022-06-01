@@ -2,6 +2,7 @@
 
 <?import java.net.URL?>
 <?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -24,12 +25,15 @@
                            </image>
                         </ImageView>
                      </graphic>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="navToggleGroup" />
+                     </toggleGroup>
                   </ToggleButton>
                </children>
             </AnchorPane>
             <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="60.0">
                <children>
-                  <ToggleButton fx:id="searchPageToggleButton" layoutX="1.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" style="-fx-border-radius: 100;" styleClass="nav-toggle-button">
+                  <ToggleButton fx:id="searchPageToggleButton" layoutX="1.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" style="-fx-border-radius: 100;" styleClass="nav-toggle-button" toggleGroup="$navToggleGroup">
                      <graphic>
                         <ImageView fitHeight="150.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -42,7 +46,7 @@
             </AnchorPane>
             <AnchorPane layoutX="10.0" layoutY="85.0" prefHeight="40.0" prefWidth="60.0">
                <children>
-                  <ToggleButton fx:id="killPageToggleButton" layoutX="1.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" style="-fx-border-radius: 100;" styleClass="nav-toggle-button">
+                  <ToggleButton fx:id="killPageToggleButton" layoutX="1.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" style="-fx-border-radius: 100;" styleClass="nav-toggle-button" toggleGroup="$navToggleGroup">
                      <graphic>
                         <ImageView fitHeight="150.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -55,7 +59,7 @@
             </AnchorPane>
             <AnchorPane layoutX="10.0" layoutY="160.0" prefHeight="40.0" prefWidth="60.0">
                <children>
-                  <ToggleButton fx:id="ScoutingPageToggleButton" layoutX="1.0" layoutY="1.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" style="-fx-border-radius: 100;" styleClass="nav-toggle-button">
+                  <ToggleButton fx:id="ScoutingPageToggleButton" layoutX="1.0" layoutY="1.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" style="-fx-border-radius: 100;" styleClass="nav-toggle-button" toggleGroup="$navToggleGroup">
                      <graphic>
                         <ImageView fitHeight="150.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -68,7 +72,7 @@
             </AnchorPane>
             <AnchorPane layoutX="10.0" layoutY="235.0" prefHeight="40.0" prefWidth="60.0">
                <children>
-                  <ToggleButton fx:id="decipherPageToggleButton" layoutX="1.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" style="-fx-border-radius: 100;" styleClass="nav-toggle-button">
+                  <ToggleButton fx:id="decipherPageToggleButton" layoutX="1.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" style="-fx-border-radius: 100;" styleClass="nav-toggle-button" toggleGroup="$navToggleGroup">
                      <graphic>
                         <ImageView fitHeight="150.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -81,7 +85,7 @@
             </AnchorPane>
             <AnchorPane layoutX="10.0" layoutY="310.0" prefHeight="40.0" prefWidth="60.0">
                <children>
-                  <ToggleButton fx:id="wallPageToggleButton" layoutX="1.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" style="-fx-border-radius: 100;" styleClass="nav-toggle-button">
+                  <ToggleButton fx:id="wallPageToggleButton" layoutX="1.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" style="-fx-border-radius: 100;" styleClass="nav-toggle-button" toggleGroup="$navToggleGroup">
                      <graphic>
                         <ImageView fitHeight="150.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
