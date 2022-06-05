@@ -6,11 +6,11 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class WallMaria {
-    private List<List<Integer>> wallStructure = new ArrayList<>();
+    private final List<List<Integer>> wallStructure = new ArrayList<>();
     private int[][] arrayWallStructure;
     private int[] weakestPart;
-    private Scanner sc = new Scanner(System.in);
-    private Random r = new Random();
+    private final Scanner sc = new Scanner(System.in);
+    private final Random r = new Random();
     private int height = 0;
     private int width = 0;
 
