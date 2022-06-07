@@ -115,6 +115,17 @@ public class LinkedList<E> implements Iterable<E> {
         this.tail.next = null;
         isCircular = false;
     }
+    
+    public E[] toArray(){
+        LinkedListNode<E> current = this.head;
+        E[] ret = (E[]) new Object[size];
+        int i = 0;
+        while(current.getNext() != null){
+            ret[i] = current.getData();
+        }
+        
+        return ret;
+    }
 
     @Override
     public Iterator<E> iterator() {

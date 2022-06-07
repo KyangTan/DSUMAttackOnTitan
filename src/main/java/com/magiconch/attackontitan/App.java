@@ -2,6 +2,9 @@ package com.magiconch.attackontitan;
 
 import com.magiconch.backend.Attribute;
 import com.magiconch.backend.BGMPlayer;
+import com.magiconch.backend.GraphRelated.Djikstra;
+import com.magiconch.backend.GraphRelated.Graph;
+import com.magiconch.backend.GraphRelated.WeightMode;
 import com.magiconch.backend.LinkedList;
 import com.magiconch.backend.Member;
 import com.magiconch.backend.Music;
@@ -79,7 +82,10 @@ public class App extends Application {
     }
 
     public static void main(String[] args) throws Exception {
-//        Graph graph = fileReader.readGraphFromJSON(jsonString, WeightMode.NO_WEIGHT);
+        String jsonString = fileReader.readFile("C:/Users/User/Documents/Git Netbeans/attackontitan/src/main/resources/com/magiconch/attackontitan/json/map.json");
+        Graph graph = fileReader.readGraphFromJSON(jsonString, WeightMode.DIFFER_BY_INDEX);
+        graph.printGraph();
+//        Djikstra.dijkstra(graph.getAdjacencyMatrix(), 2);
 //        ArrayList<String> paths = new HamiltonianCycle().hamCycle(graph.getAdjacencyMatrix(), 0);
 //        for (String s : paths) {
 //            System.out.println(s);
@@ -105,7 +111,6 @@ public class App extends Application {
 //                System.out.printf("%s %d\n", member.getName(), member.getStrength());
 //            }
 //        }
-
-        launch();
+//        launch();
     }
 }

@@ -5,6 +5,8 @@
 package com.magiconch.backend;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.PriorityQueue;
 
 /**
  *
@@ -41,7 +43,7 @@ public class Operations {
         if (starting == -1 || ending == -1) {
             return -1;
         }
-        
+
         // ability value only
         // searching objective: find the first occurance and last occurance of targeted value
         int mid = starting + ((ending - starting) / 2);
@@ -100,7 +102,6 @@ public class Operations {
 
 // LinkedList Operations
     /**
-     *
      * @param attr
      * @param members
      * @param reverse
@@ -162,15 +163,14 @@ public class Operations {
         return matched;
     }
 
-    /**
-     *
-     * @param attr
-     * @param titans
-     * @return
-     */
-//    public static Titans[] sortBy(String attr, LinkedList<Titans> titans){
-//        
-//    }
+    public static PriorityQueue<Titan> getTitanPriority(LinkedList<Titan> titans) {
+        PriorityQueue<Titan> killQueue = new PriorityQueue<Titan>(titans.getSize(), AttributeComparator.getTitanComparator());
+        for (Titan titan : titans) {
+            killQueue.add(titan);
+        }
+
+        return killQueue;
+    }
     /**
      *
      * @param attr

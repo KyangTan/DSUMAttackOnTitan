@@ -4,7 +4,9 @@
  */
 package com.magiconch.backend.GraphRelated;
 
+import com.magiconch.backend.TitanFactory;
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  *
@@ -25,6 +27,8 @@ public class Graph {
     }
 
     public Graph(int dim, WeightMode weightMode) {
+        // Random class
+        Random r = new Random();
         // to limit both column and row
         this.dim = dim;
 
@@ -34,11 +38,21 @@ public class Graph {
         // to instantiate the ArrayList and occcupiedBy
         this.adjMatrix = new ArrayList<>();
         this.occupiedBy = new ArrayList<>();
+        int titanNum = 0;
         // build row
         for (int i = 0; i < dim; i++) {
-            // populate vertex
-            this.occupiedBy.add(new Vertex(VertexType.UNDEFINED));
-
+            if(i == 0){
+                this.occupiedBy.add(new Vertex(VertexType.MEMBER));
+            }
+            else if(r.nextInt(101) > 50 && titanNum < 7){
+                this.occupiedBy.add(new TitanFactory().generateRandomTitan());
+                titanNum++;
+            }
+            else{
+                // populate vertex
+                this.occupiedBy.add(new Vertex(VertexType.CROSSABLE_OBSTACLE));
+            }
+            
             this.adjMatrix.add(new ArrayList<>());
             for (int j = 0; j < dim; j++) {
                 // init all to 0
@@ -176,6 +190,10 @@ public class Graph {
 
     //this method is to print graph
     public void printGraph() {
+        for(int i = 0 ; i < this.dim ; i++){
+            System.out.print(this.occupiedBy.get(i).getType().toString()+" ");
+        }
+        System.out.println("");
         if (this.dim == 0) {
             System.out.println("========Blank Graph========");
         } else {

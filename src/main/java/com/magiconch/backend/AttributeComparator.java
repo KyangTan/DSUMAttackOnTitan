@@ -4,11 +4,22 @@
  */
 package com.magiconch.backend;
 
+import java.util.Comparator;
+
 /**
  *
  * @author User
  */
 public class AttributeComparator {
+
+    private static class TitanRiskComparator<T extends Titan> implements Comparator<T> {
+
+        @Override
+        public int compare(T o1, T o2) {
+            return Integer.valueOf(o2.getDangerRisk()).compareTo(o1.getDangerRisk());
+        }
+
+    }
 
     public static int compareByName(Member o1, Member o2, boolean reverse) {
         if (!reverse) {
@@ -64,6 +75,10 @@ public class AttributeComparator {
             return Integer.valueOf(o1.getCoordination()).compareTo(o2.getCoordination());
         }
         return Integer.valueOf(o2.getCoordination()).compareTo(o1.getCoordination());
+    }
+
+    public static TitanRiskComparator getTitanComparator() {
+        return new TitanRiskComparator();
     }
 
 }
