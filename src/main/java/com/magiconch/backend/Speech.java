@@ -1,14 +1,17 @@
 package com.magiconch.backend;
 
+import static com.magiconch.backend.HashMap.caesarEncrypt;
 import static com.magiconch.backend.HashMap.marleyToParadis;
 import static com.magiconch.backend.HashMap.myDecrypt;
 import static com.magiconch.backend.HashMap.myEncrypt;
+import static com.magiconch.backend.HashMap.paradisConverter;
+import static com.magiconch.backend.HashMap.paradisInverter;
 import static com.magiconch.backend.HashMap.paradisToMarley;
 import java.util.Scanner;
 
 
 public class Speech {
-    private Scanner sc = new Scanner(System.in);
+    private final Scanner sc = new Scanner(System.in);
     
     public void combinedScenes(){
         Scene1();
@@ -22,7 +25,7 @@ public class Speech {
         System.out.println("Eren: ");
         System.out.println("  With Wall Maria being cleared of Titans, I can finally go back to my house basement.");
         sc.nextLine();
-        System.out.println("  ...After searching around the bacement...");
+        System.out.println("  ...After searching around the basement...");
         sc.nextLine();
         System.out.println("Eren: ");
         System.out.println("  Oh! Isn't this some an information with Marley's sentence and a Marley Dictionary?");
@@ -49,10 +52,11 @@ public class Speech {
         System.out.println("Captain Erwin: ");
         System.out.println("  Eren I found an information from the enemy.");
         System.out.println("  Please decrypt this message immediately, I have a bad feeling about this");
-        String a =  "Message from Reiner Braun: "
-                + "\nBy sunset, Bertholdt and I will transform into Colossal Titan and Armored Titan respectively to destroy Wall Maria."
-                + "\nHere is the building structure of Wall of Maria, we are going to break the weakest part where most edges of bricks align together."
-                + "\nHeight of the wall: [input]\nWidth of the wall: [input]";
+        String a =  "Message from Reiner Braun: /n" +
+                    "      By sunset, Bertholdt and I will transform into Colossal Titan and Armored Titan respectively to destroy Wall Maria.\n" +
+                    "    Here is the building structure of Wall of Maria, we are going to break the weakest part where most edges of bricks align together.\n"+
+                    "    Height of the wall: [input]\n" +
+                    "    Width of the wall: [input]\n";
         sc.nextLine();
         System.out.println("\nSecret message in Marley: ");
         System.out.println(paradisToMarley(a,-1, -1, -1));
@@ -81,15 +85,32 @@ public class Speech {
         System.out.println("  Use () to invert certain character. ");
         System.out.print("  Your Paradis Sentence: ");
         String sentence = sc.nextLine();
-        System.out.print("  Insert 1 or 2 for Caesar Decryption. -1 to omit: ");
-        int caesar = sc.nextInt();
-        System.out.print("  Insert the starting character for Caesar Encryption: ");
-        int start = sc.nextInt();
-        System.out.print("  Insert the ending character for Caesar Encryption: ");
-        int end = sc.nextInt();
-        
-        sc.nextLine();
-        String marley = paradisToMarley(sentence, caesar, start, end);
+        String marley = paradisConverter(paradisInverter(sentence));
+        System.out.println("");
+        System.out.println("  Important note!!! Do not insert caesar cipher that breaks this sequence: &num{");
+        while(true){
+            System.out.print("  Do you want the further encrypt with Caesar Cipher? [y/n]: ");
+            String answer = sc.next();
+            if(answer.equalsIgnoreCase("y")){
+                System.out.print("  Insert 1 or 2 for Caesar Decryption. -1 to omit: ");
+                int caesar = sc.nextInt();
+                if(caesar>0){
+                    System.out.print("  Insert the index of starting character for Caesar Encryption: ");
+                    int start = sc.nextInt();
+                    System.out.print("  Insert the index of ending character for Caesar Encryption: ");
+                    int end = sc.nextInt();
+                    sc.nextLine();
+                    marley = caesarEncrypt(marley, caesar, start, end); 
+                    System.out.println("  Current marley: " + marley);
+                }else{
+                    System.out.println("  Current marley: " + marley);
+                    break;
+                }
+                }else {
+                System.out.println("  Current marley: " + marley);
+                break;
+            }   
+        }
         String paradis = marleyToParadis(marley);
         System.out.println("\nEren: ");
         System.out.println("  Captain Erwin, this is the Marley Sentence.");

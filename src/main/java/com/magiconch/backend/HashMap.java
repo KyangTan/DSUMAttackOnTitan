@@ -4,18 +4,20 @@
  */
 package com.magiconch.backend;
 
-import java.util.List;
 import java.util.Random;
+import java.util.Stack;
 
 /**
  *
  * @author kuckn
+ * @param <K> as String
+ * @param <V> as String
  */
 public class HashMap<K, V>{
     // for better re-sizing is taken as 2^5
     private static final int SIZE = 32;
     
-    private Entry table[] = new Entry[SIZE];
+    private final Entry table[] = new Entry[SIZE];
     
     /**
      * To store the Map data in key and value pair.
@@ -184,24 +186,26 @@ public class HashMap<K, V>{
      * @return return processed marley function that restore the meaning of sentence using caesar cipher
      */
     public static String caesarProcessor(String marley){
+        Stack<Integer> st = new Stack<>();
+        
         for(int i=0; i<marley.length(); i++){
-            if(marley.charAt(i) == '&' && Character.isDigit(marley.charAt(i+1)) && marley.charAt(i+2) == '{') {
-                int num = Character.getNumericValue(marley.charAt(i+1));
-                
-                if(num>2){
-                    System.out.println("num in &num{} should not be larger than 2 since character z will be masked. \nError Processing this code: ");
-                    break;
-                }
+            if (marley.charAt(i) == '&' && Character.isDigit(marley.charAt(i+1)) && marley.charAt(i+2) == '{')
+            {
+              st.push(i);
+            }
+            else if (marley.charAt(i) == '}')
+            {
+              int j =st.pop();
+               
+              int num = Character.getNumericValue(marley.charAt(j+1));
 
-                // Find its respective closing curly
-                int j  = i+3;
-                while(true){
-                    if(marley.charAt(j) == '}') {
-                        break;
-                    } 
-                    j++;
-                }
-                marley = caesarCipher(num, marley, i+3, j);
+              if(num>2){
+                  System.out.println("num in &num{} should not be larger than 2 since character z will be masked. \nError Processing this code: ");
+                  break;
+              }
+              marley = caesarCipher(num, marley,j+3 ,i);
+              System.out.println("Current decrypted marley: " + marley);
+              i=0;
             }
         }
         return marley;
@@ -219,15 +223,8 @@ public class HashMap<K, V>{
     public static String caesarCipher(int n, String s, int start, int end){
         String oldStr = s;
         for(int i = start; i<end; i++){
-//            if(oldStr.charAt(i) == '(' || oldStr.charAt(i) == ')'
-//                    || oldStr.charAt(i) == '&' || oldStr.charAt(i) == '{'
-//                    || oldStr.charAt(i) == '}' || oldStr.charAt(i) == '$' 
-//                    || oldStr.charAt(i) == ',' || oldStr.charAt(i) == '^'){
-//                continue;
-//            } else {
-                oldStr = oldStr.substring(0, i) + (char)((int)oldStr.charAt(i)-n)
-                  + oldStr.substring(i + 1);
-//            }
+            oldStr = oldStr.substring(0, i) + (char)((int)oldStr.charAt(i)-n)
+                + oldStr.substring(i + 1);
         }
         
         //To eliminate the num and & and { and } in &num{} 
@@ -267,41 +264,60 @@ public class HashMap<K, V>{
         return str;
     }
     
+    public static void reverse(char A[], int l, int h)
+    {
+      if (l < h)
+      {
+        char ch = A[l];
+        A[l] = A[h];
+        A[h] = ch;
+        reverse(A, l + 1, h - 1);
+      }
+    }
+   
+    // Function to return the modified string
+    public static String inverter(String str)
+    {
+        int len = str.length();
+        Stack<Integer> st = new Stack<>();
+        for (int i = 0; i < len; i++)
+        {
+
+          // Push the index of the current
+          // opening bracket
+          if (str.charAt(i) == '(')
+          {
+            st.push(i);
+          }
+
+          // Reverse the substring starting
+          // after the last encountered opening
+          // bracket till the current character
+          else if (str.charAt(i) == ')')
+          {
+            char[] A = str.toCharArray();
+            reverse(A, st.peek() + 1, i);
+            str = String.copyValueOf(A);
+            st.pop();
+          }
+        }
+        // To store the modified string
+        String res = "";
+        for (int i = 0; i < len; i++)
+        {
+          if (str.charAt(i) != ')' && str.charAt(i) != '(')
+          {
+            res += (str.charAt(i));
+          }
+        }
+        return res;
+    } 
+    
     /**
      * 
      * @param marley is the processed sentence using caesarProcessor() & marleyTranslator()
      * @return corrected sentence in parentheses and eliminate parentheses
      */
-    public static String inverter(String marley){
-        int start = 0;
-        int end = 0;
-        String str = "";
-        
-        for(int i=0; i<marley.length(); i++){
-            if(marley.charAt(i) == '('){
-                start  = i;
-                int j = i+1;
-                while(true){
-                    if(marley.charAt(j) == ')') {
-                        break;
-                    } 
-                    j++;
-                }
-                end = j;
-                
-                for (int k = end-1; k>start; k--){
-                    str += marley.charAt(k);
-                }
-                
-                i = end;
-                
-            } else {
-                str += marley.charAt(i);
-            }
-        }
-        
-        return str;
-    }
     //End/////////////// Marley To Paradis Useful Functions ////////////////////
     
     //////////////////// Paradis To Marley Useful Functions ////////////////////
@@ -346,38 +362,43 @@ public class HashMap<K, V>{
      * @return inverted substring in () while keeping parentheses
      */
     public static String paradisInverter(String paradis){
-        int start = 0;
-        int end = 0;
-        String str = "";
-        
-        for(int i=0; i<paradis.length(); i++){
-            if(paradis.charAt(i) == '('){
-                start  = i;
-                int j = i+1;
-                while(true){
-                    if(paradis.charAt(j) == ')') {
-                        break;
-                    } 
-                    j++;
-                }
-                end = j;
-                
-                // Difference between Marley Inverter and this Inverter (Keep the parentheses)
-                str += paradis.charAt(start);
-                for (int k = end-1; k>start; k--){
-                    str += paradis.charAt(k);
-                }
-                // Difference between Marley Inverter and this Inverter (Keep the parentheses)
-                str += paradis.charAt(end);
-                
-                i = end;
-                
-            } else {
-                str += paradis.charAt(i);
-            }
+        int len = paradis.length();
+        Stack<Integer> st = new Stack<>();
+        for (int i = 0; i < len; i++)
+        {
+
+          // Push the index of the current
+          // opening bracket
+          if (paradis.charAt(i) == '(')
+          {
+            st.push(i);
+          }
+
+          // Reverse the substring starting
+          // after the last encountered opening
+          // bracket till the current character
+          else if (paradis.charAt(i) == ')')
+          {
+              String inverted = paradis.substring(0, st.peek());
+              for(int j = i; j>=st.peek(); j--){
+                  switch (paradis.charAt(j)) {
+                      case '(':
+                          inverted+=')';
+                          break;
+                      case ')':
+                          inverted+='(';
+                          break;
+                      default:
+                          inverted += paradis.charAt(j);
+                          break;
+                  }
+              }
+              inverted += paradis.substring(i+1);
+              paradis = inverted;
+              st.pop();
+          }
         }
-        
-        return str;
+        return paradis;
     }
     
     /**
@@ -435,13 +456,19 @@ public class HashMap<K, V>{
             System.out.println("\nError: Encryption start is out of bound. Minimum index of the start of this text is: 0 "
                     + "\n  Start value is corrected to: 0");
         }
-        start = start < 0 ? 0 : num;
+        start = start <= 0 ? 0 : start;
         
         if(end>paradis.length()){
             System.out.println("\nError: Encryption end is out of bound. Maximum index of the end of this text is: " + paradis.length()
                     + "\n  End value is corrected to: " + paradis.length());
         }
         end = end>paradis.length() ? paradis.length(): end;
+        
+        if(end<start){
+            System.out.println("\nError: Your logic got problem! You can't set the end of encrypting sentence before the start!"
+                    + "\n  End value is corrected to: " + (start+1));
+            end = start+1;
+        }
         
         for(int i=0; i<paradis.length(); i++){
             if(i==start){
@@ -550,66 +577,4 @@ public class HashMap<K, V>{
     
     
     //End/////////////////// My Own Cipher Useful Functions ////////////////////
-//    public static void main(String[] args) {
-//        String x = "^&4{hello}";
-//        System.out.println(caesarCipher(4, x, 4, 9));
-//    }
-//    public static void main(String[] args) {
-//        String x = "Hello, my name is Kuck Swee Nien. Nice to meet you!!! 1234567890{}()&$^";
-//        String num = numerized(x);
-//        System.out.println(num);
-//        System.out.println(invertAll(num));
-//        String space = spaceConverter(invertAll(num));
-//        System.out.println(space);
-//        System.out.println(symbolsConverter(space));
-//        System.out.println(invertAll(symbolsConverter(space)));
-//        System.out.println(lastConvert(integerSplit(invertAll(symbolsConverter(space)))));
-//        
-//        String e = myEncrypt(x);
-//        System.out.println(e);
-//        System.out.println(myDecrypt(e));
-//    }
-//    public static void main(String[] args) {
-//        myHashMap<String, String> myHashMap = new myHashMap<>();
-//        
-//        myHashMap.put("l", "l");
-//        myHashMap.put(",", ",");
-//        myHashMap.put("Hel", "Nothing");
-//        myHashMap.put("He", "SE");
-//        
-//        String e = (String)myHashMap.get(",").getValue();
-//        System.out.println("" + e);
-//        
-//        myHashMap.put("Hello", "Sad");
-//        e = (String)myHashMap.get("l").getValue();
-//        System.out.println("" + e);
-//        
-//        System.out.println(myHashMap.remove(","));
-//        e = (String)myHashMap.get("l").getValue();
-//        System.out.println("" + e);
-//        e = (myHashMap.get(",") != null) ? (String)myHashMap.get(",").getValue() : null;
-//        System.out.println("" + e);
-//        
-//        System.out.println(myHashMap.containsKey("d"));
-//        Character x = '(';
-//        String y = "&3{acnskw()&$l}";
-//        String z = "";
-//        for(int i = 0; i<y.length(); i++){
-//            z += (char)(((int)y.charAt(i))-3);
-//        }
-//        System.out.println(z);
-//        System.out.println(caesarCipher(3, y, 3, 14));
-//        System.out.println(caesarProcessor("hello&2{cefghijklmnopqrstuvwxyz{|}hello"));
-//        System.out.println(inverter(marleyTranslator(caesarProcessor("^oh(&1{medi_d%fcedd_e%sm})"))));
-//        System.out.println(inverter(marleyTranslator(caesarProcessor("rsgc(qqd^i$tkz)$ko$^udzhd,(rld$sgk^z$)$^gpssld"))));
-//        System.out.println(inverter(marleyTranslator(caesarProcessor("&2{t}s&1{h}c(qqd^i$tkz)$ko$^udzh&1{e},(rld$sgk^z$)$^gpssld"))));
-//        System.out.println(inverter(marleyTranslator(caesarProcessor("^ukgc$rd(vsq$gh$zshrqkg$gwkzsml)h$dbeszudl"))));
-//        System.out.println(marleyToParadis("^ukgc$rd(vsq$gh$zshrqkg$gwkzsml)h$dbeszudl"));
-//        System.out.println(caesarEncrypt(paradisConverter(paradisInverter("fi(nd attack titan)")), -1, -1, -1));
-//        System.out.println(marleyToParadis("(k&1{rrt_q*%-mi-qei%)heq*}"));
-//        
-//        
-//       }
 }
-
-
