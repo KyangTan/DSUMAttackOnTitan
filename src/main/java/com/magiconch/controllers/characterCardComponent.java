@@ -4,15 +4,12 @@ import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 
-public class searchCardComponentController {
+public class characterCardComponent {
 
     @FXML
-    private ImageView charEyeImage;
+    private ImageView charImage;
 
     @FXML
     private Text charNameText;
-
-    @FXML
-    private Text charStrText;
 
 }
