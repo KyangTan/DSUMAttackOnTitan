@@ -1,44 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1220.0" stylesheets="@../stylesheet/root.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1220.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.magiconch.controllers.characterDetailsViewPageController">
    <children>
       <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../com/magiconch/attackontitan/assets/images/character_background.png" />
+            <Image url="@assets/images/character_background.png" />
          </image>
       </ImageView>
-      <Text layoutX="512.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h1" text="Eren Yeager" />
+      <Text fx:id="charNameText" layoutX="512.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h1" text="Eren Yeager" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="500.0" layoutX="638.0" layoutY="110.0" stroke="BLACK" strokeType="INSIDE" styleClass="card" width="463.0" />
       <Text layoutX="677.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="Character Information" />
-      <Text fill="WHITE" layoutX="677.0" layoutY="190.0" lineSpacing="5.0" opacity="0.6" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h4" text="Height: 185cm&#10;Weight: 95kg&#10;Strength: 9&#10;Agility: 7&#10;Intelligence: 7&#10;Coordination: 10&#10;Leadership: 8&#10;" />
+      <Text fx:id="charInfoText" fill="WHITE" layoutX="677.0" layoutY="190.0" lineSpacing="5.0" opacity="0.6" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h4" text="Height: 185cm&#10;Weight: 95kg&#10;Strength: 9&#10;Agility: 7&#10;Intelligence: 7&#10;Coordination: 10&#10;Leadership: 8&#10;" />
       <Text layoutX="677.0" layoutY="387.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="Description" />
-      <Text fill="WHITE" layoutX="677.0" layoutY="407.0" lineSpacing="5.0" opacity="0.6" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h4" text="Eren Yeager was a former member of the Survey Corps. He was the main protagonist of Attack on Titan. He lived in Shiganshina District with his parents until the fall of Wall Maria, where he impotently witnessed his mother being eaten by a Titan. This event would lead to Eren's intense hatred towards the Titans as he swore to wipe all of them off the face of the Earth.&#10;&#10;" wrappingWidth="384.633056640625" />
-      <Text layoutX="594.0" layoutY="676.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h1" text="1/10" />
-      <ImageView fitHeight="500.0" fitWidth="463.0" layoutX="119.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+      <Text fx:id="charDescText" fill="WHITE" layoutX="677.0" layoutY="407.0" lineSpacing="5.0" opacity="0.6" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h4" text="Eren Yeager was a former member of the Survey Corps. He was the main protagonist of Attack on Titan. He lived in Shiganshina District with his parents until the fall of Wall Maria, where he impotently witnessed his mother being eaten by a Titan. This event would lead to Eren's intense hatred towards the Titans as he swore to wipe all of them off the face of the Earth.&#10;&#10;" wrappingWidth="384.633056640625" />
+      <Text fx:id="counterButton" layoutX="594.0" layoutY="676.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h1" text="1/10" />
+      <ImageView fx:id="charFullImage" fitHeight="500.0" fitWidth="463.0" layoutX="119.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../com/magiconch/attackontitan/assets/images/eren_full.png" />
+            <Image url="@assets/images/eren_full.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="49.0" layoutX="488.0" layoutY="640.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="backButton" fitHeight="50.0" fitWidth="49.0" layoutX="488.0" layoutY="640.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../com/magiconch/attackontitan/assets/images/next_previous.png" />
+            <Image url="@assets/images/next_previous.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="49.0" layoutX="720.0" layoutY="640.0" pickOnBounds="true" preserveRatio="true" style="-fx-rotate: 180;">
+      <ImageView fx:id="nextButton" fitHeight="50.0" fitWidth="49.0" layoutX="720.0" layoutY="640.0" pickOnBounds="true" preserveRatio="true" style="-fx-rotate: 180;">
          <image>
-            <Image url="@../com/magiconch/attackontitan/assets/images/next_previous.png" />
+            <Image url="@assets/images/next_previous.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="28.0" fitWidth="41.0" layoutX="18.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="backButton" fitHeight="28.0" fitWidth="41.0" layoutX="18.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../com/magiconch/attackontitan/assets/images/back_button.png" />
+            <Image url="@assets/images/back_button.png" />
          </image>
       </ImageView>
    </children>
+   <stylesheets>
+      <URL value="@../stylesheet/root.css" />
+      <URL value="@../../../stylesheet/root.css" />
+   </stylesheets>
 </AnchorPane>

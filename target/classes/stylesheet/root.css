@@ -161,6 +161,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-background-color: -fx-yellow;
 }
 
+<<<<<<< Updated upstream
 .nav-toggle-button {
     -fx-background-color: -fx-yellow;
     -fx-border-radius: 0px; 
@@ -177,6 +178,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-background-color: -fx-red;
 }
 
+=======
+>>>>>>> Stashed changes
 /*Below use to hide scrollBar*/
 /*scrollPane.setHbarPolicy(ScrollBarPolicy.NEVER);
 scrollPane.setVbarPolicy(ScrollBarPolicy.NEVER);*/
