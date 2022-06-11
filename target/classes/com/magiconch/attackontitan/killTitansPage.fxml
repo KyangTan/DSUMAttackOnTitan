@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -8,20 +7,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="721.0" prefWidth="1220.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.magiconch.controllers.killTitansPageController">
+<AnchorPane id="AnchorPane" prefHeight="721.0" prefWidth="1220.0" stylesheets="@../stylesheet/root.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fitHeight="721.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@assets/images/kill_titans_background.png" />
+            <Image url="@../com/magiconch/attackontitan/assets/images/kill_titans_background.png" />
          </image>
       </ImageView>
       <Text layoutX="411.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h1" text="Let's kill some Titans!" />
       <Text layoutX="413.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="Enter the numbers of titans to be killed..." />
-      <TextField fx:id="titansNumberTextBox" layoutX="362.0" layoutY="367.0" styleClass="largeTextField" />
-      <Button fx:id="killButton" layoutX="503.0" layoutY="453.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="215.0" text="Kill!" />
+      <TextField layoutX="362.0" layoutY="367.0" styleClass="largeTextField" />
+      <Button layoutX="503.0" layoutY="453.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="215.0" text="Button" />
    </children>
-   <stylesheets>
-      <URL value="@../stylesheet/root.css" />
-      <URL value="@../../../stylesheet/root.css" />
-   </stylesheets>
 </AnchorPane>

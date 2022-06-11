@@ -11,7 +11,10 @@ package com.magiconch.backend.GraphRelated;
 public class Vertex {
 
     private VertexType type = VertexType.UNDEFINED;
-
+    
+    public Vertex(){
+        setType(type);
+    }
     public Vertex(VertexType type) {
         setType(type);
     }

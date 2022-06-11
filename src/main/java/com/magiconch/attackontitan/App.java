@@ -9,6 +9,7 @@ import com.magiconch.backend.LinkedList;
 import com.magiconch.backend.Member;
 import com.magiconch.backend.Music;
 import com.magiconch.backend.Operations;
+import com.magiconch.controllers.SceneController;
 import com.magiconch.utility.fileReader;
 //import com.magiconch.controllers.SceneController;
 import com.magiconch.controllers.ScreenController;
@@ -84,7 +85,7 @@ public class App extends Application {
         ImageView img = new ImageView(new Image(method.getPathToResources("assets/images/opening.png")));
 
         //setting group and scene   
-        Group root = new Group();
+//        Group root = new Group();
         root.getChildren().add(mediaView);
         mediaPlayer.setOnEndOfMedia(() -> {
             // switch to static

@@ -1,4 +1,5 @@
 package com.magiconch.backend;
+
 import com.magiconch.backend.GraphRelated.Vertex;
 import com.magiconch.backend.GraphRelated.VertexType;
 import java.util.Random;
@@ -8,15 +9,18 @@ import java.util.Random;
  * @author kwany
  */
 public abstract class Titan extends Vertex {
+
     static int normalTitanCount = 0;
     static int abnormalTitanCount = 0;
     private final VertexType vertexType = VertexType.TITAN;
-    enum type{
+
+    enum type {
         Normal,
         Abnormal,
         NineTitan
     }
-    enum WalkingPattern{
+
+    enum WalkingPattern {
         Not_Repeated,
         Repeated,
         Normal_Pattern
@@ -48,6 +52,7 @@ public abstract class Titan extends Vertex {
     }
 
     public void setTitantype(type Titantype) {
+        super.setType(VertexType.TITAN);
         this.Titantype = Titantype;
     }
 
@@ -60,11 +65,9 @@ public abstract class Titan extends Vertex {
         if (Titantype.equals(type.Normal)) {
             if (wp.equals(WalkingPattern.Normal_Pattern)) {
                 dangerRisk += 1;
-            }
-            else if(wp.equals(WalkingPattern.Repeated)){
+            } else if (wp.equals(WalkingPattern.Repeated)) {
                 dangerRisk += 2;
-            }
-            else if(wp.equals(WalkingPattern.Not_Repeated)){
+            } else if (wp.equals(WalkingPattern.Not_Repeated)) {
                 dangerRisk += 3;
             }
         }
@@ -79,7 +82,7 @@ public abstract class Titan extends Vertex {
         if (Titantype.equals(type.Normal)) {
             if (climb) {
                 dangerRisk += 3;
-            }else{
+            } else {
                 dangerRisk += 1;
             }
         }
@@ -94,11 +97,9 @@ public abstract class Titan extends Vertex {
         if (Titantype.equals(type.Normal)) {
             if (height < 10) {
                 dangerRisk += 1;
-            }
-            else if(height >= 10){
+            } else if (height >= 10) {
                 dangerRisk += 2;
-            }
-            else if(height > 20){
+            } else if (height > 20) {
                 dangerRisk += 3;
             }
         }
@@ -113,11 +114,9 @@ public abstract class Titan extends Vertex {
         if (Titantype.equals(type.Normal)) {
             if (this.walkingLegs == 4) {
                 dangerRisk += 3;
-            }
-            else if(this.walkingLegs == 2){
+            } else if (this.walkingLegs == 2) {
                 dangerRisk += 2;
-            }
-            else if(this.walkingLegs == 0){
+            } else if (this.walkingLegs == 0) {
                 dangerRisk += 1;
             }
         }
@@ -130,19 +129,16 @@ public abstract class Titan extends Vertex {
     public void setRunningSpeed(int runningSpeed) {
         this.runningSpeed = runningSpeed;
         if (Titantype.equals(type.Normal)) {
-            if(this.runningSpeed >20){
+            if (this.runningSpeed > 20) {
                 dangerRisk += 3;
-            }
-            else if(this.runningSpeed >10){
+            } else if (this.runningSpeed > 10) {
                 dangerRisk += 2;
-            }
-            else if (this.runningSpeed <10) {
+            } else if (this.runningSpeed < 10) {
                 dangerRisk += 1;
             }
         }
     }
 
-                
     public int getDangerRisk() {
         return dangerRisk;
     }
@@ -150,8 +146,8 @@ public abstract class Titan extends Vertex {
     public void setDangerRisk(int dangerRisk) {
         this.dangerRisk = dangerRisk;
     }
-    
-    public WalkingPattern randomWP(){
+
+    public WalkingPattern randomWP() {
         Random ran = new Random();
         int randomNo = ran.nextInt(3);
         switch (randomNo) {
@@ -170,6 +166,5 @@ public abstract class Titan extends Vertex {
     public String toString() {
         return "Titan{" + "name=" + name + ", Titantype=" + Titantype + ", wp=" + wp + ", climb=" + climb + ", height=" + height + ", walkingLegs=" + walkingLegs + ", runningSpeed=" + runningSpeed + ", dangerRisk=" + dangerRisk + ", position=" + position + '}';
     }
-    
-    
+
 }
