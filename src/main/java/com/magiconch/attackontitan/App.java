@@ -34,20 +34,10 @@ public class App extends Application {
     private final CommonMethod method = new CommonMethod();
     
     public static String brain = "controlCenter";
-    public static String characterPage = "characterPage";
-    public static String mariaWallPage = "mariaWallPage";
-    public static String decipherPage = "decipherPage";
-    public static String killTitansPage = "killTitanPage";
-    public static String scoutingPage = "scoutingPage";
-    public static String searchPage = "searchPage";
+
             
     public static String brainFile = "/com/magiconch/attackontitan/navBar.fxml";
-    public static String characterPageFile = "/com/magiconch/attackontitan/characterPage.fxml";
-    public static String mariaWallPageFile = "/com/magiconch/attackontitan/mariaWallPage.fxml";
-    public static String decipherPageFile = "/com/magiconch/attackontitan/decipherPage.fxml";
-    public static String killTitansPageFile = "/com/magiconch/attackontitan/killTitansPage.fxml";
-    public static String scoutingPageFile = "/com/magiconch/attackontitan/scoutingPage.fxml";
-    public static String searchPageFile = "/com/magiconch/attackontitan/searchPage.fxml";
+
     
     @Override
     public void start(Stage primaryStage) throws IOException {
@@ -55,12 +45,7 @@ public class App extends Application {
         //Initialise all the fxml file
         ScreenController mainContainer = new ScreenController();
         System.out.println(mainContainer.loadScreen(brain, brainFile));
-        System.out.println(mainContainer.loadScreen(characterPage, characterPageFile));
-        System.out.println(mainContainer.loadScreen(mariaWallPage, mariaWallPageFile));
-        System.out.println(mainContainer.loadScreen(decipherPage, decipherPageFile));
-        System.out.println(mainContainer.loadScreen(killTitansPage, killTitansPageFile));
-        System.out.println(mainContainer.loadScreen(scoutingPage, scoutingPageFile));
-        System.out.println(mainContainer.loadScreen(searchPage, searchPageFile));
+
         
         mainContainer.setScreen(brain);
         
