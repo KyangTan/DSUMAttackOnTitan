@@ -16,7 +16,7 @@ public class BGMPlayer {
     private static LinkedListNode<Music> current;
     public static MediaPlayer player;
     private static Runnable r;
-    
+    private static boolean paused = false;
     BGMPlayer() {
     }
     
@@ -46,8 +46,14 @@ public class BGMPlayer {
         });     
     }
     
-    public static void pausePlayer() {
-        BGMPlayer.player.pause();
+    public static void togglePlayer() {
+        if (paused) {
+            BGMPlayer.player.play();
+            paused = false;
+        }else{
+            BGMPlayer.player.pause();
+            paused = true;
+        }
     }
     
 }

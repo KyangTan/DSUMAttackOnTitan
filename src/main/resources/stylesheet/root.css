@@ -161,6 +161,22 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-background-color: -fx-yellow;
 }
 
+.nav-toggle-button {
+    -fx-background-color: -fx-yellow;
+    -fx-border-radius: 0px; 
+    -fx-font-family: "Poppins", sans-serif;
+    -fx-font-size: 12.8px;
+    -fx-text-fill: -fx-beige;
+    -fx-font-weight: 300;
+    -fx-text-alignment: left;
+    -fx-background-radius:100;
+    -fx-border-radius: 100;
+}
+
+.nav-toggle-button:selected {
+    -fx-background-color: -fx-red;
+}
+
 /*Below use to hide scrollBar*/
 /*scrollPane.setHbarPolicy(ScrollBarPolicy.NEVER);
 scrollPane.setVbarPolicy(ScrollBarPolicy.NEVER);*/

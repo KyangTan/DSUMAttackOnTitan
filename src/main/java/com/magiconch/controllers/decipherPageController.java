@@ -12,7 +12,7 @@ import javafx.scene.text.Text;
  *
  * @author Ming
  */
-public class decipherPageController implements Initializable{
+public class decipherPageController implements Initializable, ControlledScreen {
     @FXML
     private TextField InputTextbox;
 
@@ -22,8 +22,15 @@ public class decipherPageController implements Initializable{
     @FXML
     private Button translateButton;
     
+    ScreenController myController;
+    
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+    }
+
+    @Override
+    public void setScreenParent(ScreenController screenParent) {
+        myController = screenParent; //To change body of generated methods, choose Tools | Templates.
     }
 }

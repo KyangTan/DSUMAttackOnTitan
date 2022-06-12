@@ -18,10 +18,12 @@ import java.io.File;
 import java.io.IOException;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
+import javafx.event.EventType;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -39,26 +41,26 @@ public class App extends Application {
     public static String scoutingPage = "scoutingPage";
     public static String searchPage = "searchPage";
             
-    public static String brainFile = "/src/main/resources/com/magiconch/attackontitan/navBar.fxml";
-    public static String characterPageFile = "/src/main/resources/com/magiconch/attackontitan/characterPage.fxml";
-    public static String mariaWallPageFile = "/src/main/resources/com/magiconch/attackontitan/mariaWallPage.fxml";
-    public static String decipherPageFile = "/src/main/resources/com/magiconch/attackontitan/decipherPage.fxml";
-    public static String killTitansPageFile = "/src/main/resources/com/magiconch/attackontitan/killTitansPage.fxml";
-    public static String scoutingPageFile = "/src/main/resources/com/magiconch/attackontitan/scoutingPage.fxml";
-    public static String searchPageFile = "/src/main/resources/com/magiconch/attackontitan/searchPage.fxml";
+    public static String brainFile = "/com/magiconch/attackontitan/navBar.fxml";
+    public static String characterPageFile = "/com/magiconch/attackontitan/characterPage.fxml";
+    public static String mariaWallPageFile = "/com/magiconch/attackontitan/mariaWallPage.fxml";
+    public static String decipherPageFile = "/com/magiconch/attackontitan/decipherPage.fxml";
+    public static String killTitansPageFile = "/com/magiconch/attackontitan/killTitansPage.fxml";
+    public static String scoutingPageFile = "/com/magiconch/attackontitan/scoutingPage.fxml";
+    public static String searchPageFile = "/com/magiconch/attackontitan/searchPage.fxml";
     
     @Override
     public void start(Stage primaryStage) throws IOException {
         
         //Initialise all the fxml file
         ScreenController mainContainer = new ScreenController();
-        mainContainer.loadScreen(brain, brainFile);
-        mainContainer.loadScreen(characterPage, characterPageFile);
-        mainContainer.loadScreen(mariaWallPage, mariaWallPageFile);
-        mainContainer.loadScreen(decipherPage, decipherPageFile);
-        mainContainer.loadScreen(killTitansPage, killTitansPageFile);
-        mainContainer.loadScreen(scoutingPage, scoutingPageFile);
-        mainContainer.loadScreen(searchPage, searchPageFile);
+        System.out.println(mainContainer.loadScreen(brain, brainFile));
+        System.out.println(mainContainer.loadScreen(characterPage, characterPageFile));
+        System.out.println(mainContainer.loadScreen(mariaWallPage, mariaWallPageFile));
+        System.out.println(mainContainer.loadScreen(decipherPage, decipherPageFile));
+        System.out.println(mainContainer.loadScreen(killTitansPage, killTitansPageFile));
+        System.out.println(mainContainer.loadScreen(scoutingPage, scoutingPageFile));
+        System.out.println(mainContainer.loadScreen(searchPage, searchPageFile));
         
         mainContainer.setScreen(brain);
         
@@ -66,10 +68,10 @@ public class App extends Application {
         root.getChildren().addAll(mainContainer);
         
         // set Primary Stage
-        SceneController.setPrimaryStage(primaryStage);
+//        SceneController.setPrimaryStage(primaryStage);
 
         //Instantiating Media class  
-        String vidPath = "src/main/resources/com/magiconch/attackontitan/assets/videos/opening.mp4";
+        String vidPath = "C:\\Users\\kwany\\Documents\\NetBeansProjects\\attackontitan\\src\\main\\resources\\com\\magiconch\\attackontitan\\assets\\videos\\opening.mp4";
         Media media = new Media(new File(vidPath).toURI().toString());
 
         //Instantiating MediaPlayer class   
@@ -92,22 +94,35 @@ public class App extends Application {
             root.getChildren().add(img);
         });
 
-        root.setOnMouseClicked(e -> {
-            try {
-                mediaPlayer.stop();
-                mediaPlayer.dispose();
-                String jsonString = fileReader.readFile("src/main/resources/com/magiconch/attackontitan/json/bgmList.json");
-                LinkedList<Music> queue = fileReader.getBGMQueueFromJSON(jsonString);
-                BGMPlayer.initPlayer(queue);
-                BGMPlayer.startPlayer();
-                new SceneController().switchToNavBar(e);
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
+        mediaView.setOnMouseClicked(e->{
+            mediaPlayer.stop();
+            mediaPlayer.dispose();
+            String jsonString = fileReader.readFile("C:\\Users\\kwany\\Documents\\NetBeansProjects\\attackontitan\\src\\main\\resources\\com\\magiconch\\attackontitan\\json\\bgmList.json");
+            LinkedList<Music> queue = fileReader.getBGMQueueFromJSON(jsonString);
+            BGMPlayer.initPlayer(queue);
+            BGMPlayer.startPlayer();
+//            root.setOnMouseClicked();
+            mainContainer.setScreen(brain);
+            System.out.println("\n\n\n removing");
+            root.getChildren().remove(mediaView);
         });
-
+//        root.setOnMouseClicked(e -> {
+//            mediaPlayer.stop();
+//            mediaPlayer.dispose();
+//            String jsonString = fileReader.readFile("C:\\Users\\kwany\\Documents\\NetBeansProjects\\attackontitan\\src\\main\\resources\\com\\magiconch\\attackontitan\\json\\bgmList.json");
+//            LinkedList<Music> queue = fileReader.getBGMQueueFromJSON(jsonString);
+//            BGMPlayer.initPlayer(queue);
+//            BGMPlayer.startPlayer();
+////            root.setOnMouseClicked();
+//            mainContainer.setScreen(brain);
+//            System.out.println("\n\n\n removing");
+//            root.removeEventHandler(MouseEvent.MOUSE_CLICKED, root.getOnMouseClicked());
+//        });
+        
+        
+        
         Scene scene = new Scene(root, 1280, 720);
-        Image icon = new Image("assets/images/aot_logo.png");
+        Image icon = new Image(new File("assets/images/aot_logo.png").toURI().toString());
         primaryStage.getIcons().add(icon);
         primaryStage.setScene(scene);
         primaryStage.centerOnScreen();
@@ -118,9 +133,9 @@ public class App extends Application {
     }
 
     public static void main(String[] args) throws Exception {
-        String jsonString = fileReader.readFile("C:/Users/User/Documents/Git Netbeans/attackontitan/src/main/resources/com/magiconch/attackontitan/json/map.json");
+        String jsonString = fileReader.readFile("C:\\Users\\kwany\\Documents\\NetBeansProjects\\attackontitan\\src\\main\\resources\\com\\magiconch\\attackontitan\\json\\map.json");
         Graph graph = fileReader.readGraphFromJSON(jsonString, WeightMode.DIFFER_BY_INDEX);
-        graph.printGraph();
+//        graph.printGraph();
 //        Djikstra.dijkstra(graph.getAdjacencyMatrix(), 2);
 //        ArrayList<String> paths = new HamiltonianCycle().hamCycle(graph.getAdjacencyMatrix(), 0);
 //        for (String s : paths) {
@@ -147,6 +162,6 @@ public class App extends Application {
 //                System.out.printf("%s %d\n", member.getName(), member.getStrength());
 //            }
 //        }
-//        launch();
+        launch();
     }
 }

@@ -1,0 +1,14 @@
+{
+    "Ashes On Th Fire": "src/main/resources/com/magiconch/attackontitan/assets/audio/AshesOnTheFire.mp3",
+    "My War": "src/main/resources/com/magiconch/attackontitan/assets/audio/MyWar.mp3",
+    "Eren's Berserk": "src/main/resources/com/magiconch/attackontitan/assets/audio/ErenBerserk.mp3",
+    "Levi Vs Zeke Theme": "src/main/resources/com/magiconch/attackontitan/assets/audio/LeviVsZeke.mp3",
+    "OST1": "src/main/resources/com/magiconch/attackontitan/assets/audio/OST1.mp3",
+    "OST2": "src/main/resources/com/magiconch/attackontitan/assets/audio/OST2.mp3",
+    "EMA": "src/main/resources/com/magiconch/attackontitan/assets/audio/EMA.mp3",
+    "Shock": "src/main/resources/com/magiconch/attackontitan/assets/audio/Shock.mp3",
+    "APETITAN": "src/main/resources/com/magiconch/attackontitan/assets/audio/APETITAN.mp3",
+    "Shinzo wo Sasageyo": "src/main/resources/com/magiconch/attackontitan/assets/audio/Shinzo wo Sasageyo.mp3",
+    "The Rumbling": "src/main/resources/com/magiconch/attackontitan/assets/audio/The Rumbling.mp3",
+    "So Ist Es Immer": "src/main/resources/com/magiconch/attackontitan/assets/audio/SoIstEsImmer.mp3"
+}
