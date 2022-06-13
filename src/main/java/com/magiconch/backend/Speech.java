@@ -14,9 +14,27 @@ public class Speech {
     private final Scanner sc = new Scanner(System.in);
     
     public void combinedScenes(){
-        Scene1();
-        Scene2();
-        Scene3();
+        try{
+            Scene1();
+        }catch(Exception e){
+            System.out.println("##################################");
+            System.out.println("#Scene 1 halted due to some error#");
+            System.out.println("##################################\n");
+        }
+        try{
+            Scene2();
+        }catch(Exception e){
+            System.out.println("##################################");
+            System.out.println("#Scene 2 halted due to some error#");
+            System.out.println("##################################\n");
+        }
+        try{
+            Scene3();
+        }catch(Exception e){
+            System.out.println("##################################");
+            System.out.println("#Scene 3 halted due to some error#");
+            System.out.println("##################################\n");
+        }
     }
         
     public void Scene1(){
