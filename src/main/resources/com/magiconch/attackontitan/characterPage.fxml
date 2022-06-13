@@ -13,26 +13,26 @@
    <children>
       <ImageView fitHeight="720.0" fitWidth="1220.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../com/magiconch/attackontitan/assets/images/character_background.png" />
+            <Image url="@assets/images/character_background.png" />
          </image>
       </ImageView>
       <Text layoutX="387.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h1" text="Character" wrappingWidth="445.2762451171875" />
       <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="40.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../com/magiconch/attackontitan/assets/images/plus_icon.png" />
+            <Image url="@assets/images/plus_icon.png" />
          </image>
       </ImageView>
       <Text layoutX="72.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="Add new Character" />
       <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="1160.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../com/magiconch/attackontitan/assets/images/settings.png" />
+            <Image url="@assets/images/settings.png" />
          </image>
       </ImageView>
       <ScrollPane layoutX="34.0" layoutY="123.0" prefHeight="532.0" prefWidth="1152.0">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="530.0" prefWidth="1150.0">
                <children>
-                  <VBox prefHeight="655.0" prefWidth="1140.0" />
+                  <VBox prefHeight="655.0" prefWidth="1140.0" spacing="35.0" />
                </children>
             </AnchorPane>
         </content>

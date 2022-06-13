@@ -7,16 +7,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1220.0" stylesheets="@../stylesheet/root.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.magiconch.controllers.mariaWallPageController">
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1220.0" stylesheets="@../../../stylesheet/root.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.magiconch.controllers.mariaWallPageController">
    <children>
       <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../com/magiconch/attackontitan/assets/images/maria_wall_background.png" />
+            <Image url="@assets/images/maria_wall_background.png" />
          </image>
       </ImageView>
       <Text layoutX="483.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h1" text="Wall of Maria" />
       <Text layoutX="518.0" layoutY="337.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="Enter number of layers:" />
-      <TextField layoutX="361.0" layoutY="354.0" styleClass="largeTextField" />
-      <Button layoutX="522.0" layoutY="448.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="176.0" text="Break it!" />
+      <TextField fx:id="wallLayersTextbox" layoutX="361.0" layoutY="354.0" styleClass="largeTextField" />
+      <Button fx:id="breakItButton" layoutX="522.0" layoutY="448.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="176.0" text="Break it!" />
    </children>
 </AnchorPane>
