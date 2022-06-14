@@ -16,9 +16,11 @@
 //        try{
 //            Q5n6.Bonus_Encrypt();    
 //        }catch(Exception e){
-//            System.out.println("###################################");
-//            System.out.println("#Function halted due to some error#");
-//            System.out.println("###################################\n");
+//            System.out.println("  ###################################");
+//            System.out.println("  #Function halted due to some error#");
+//            System.out.println("  #Told you not to break the &num{} #");
+//            System.out.println("  #or you probably made some mustake#");
+//            System.out.println("  ###################################\n");
 //            
 //        }
 //        /*

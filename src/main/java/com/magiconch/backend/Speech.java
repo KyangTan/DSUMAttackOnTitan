@@ -1,12 +1,12 @@
 package com.magiconch.backend;
 
-import static com.magiconch.backend.HashMap.caesarEncrypt;
-import static com.magiconch.backend.HashMap.marleyToParadis;
-import static com.magiconch.backend.HashMap.myDecrypt;
-import static com.magiconch.backend.HashMap.myEncrypt;
-import static com.magiconch.backend.HashMap.paradisConverter;
-import static com.magiconch.backend.HashMap.paradisInverter;
-import static com.magiconch.backend.HashMap.paradisToMarley;
+import static com.magiconch.backend.cipher.myDecrypt;
+import static com.magiconch.backend.cipher.myEncrypt;
+import static com.magiconch.backend.marley.marleyToParadis;
+import static com.magiconch.backend.paradis.caesarEncrypt;
+import static com.magiconch.backend.paradis.paradisConverter;
+import static com.magiconch.backend.paradis.paradisInverter;
+import static com.magiconch.backend.paradis.paradisToMarley;
 import java.util.Scanner;
 
 
