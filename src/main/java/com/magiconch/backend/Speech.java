@@ -1,12 +1,12 @@
 package com.magiconch.backend;
 
-import static com.magiconch.backend.HashMap.caesarEncrypt;
-import static com.magiconch.backend.HashMap.marleyToParadis;
-import static com.magiconch.backend.HashMap.myDecrypt;
-import static com.magiconch.backend.HashMap.myEncrypt;
-import static com.magiconch.backend.HashMap.paradisConverter;
-import static com.magiconch.backend.HashMap.paradisInverter;
-import static com.magiconch.backend.HashMap.paradisToMarley;
+import static com.magiconch.backend.cipher.myDecrypt;
+import static com.magiconch.backend.cipher.myEncrypt;
+import static com.magiconch.backend.marley.marleyToParadis;
+import static com.magiconch.backend.paradis.caesarEncrypt;
+import static com.magiconch.backend.paradis.paradisConverter;
+import static com.magiconch.backend.paradis.paradisInverter;
+import static com.magiconch.backend.paradis.paradisToMarley;
 import java.util.Scanner;
 
 
@@ -14,9 +14,27 @@ public class Speech {
     private final Scanner sc = new Scanner(System.in);
     
     public void combinedScenes(){
-        Scene1();
-        Scene2();
-        Scene3();
+        try{
+            Scene1();
+        }catch(Exception e){
+            System.out.println("##################################");
+            System.out.println("#Scene 1 halted due to some error#");
+            System.out.println("##################################\n");
+        }
+        try{
+            Scene2();
+        }catch(Exception e){
+            System.out.println("##################################");
+            System.out.println("#Scene 2 halted due to some error#");
+            System.out.println("##################################\n");
+        }
+        try{
+            Scene3();
+        }catch(Exception e){
+            System.out.println("##################################");
+            System.out.println("#Scene 3 halted due to some error#");
+            System.out.println("##################################\n");
+        }
     }
         
     public void Scene1(){
