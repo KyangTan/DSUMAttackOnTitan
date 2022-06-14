@@ -22,6 +22,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -54,6 +55,12 @@ public class mariaWallPageOneController implements Initializable {
     @FXML
     private Text weakestAnsText;
     
+    @FXML
+    private ScrollPane scroll;
+
+    @FXML
+    private AnchorPane scrollAPane;
+    
     int height;
     int width;
     List<wallComponentModel> wallLayers = new ArrayList<>();
@@ -73,6 +80,9 @@ public class mariaWallPageOneController implements Initializable {
         
         wall.loadWall(height, width);
         wall.printWall();
+        
+        scrollAPane.setPrefHeight(height*50);
+        wallLayersVbox.setPrefHeight(height*50);
         
         try {
             for (int j = 0; j < height; j++) {
@@ -101,6 +111,7 @@ public class mariaWallPageOneController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         errorMsg.setVisible(false);
+        scroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
     }
     
     @FXML
