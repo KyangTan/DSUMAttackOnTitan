@@ -4,8 +4,25 @@
 //    
 //    public static void main(String[] args) {
 //        Speech Q5n6 = new Speech();
-//        Q5n6.combinedScenes();
-//        Q5n6.Bonus_Encrypt();
+//        try{
+//            Q5n6.combinedScenes();
+//        }catch(Exception e){
+//            System.out.println("###################################");
+//            System.out.println("#Function halted due to some error#");
+//            System.out.println("###################################\n");
+//            
+//        }
+//        
+//        try{
+//            Q5n6.Bonus_Encrypt();    
+//        }catch(Exception e){
+//            System.out.println("  ###################################");
+//            System.out.println("  #Function halted due to some error#");
+//            System.out.println("  #Told you not to break the &num{} #");
+//            System.out.println("  #or you probably made some mustake#");
+//            System.out.println("  ###################################\n");
+//            
+//        }
 //        /*
 //        GUI Scene
 //        1) Eren face is displayed
