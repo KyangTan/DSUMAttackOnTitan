@@ -118,6 +118,20 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-text-fill: -fx-beige;
 }
 
+.button-transparent {
+    -fx-background-color: transparent;
+    -fx-background-radius: 1px;
+    -fx-font-family: "Poppins", sans-serif;
+    -fx-font-size: 20px;
+    -fx-fill: -fx-yellow;
+    -fx-font-weight: 400;
+    -fx-border-width: 0;
+    -fx-border-color: -fx-yellow;
+    -fx-border-radius: 1;
+    -fx-text-alignment: center;
+    -fx-text-fill: -fx-beige;
+}
+
 .nav-button-container {
     -fx-fill: -fx-yellow;
 }

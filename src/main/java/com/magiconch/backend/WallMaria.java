@@ -18,11 +18,11 @@ public class WallMaria {
         return wallStructure;
     }
     
-    public void loadWall(){
-        System.out.print("    Height of Wall: ");
-        height = sc.nextInt();
-        System.out.print("    Width of Wall: ");
-        width = sc.nextInt();
+    public void loadWall(int height, int width){
+//        System.out.print("    Height of Wall: ");
+//        height = sc.nextInt();
+//        System.out.print("    Width of Wall: ");
+//        width = sc.nextInt();
         arrayWallStructure = new int[height][width];
         
         for(int i =0; i<width; i++){

@@ -10,7 +10,7 @@
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="600.0" stroke="BLACK" strokeType="INSIDE" styleClass="darkCard" width="560.0" />
       <Text fx:id="messageText" layoutX="110.0" layoutY="242.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h1" text="Character added&#10;successfully" />
-      <Button fx:id="returnButton" layoutX="173.0" layoutY="349.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="215.0" text="Return" />
+      <Button fx:id="returnButton" layoutX="173.0" layoutY="349.0" mnemonicParsing="false" onAction="#returnHome" prefHeight="48.0" prefWidth="215.0" text="Return" />
    </children>
    <stylesheets>
       <URL value="@../stylesheet/root.css" />

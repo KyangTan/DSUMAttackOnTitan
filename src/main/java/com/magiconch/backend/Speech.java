@@ -87,7 +87,7 @@ public class Speech {
         System.out.print(marleyToParadis(paradisToMarley(a,-1, -1, -1)));
         sc.nextLine();   
         WallMaria wall = new WallMaria();
-        wall.loadWall();
+        wall.loadWall(10, 10);
         wall.printWall();    
         sc.nextLine();
         System.out.println("Eren: ");
