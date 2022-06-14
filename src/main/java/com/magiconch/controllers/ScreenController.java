@@ -160,8 +160,8 @@ public class ScreenController extends StackPane{
         else if (!showing){
             try {
                 BoxBlur boxBlur = new BoxBlur();
-                boxBlur.setWidth(10);
                 boxBlur.setHeight(10);
+                boxBlur.setWidth(10);
                 boxBlur.setIterations(3);
                 screen.setEffect(boxBlur);
                 setShowing(true);

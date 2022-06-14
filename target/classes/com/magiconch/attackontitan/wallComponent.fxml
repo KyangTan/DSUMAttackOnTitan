@@ -1,33 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Text?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="54.0" prefWidth="381.0" stylesheets="@../stylesheet/root.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17">
+<AnchorPane id="AnchorPane" prefHeight="40.0" prefWidth="381.0" stylesheets="@../../../stylesheet/root.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.magiconch.controllers.wallComponentControllers">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6e4643" height="54.0" stroke="TRANSPARENT" strokeType="INSIDE" width="381.0" />
-      <CheckBox layoutX="16.0" mnemonicParsing="false" styleClass="h2" />
-      <CheckBox layoutX="51.0" mnemonicParsing="false" styleClass="h2" />
-      <CheckBox layoutX="90.0" mnemonicParsing="false" styleClass="h2" />
-      <CheckBox layoutX="121.0" mnemonicParsing="false" styleClass="h2" />
-      <CheckBox layoutX="160.0" mnemonicParsing="false" styleClass="h2" />
-      <CheckBox layoutX="191.0" mnemonicParsing="false" styleClass="h2" />
-      <CheckBox layoutX="230.0" mnemonicParsing="false" styleClass="h2" />
-      <CheckBox layoutX="265.0" mnemonicParsing="false" styleClass="h2" />
-      <CheckBox layoutX="300.0" mnemonicParsing="false" styleClass="h2" />
-      <CheckBox layoutX="335.0" mnemonicParsing="false" styleClass="h2" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ab5953" height="31.0" stroke="TRANSPARENT" strokeType="INSIDE" width="31.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ab5953" height="31.0" layoutX="35.0" stroke="TRANSPARENT" strokeType="INSIDE" width="31.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ab5953" height="31.0" layoutX="70.0" stroke="TRANSPARENT" strokeType="INSIDE" width="31.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ab5953" height="31.0" layoutX="105.0" stroke="TRANSPARENT" strokeType="INSIDE" width="31.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ab5953" height="31.0" layoutX="140.0" stroke="TRANSPARENT" strokeType="INSIDE" width="31.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ab5953" height="31.0" layoutX="175.0" stroke="TRANSPARENT" strokeType="INSIDE" width="31.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ab5953" height="31.0" layoutX="210.0" stroke="TRANSPARENT" strokeType="INSIDE" width="31.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ab5953" height="31.0" layoutX="245.0" stroke="TRANSPARENT" strokeType="INSIDE" width="31.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ab5953" height="31.0" layoutX="280.0" stroke="TRANSPARENT" strokeType="INSIDE" width="31.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ab5953" height="31.0" layoutX="315.0" stroke="TRANSPARENT" strokeType="INSIDE" width="31.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ab5953" height="31.0" layoutX="350.0" stroke="TRANSPARENT" strokeType="INSIDE" width="31.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#462c2a" height="40.0" stroke="#462c2a" strokeType="INSIDE" strokeWidth="0.0" styleClass="darkCard" width="381.0" />
+      <Text fx:id="wallText" layoutX="40.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="Wall 1" textAlignment="CENTER" />
+      <TextField fx:id="textfield" layoutX="124.0" layoutY="11.0" prefHeight="19.0" prefWidth="228.0" styleClass="smallTextField" />
    </children>
 </AnchorPane>

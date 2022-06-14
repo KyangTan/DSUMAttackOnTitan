@@ -17,7 +17,7 @@
       <Text layoutX="523.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h1" text="Decipher" />
       <Text layoutX="520.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="Enter Marley Sentence:" />
       <TextField fx:id="InputTextbox" layoutX="84.0" layoutY="305.0" prefHeight="55.0" prefWidth="1053.0" style="-fx-alignment: center;" styleClass="largeTextField" />
-      <Text fx:id="outputText" layoutX="454.0" layoutY="526.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h1" text="ASHDASHDHASD" />
-      <Button fx:id="translateButton" layoutX="494.0" layoutY="407.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="233.0" text="Translate" />
+      <Text fx:id="outputText" layoutX="573.0" layoutY="525.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h1" textAlignment="CENTER" />
+      <Button fx:id="translateButton" layoutX="494.0" layoutY="407.0" mnemonicParsing="false" onAction="#translate" prefHeight="48.0" prefWidth="233.0" text="Translate" />
    </children>
 </AnchorPane>
