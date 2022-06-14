@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import com.magiconch.backend.HashMap;
+import com.magiconch.backend.marley;
 
 /**
  *
@@ -38,7 +39,7 @@ public class decipherPageController implements Initializable, ControlledScreen {
     
     public void translate(ActionEvent event) {
         String input = InputTextbox.getText();
-        HashMap dechiper = new HashMap();
+        marley dechiper = new marley();
         outputText.setText(dechiper.marleyToParadis(input));
     }
 }
