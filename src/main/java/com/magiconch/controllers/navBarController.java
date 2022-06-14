@@ -103,7 +103,7 @@ public class navBarController implements Initializable, ControlledScreen{
     @FXML
     private void goToMariaWallPage(ActionEvent event) throws IOException{
 //        myController.setScreen("mariaWallPage");
-        swapScreen("/com/magiconch/attackontitan/mariaWallPage.fxml");
+        swapScreen("/com/magiconch/attackontitan/mariaWallPageOne.fxml");
     }
     
     

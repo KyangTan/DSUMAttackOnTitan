@@ -4,7 +4,6 @@ com\magiconch\controllers\addNewCharacterController.class
 com\magiconch\backend\Member$statusEnum.class
 com\magiconch\backend\Titan.class
 com\magiconch\backend\GraphRelated\HamiltonianCycle.class
-com\magiconch\backend\WallMaria.class
 com\magiconch\controllers\decipherPageController.class
 com\magiconch\backend\AbnormalTitan.class
 com\magiconch\backend\GraphRelated\Graph.class
@@ -12,7 +11,6 @@ com\magiconch\backend\Titan$WalkingPattern.class
 com\magiconch\utility\fileReader.class
 com\magiconch\attackontitan\App.class
 com\magiconch\backend\Attribute.class
-com\magiconch\controllers\wallLayersOverlayController.class
 com\magiconch\controllers\titansCardPageController.class
 com\magiconch\controllers\characterCardComponent.class
 com\magiconch\controllers\ControlledScreen.class
@@ -47,7 +45,6 @@ com\magiconch\backend\HashMap$Entry.class
 com\magiconch\controllers\characterPageController.class
 com\magiconch\backend\AOTBruh.class
 com\magiconch\backend\GraphRelated\WeightMode.class
-com\magiconch\backend\Speech.class
 com\magiconch\backend\NineTitan.class
 com\magiconch\backend\TitanFactory.class
 com\magiconch\backend\Member.class
