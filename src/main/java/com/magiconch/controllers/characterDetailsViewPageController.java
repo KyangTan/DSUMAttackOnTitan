@@ -27,4 +27,6 @@ public class characterDetailsViewPageController {
     @FXML
     private ImageView nextButton;
 
+    @FXML
+    private ImageView previousButton;
 }

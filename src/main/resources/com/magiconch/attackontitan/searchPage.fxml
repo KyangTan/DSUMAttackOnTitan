@@ -8,36 +8,36 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1220.0" stylesheets="@../stylesheet/root.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.magiconch.controllers.searchPageController">
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1220.0" stylesheets="@../../../stylesheet/root.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.magiconch.controllers.searchPageController">
    <children>
       <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../com/magiconch/attackontitan/assets/images/search_background.png" />
+            <Image url="@assets/images/search_background.png" />
          </image>
       </ImageView>
       <Text layoutX="542.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h1" text="Search" />
-      <TextField layoutX="310.0" layoutY="118.0" prefHeight="30.0" prefWidth="600.0" promptText="keywords" styleClass="smallTextField" />
+      <TextField fx:id="searchTextField" layoutX="310.0" layoutY="118.0" prefHeight="30.0" prefWidth="600.0" promptText="keywords" styleClass="smallTextField" />
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="393.0" layoutY="202.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="934.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="searchButton" fitHeight="20.0" fitWidth="20.0" layoutX="934.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../com/magiconch/attackontitan/assets/images/search_icon.png" />
+            <Image url="@assets/images/search_icon.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="975.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="largeToSmallSortingButton" fitHeight="20.0" fitWidth="20.0" layoutX="975.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../com/magiconch/attackontitan/assets/images/sort_ascending.png" />
+            <Image url="@assets/images/sort_ascending.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="995.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="smallToLargeSortingButton" fitHeight="20.0" fitWidth="20.0" layoutX="995.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../com/magiconch/attackontitan/assets/images/sort_descending.png" />
+            <Image url="@assets/images/sort_descending.png" />
          </image>
       </ImageView>
       <ScrollPane layoutX="225.0" layoutY="187.0" prefHeight="490.0" prefWidth="770.0">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="2000.0" prefWidth="754.0">
                <children>
-                  <VBox layoutX="8.0" prefHeight="2000.0" prefWidth="754.0" style="-fx-background-color: transparent;" />
+                  <VBox fx:id="searchCardVBox" layoutX="8.0" prefHeight="2000.0" prefWidth="754.0" spacing="45.0" style="-fx-background-color: transparent;" />
                </children>
             </AnchorPane>
         </content>

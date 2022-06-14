@@ -56,7 +56,7 @@ public class App extends Application {
 //        SceneController.setPrimaryStage(primaryStage);
 
         //Instantiating Media class  
-        String vidPath = "C:\\Users\\kwany\\Documents\\NetBeansProjects\\attackontitan\\src\\main\\resources\\com\\magiconch\\attackontitan\\assets\\videos\\opening.mp4";
+        String vidPath = "src\\main\\resources\\com\\magiconch\\attackontitan\\assets\\videos\\opening.mp4";
         Media media = new Media(new File(vidPath).toURI().toString());
 
         //Instantiating MediaPlayer class   
@@ -82,7 +82,7 @@ public class App extends Application {
         mediaView.setOnMouseClicked(e->{
             mediaPlayer.stop();
             mediaPlayer.dispose();
-            String jsonString = fileReader.readFile("C:\\Users\\kwany\\Documents\\NetBeansProjects\\attackontitan\\src\\main\\resources\\com\\magiconch\\attackontitan\\json\\bgmList.json");
+            String jsonString = fileReader.readFile("src\\main\\resources\\com\\magiconch\\attackontitan\\json\\bgmList.json");
             LinkedList<Music> queue = fileReader.getBGMQueueFromJSON(jsonString);
             BGMPlayer.initPlayer(queue);
             BGMPlayer.startPlayer();
@@ -118,7 +118,7 @@ public class App extends Application {
     }
 
     public static void main(String[] args) throws Exception {
-        String jsonString = fileReader.readFile("C:\\Users\\kwany\\Documents\\NetBeansProjects\\attackontitan\\src\\main\\resources\\com\\magiconch\\attackontitan\\json\\map.json");
+        String jsonString = fileReader.readFile("src\\main\\resources\\com\\magiconch\\attackontitan\\json\\map.json");
         Graph graph = fileReader.readGraphFromJSON(jsonString, WeightMode.DIFFER_BY_INDEX);
 //        graph.printGraph();
 //        Djikstra.dijkstra(graph.getAdjacencyMatrix(), 2);

@@ -20,7 +20,10 @@ public class searchPageController implements Initializable, ControlledScreen {
     private TextField searchTextField;
 
     @FXML
-    private ImageView sortingButton;
+    private ImageView smallToLargeSortingButton;
+    
+    @FXML
+    private ImageView largeToSmallSortingButton;
     
     ScreenController myController;
 

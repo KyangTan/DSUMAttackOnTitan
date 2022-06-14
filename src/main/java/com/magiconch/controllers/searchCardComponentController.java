@@ -13,6 +13,6 @@ public class searchCardComponentController {
     private Text charNameText;
 
     @FXML
-    private Text charStrText;
+    private Text charDescText;
 
 }
