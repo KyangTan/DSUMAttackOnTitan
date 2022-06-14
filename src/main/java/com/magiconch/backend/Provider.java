@@ -13,6 +13,7 @@ import java.util.List;
  */
 public class Provider {
     private static LinkedList<Member> memberList = new LinkedList<>();
+    private static int currentI = 0;
 
     public static LinkedList<Member> getMemberList() {
         return memberList;
@@ -20,6 +21,14 @@ public class Provider {
 
     public static void setMemberList(LinkedList<Member> memberList) {
         Provider.memberList = memberList;
+    }
+
+    public static int getCurrentI() {
+        return currentI;
+    }
+
+    public static void setCurrentI(int currentI) {
+        Provider.currentI = currentI;
     }
     
     public static void addMember(Member member){

@@ -9,6 +9,7 @@ import com.magiconch.backend.LinkedList;
 import com.magiconch.backend.Member;
 import com.magiconch.backend.Music;
 import com.magiconch.backend.Operations;
+import com.magiconch.backend.Provider;
 import com.magiconch.controllers.SceneController;
 import com.magiconch.utility.fileReader;
 //import com.magiconch.controllers.SceneController;
@@ -41,6 +42,21 @@ public class App extends Application {
     
     @Override
     public void start(Stage primaryStage) throws IOException {
+        
+        //Add character
+        Provider.addMember(new Member("Reiner Braun", 185,95,9,7,7,10,8));
+        Provider.addMember(new Member("Armin Arlert", 163,55,2,6,10,8,8));
+        Provider.addMember(new Member("Annie Leonhart", 153,54,10,7,7,3,1));
+        Provider.addMember(new Member("Bertholdt Hoover", 192,81,9,4,6,9,2));
+        Provider.addMember(new Member("Jean Kristein", 175,65,9,8,7,5,9));
+        Provider.addMember(new Member("Sasha Blouse", 165,55,6,3,5,6,7));
+        Provider.addMember(new Member("Connie Springer", 158,58,6,7,3,7,5));
+        Provider.addMember(new Member("Mikasa Ackerman", 170,68,10,9,8,6,7));
+        Provider.addMember(new Member("Eren Yeager", 170,63,9,10,3,5,10));
+        Provider.addMember(new Member("Historia Reiss", 145,42,4,8,7,6,5));
+        Provider.addMember(new Member("Levi Ackerman", 160,65,12,12,7,8,8));
+        Provider.addMember(new Member("Erwin Smith", 188,92,8,8,11,10,12));
+        Provider.addMember(new Member("Hange Zoë", 170,60,9,9,12,7,11));  
         
         //Initialise all the fxml file
         ScreenController mainContainer = new ScreenController();

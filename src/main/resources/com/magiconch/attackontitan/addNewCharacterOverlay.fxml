@@ -15,8 +15,8 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="600.0" stroke="BLACK" strokeType="INSIDE" styleClass="darkCard" width="560.0" />
       <Text layoutX="94.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h1" text="Add new character" />
       <Text layoutX="93.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="Name" />
-      <TextField fx:id="nameTextField" layoutX="78.0" layoutY="129.0" prefHeight="30.0" prefWidth="406.0" promptText="Name" styleClass="smallTextField" />
       <Button fx:id="addCharButton" layoutX="174.0" layoutY="505.0" mnemonicParsing="false" onAction="#addChar" prefHeight="48.0" prefWidth="215.0" text="Add" />
+      <TextField fx:id="nameTextField" layoutX="78.0" layoutY="129.0" prefHeight="30.0" prefWidth="406.0" promptText="Name" styleClass="smallTextField" />
       <Text layoutX="92.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="Height (cm)" />
       <TextField fx:id="heightTextField" layoutX="77.0" layoutY="207.0" prefHeight="30.0" prefWidth="193.0" promptText="Name" styleClass="smallTextField" />
       <Text layoutX="305.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="Weight(kg)" />
