@@ -57,6 +57,8 @@ public class mariaWallPageOneController implements Initializable {
     int height;
     int width;
     List<wallComponentModel> wallLayers = new ArrayList<>();
+    WallMaria wall = new WallMaria();
+
 
     @FXML
     void input(ActionEvent event) {
@@ -69,8 +71,8 @@ public class mariaWallPageOneController implements Initializable {
             errorMsg.setVisible(true);
         }
         
-        WallMaria wm = new WallMaria();
-//        wm.loadWall();
+        wall.loadWall(height, width);
+        wall.printWall();
         
         try {
             for (int j = 0; j < height; j++) {
@@ -88,18 +90,6 @@ public class mariaWallPageOneController implements Initializable {
                 wallComponentControllers con = contentLoader.getController();
                 con.setContentInfo(wallLayers.get(j).getLayerText(),wallLayers.get(j).getTextField());               
 
-    //                nodes[h].setOnMouseEntered(evt -> {
-    //                    //add effect
-    //                    nodes[h].setStyle("-fx-background-color: #b4baca");
-    //                });
-    //                nodes[h].setOnMouseExited(evt -> {
-    //                    //add effect
-    //                    nodes[h].setStyle("-fx-background-color: transparent");
-    //                });
-    //                nodes[h].setOnMousePressed(evt -> {
-    //                    //add effect
-    //                });
-
                 wallLayersVbox.getChildren().add(nodes[j]);
 
             }
@@ -116,6 +106,8 @@ public class mariaWallPageOneController implements Initializable {
     @FXML
     void breakIt(ActionEvent event) {
         getTexts();
+        System.out.println("the weakest part of the wall is at position: " + wall.weakestPart());
+        weakestAnsText.setText("the weakest part of the wall is at position: " + wall.weakestPart());
     }
     
     @FXML 

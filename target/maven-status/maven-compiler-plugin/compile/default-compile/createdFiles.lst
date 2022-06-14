@@ -12,7 +12,6 @@ com\magiconch\utility\fileReader.class
 com\magiconch\attackontitan\App.class
 com\magiconch\backend\Attribute.class
 com\magiconch\controllers\titansCardPageController.class
-com\magiconch\controllers\characterCardComponent.class
 com\magiconch\controllers\ControlledScreen.class
 com\magiconch\backend\BGMPlayer.class
 com\magiconch\backend\Member$1.class
