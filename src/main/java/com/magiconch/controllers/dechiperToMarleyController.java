@@ -1,12 +1,12 @@
 package com.magiconch.controllers;
 
-import static com.magiconch.backend.Cipher.myDecrypt;
-import static com.magiconch.backend.Cipher.myEncrypt;
-import static com.magiconch.backend.Marley.marleyToParadis;
-import com.magiconch.backend.Paradis;
-import static com.magiconch.backend.Paradis.caesarEncrypt;
-import static com.magiconch.backend.Paradis.paradisConverter;
-import static com.magiconch.backend.Paradis.paradisInverter;
+import static com.magiconch.backend.cipher.myDecrypt;
+import static com.magiconch.backend.cipher.myEncrypt;
+import static com.magiconch.backend.marley.marleyToParadis;
+import com.magiconch.backend.paradis;
+import static com.magiconch.backend.paradis.caesarEncrypt;
+import static com.magiconch.backend.paradis.paradisConverter;
+import static com.magiconch.backend.paradis.paradisInverter;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
