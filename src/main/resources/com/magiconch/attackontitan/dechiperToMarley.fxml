@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="700.0" stylesheets="@../../../stylesheet/root.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.magiconch.controllers.dechiperToMarleyController">
+   <children>
+      <ImageView fitHeight="720.0" fitWidth="700.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/images/decipher_background_square.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="262.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h1" text="Decipher" />
+      <Button fx:id="toMarleyButton" layoutX="233.0" layoutY="566.0" mnemonicParsing="false" onAction="#toMarleySentence" prefHeight="55.0" prefWidth="233.0" text="Dechiper" />
+      <ImageView fitHeight="43.0" fitWidth="45.0" layoutX="36.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/images/back_button.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="backButton" layoutX="23.0" layoutY="41.0" mnemonicParsing="false" onAction="#back" prefHeight="42.0" prefWidth="71.0" styleClass="button-transparent" />
+      <VBox fx:id="fourInputVBox" layoutX="95.0" layoutY="157.0" prefHeight="454.0" prefWidth="515.0" spacing="10.0">
+         <children>
+            <Pane prefHeight="97.0" prefWidth="515.0">
+               <children>
+                  <TextField fx:id="caesarIndexTextBox" alignment="CENTER" layoutX="9.0" layoutY="49.0" styleClass="largeTextField" />
+                  <Text layoutX="124.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="Insert 1 or 2 for Caesar Decryption" textAlignment="CENTER" />
+               </children>
+            </Pane>
+            <Pane prefHeight="97.0" prefWidth="515.0">
+               <children>
+                  <TextField fx:id="startIndex" alignment="CENTER" layoutX="9.0" layoutY="49.0" styleClass="largeTextField" />
+                  <Text layoutX="24.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="Insert the index of starting character for Caesar Encryption" textAlignment="CENTER" />
+               </children>
+            </Pane>
+            <Pane prefHeight="97.0" prefWidth="515.0">
+               <children>
+                  <TextField fx:id="endIndex" alignment="CENTER" layoutX="9.0" layoutY="49.0" styleClass="largeTextField" />
+                  <Text layoutX="27.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="Insert the index of ending character for Caesar Encryption" textAlignment="CENTER" />
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+      <TextField fx:id="marleyOutputTextBox" alignment="CENTER" layoutX="104.0" layoutY="657.0" styleClass="transparentTextField" />
+      <Text fx:id="errorMsg" fill="RED" layoutX="73.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Important note!!! Do not insert caesar cipher that breaks this sequence: &amp;num{" textAlignment="CENTER" wrappingWidth="553.3560180664062">
+         <font>
+            <Font name="Poppins Regular" size="12.0" />
+         </font>
+      </Text>
+      <Pane fx:id="continueCaesarPane" layoutX="105.0" layoutY="544.0" prefHeight="86.0" prefWidth="498.0">
+         <children>
+            <Button fx:id="discontinueCaesarButton" layoutY="31.0" mnemonicParsing="false" onAction="#discontinueCaeser" prefHeight="55.0" prefWidth="233.0" text="No" />
+            <Button fx:id="continueCaesarButton" layoutX="265.0" layoutY="31.0" mnemonicParsing="false" onAction="#continueCaesar" prefHeight="55.0" prefWidth="233.0" text="Yes" />
+            <Text layoutX="130.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="Continue with Caeser Chiper?" textAlignment="CENTER" />
+         </children>
+      </Pane>
+      <Pane fx:id="continueMychiperPane" layoutX="105.0" layoutY="544.0" prefHeight="86.0" prefWidth="498.0">
+         <children>
+            <Button fx:id="discontinueMychiperButton" layoutY="31.0" mnemonicParsing="false" onAction="#discontinueMychiper" prefHeight="55.0" prefWidth="233.0" text="No" />
+            <Button fx:id="continueMychiperButton" layoutX="265.0" layoutY="31.0" mnemonicParsing="false" onAction="#continueMychiper" prefHeight="55.0" prefWidth="233.0" text="Yes" />
+            <Text layoutX="121.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="Continue with Mychiper?" textAlignment="CENTER" wrappingWidth="256.2720031738281" />
+         </children>
+      </Pane>
+      <Pane fx:id="paradisInputPane" layoutX="94.0" layoutY="264.0" prefHeight="97.0" prefWidth="515.0">
+         <children>
+            <TextField fx:id="paradisSentenceTextBox" alignment="CENTER" layoutX="9.0" layoutY="49.0" styleClass="largeTextField" />
+            <Text layoutX="162.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="Enter Paradis sentences" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

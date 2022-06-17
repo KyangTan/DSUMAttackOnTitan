@@ -1,12 +1,12 @@
 package com.magiconch.backend;
 
-import static com.magiconch.backend.cipher.myDecrypt;
-import static com.magiconch.backend.cipher.myEncrypt;
-import static com.magiconch.backend.marley.marleyToParadis;
-import static com.magiconch.backend.paradis.caesarEncrypt;
-import static com.magiconch.backend.paradis.paradisConverter;
-import static com.magiconch.backend.paradis.paradisInverter;
-import static com.magiconch.backend.paradis.paradisToMarley;
+import static com.magiconch.backend.Cipher.myDecrypt;
+import static com.magiconch.backend.Cipher.myEncrypt;
+import static com.magiconch.backend.Marley.marleyToParadis;
+import static com.magiconch.backend.Paradis.caesarEncrypt;
+import static com.magiconch.backend.Paradis.paradisConverter;
+import static com.magiconch.backend.Paradis.paradisInverter;
+import static com.magiconch.backend.Paradis.paradisToMarley;
 import java.util.Scanner;
 
 
@@ -103,7 +103,7 @@ public class Speech {
         System.out.println("  Use () to invert certain character. ");
         System.out.print("  Your Paradis Sentence: ");
         String sentence = sc.nextLine();
-        String marley = paradisConverter(paradisInverter(sentence));
+        String marley = paradisConverter(paradisInverter(sentence));//=========================1
         System.out.println("");
         System.out.println("  Important note!!! Do not insert caesar cipher that breaks this sequence: &num{");
         while(true){
@@ -111,20 +111,20 @@ public class Speech {
             String answer = sc.next();
             if(answer.equalsIgnoreCase("y")){
                 System.out.print("  Insert 1 or 2 for Caesar Decryption. -1 to omit: ");
-                int caesar = sc.nextInt();
+                int caesar = sc.nextInt();//=========================2
                 if(caesar>0){
                     System.out.print("  Insert the index of starting character for Caesar Encryption: ");
                     int start = sc.nextInt();
                     System.out.print("  Insert the index of ending character for Caesar Encryption: ");
                     int end = sc.nextInt();
                     sc.nextLine();
-                    marley = caesarEncrypt(marley, caesar, start, end); 
+                    marley = caesarEncrypt(marley, caesar, start, end);// 
                     System.out.println("  Current marley: " + marley);
                 }else{
                     System.out.println("  Current marley: " + marley);
                     break;
                 }
-                }else {
+            }else {
                 System.out.println("  Current marley: " + marley);
                 break;
             }   

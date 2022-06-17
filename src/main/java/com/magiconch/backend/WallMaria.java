@@ -9,8 +9,6 @@ public class WallMaria {
     private final List<List<Integer>> wallStructure = new ArrayList<>();
     private int[][] arrayWallStructure;
     private int[] weakestPart;
-    private final Scanner sc = new Scanner(System.in);
-    private final Random r = new Random();
     private int height = 0;
     private int width = 0;
 
@@ -24,58 +22,68 @@ public class WallMaria {
 //        System.out.print("    Width of Wall: ");
 //        width = sc.nextInt();
         arrayWallStructure = new int[height][width];
-        
-        for(int i =0; i<width; i++){
-            if(i == 0){
-                System.out.printf("\n    %1s  ", Integer.toString(i));
-            } else if(i == width-1){
-                System.out.printf("  %2s", Integer.toString(i));
-            } else {
-                System.out.printf(" %2s ", Integer.toString(i));
-            }
+        this.height = height;
+        this.width = width;
+//        for(int i =0; i<width; i++){
+//            if(i == 0){
+//                System.out.printf("\n    %1s  ", Integer.toString(i));
+//            } else if(i == width-1){
+//                System.out.printf("  %2s", Integer.toString(i));
+//            } else {
+//                System.out.printf(" %2s ", Integer.toString(i));
+//            }
+//        }
+//        System.out.println();
+//        
+//        for(int i =0; i<width; i++){
+//            if(i==0){
+//                System.out.print("    ___");
+//            } else
+//            System.out.print("____");
+//        }
+//        System.out.println();
+//        
+//        for(int i = 0; i < height; i++ ){
+//            List<Integer> layer = new ArrayList<>();
+//            for(int j = 0; j<width; j++){
+//                //1 for edge, 0 for wall brick
+//                int rand;
+//                if(j == 0 || j == width-1){
+//                    rand = 1;
+//                } else {
+//                    rand = r.nextInt(2);
+//                }
+//                
+//                // Store in array for later use if necessary
+//                arrayWallStructure[i][j] = rand;
+//                
+//                // Store in List<Integer> in layer i
+//                if(rand == 1 && (j!=0 && j!= width-1)){
+//                    layer.add(j);
+//                }
+//                
+//                if(rand == 0){
+//                    System.out.print("____");
+//                } else if(rand == 1 && j == 0){
+//                    System.out.print("    |__");
+//                } else if(rand == 1 && j == width-1){
+//                    System.out.print("___|");
+//                } else {
+//                    System.out.print("__|_");
+//                }
+//            }
+//            wallStructure.add(layer);
+//            System.out.println();
+//        }
+    }
+    
+    public void insertEdges(String integers){
+        String [] strings = integers.split(" ");
+        List<Integer> layer = new ArrayList<>();
+        for(int i = 0; i< strings.length;i++){
+            layer.add(Integer.parseInt(strings[i]));
         }
-        System.out.println();
-        
-        for(int i =0; i<width; i++){
-            if(i==0){
-                System.out.print("    ___");
-            } else
-            System.out.print("____");
-        }
-        System.out.println();
-        
-        for(int i = 0; i < height; i++ ){
-            List<Integer> layer = new ArrayList<>();
-            for(int j = 0; j<width; j++){
-                //1 for edge, 0 for wall brick
-                int rand;
-                if(j == 0 || j == width-1){
-                    rand = 1;
-                } else {
-                    rand = r.nextInt(2);
-                }
-                
-                // Store in array for later use if necessary
-                arrayWallStructure[i][j] = rand;
-                
-                // Store in List<Integer> in layer i
-                if(rand == 1 && (j!=0 && j!= width-1)){
-                    layer.add(j);
-                }
-                
-                if(rand == 0){
-                    System.out.print("____");
-                } else if(rand == 1 && j == 0){
-                    System.out.print("    |__");
-                } else if(rand == 1 && j == width-1){
-                    System.out.print("___|");
-                } else {
-                    System.out.print("__|_");
-                }
-            }
-            wallStructure.add(layer);
-            System.out.println();
-        }
+        wallStructure.add(layer);
     }
     
     public void printWall(){
