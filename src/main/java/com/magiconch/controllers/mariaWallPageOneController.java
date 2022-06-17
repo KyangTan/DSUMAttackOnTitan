@@ -79,7 +79,7 @@ public class mariaWallPageOneController implements Initializable {
         }
         
         wall.loadWall(height, width);
-        wall.printWall();
+        
         
         scrollAPane.setPrefHeight(height*50);
         wallLayersVbox.setPrefHeight(height*50);
@@ -94,7 +94,6 @@ public class mariaWallPageOneController implements Initializable {
                 FXMLLoader contentLoader = new FXMLLoader();
                 contentLoader.setLocation(getClass().getResource("/com/magiconch/attackontitan/wallComponent.fxml"));
                 nodes[j] = contentLoader.load();
-                System.out.println("bruj");
                 final int h = j;
 
                 wallComponentControllers con = contentLoader.getController();
@@ -117,20 +116,25 @@ public class mariaWallPageOneController implements Initializable {
     @FXML
     void breakIt(ActionEvent event) {
         getTexts();
+        wall.printWall();
         System.out.println("the weakest part of the wall is at position: " + wall.weakestPart());
         weakestAnsText.setText("the weakest part of the wall is at position: " + wall.weakestPart());
     }
     
     @FXML 
     void getTexts(){
+        System.out.println("Get text here");
         ObservableList<Node> childsVB = wallLayersVbox.getChildren();
         for (int i = 0; i < height; i++) {
             AnchorPane ap = (AnchorPane)childsVB.get(i);
             TextField tf = (TextField)ap.getChildren().get(2);
-//            System.out.println(tf.getText());
+            System.out.println(tf.getText());
+            wall.insertEdges(tf.getText());
             weakestAnsText.setText(tf.getText());
             //Later save in array to pass to another class
         }
+        System.out.println("End");
+        wall.printWall();
     }
 
 }

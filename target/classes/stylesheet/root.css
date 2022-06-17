@@ -104,6 +104,17 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-padding: 0 20;
 }
 
+.transparentTextField {
+    -fx-background-color: transparent;
+    -fx-background-radius: 50px;
+    -fx-font-family: "Poppins", sans-serif;
+    -fx-font-size: 39.06px;
+    -fx-fill: -fx-yellow;
+    -fx-font-weight: 500;
+    -fx-text-alignment: center;
+    -fx-padding: 0 20;
+}
+
 .button {
     -fx-background-color: -fx-dark-red;
     -fx-background-radius: 50px;
