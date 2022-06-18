@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1220.0" stylesheets="@../../../stylesheet/root.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.magiconch.controllers.searchPageController">
@@ -18,29 +18,17 @@
       <Text layoutX="542.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h1" text="Search" />
       <TextField fx:id="searchTextField" layoutX="310.0" layoutY="118.0" prefHeight="30.0" prefWidth="600.0" promptText="keywords" styleClass="smallTextField" />
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="393.0" layoutY="202.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="searchButton" fitHeight="20.0" fitWidth="20.0" layoutX="934.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@assets/images/search_icon.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="largeToSmallSortingButton" fitHeight="20.0" fitWidth="20.0" layoutX="975.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@assets/images/sort_ascending.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="smallToLargeSortingButton" fitHeight="20.0" fitWidth="20.0" layoutX="995.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@assets/images/sort_descending.png" />
-         </image>
-      </ImageView>
-      <ScrollPane layoutX="225.0" layoutY="187.0" prefHeight="490.0" prefWidth="770.0">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="2000.0" prefWidth="754.0">
-               <children>
-                  <VBox fx:id="searchCardVBox" layoutX="8.0" prefHeight="2000.0" prefWidth="754.0" spacing="45.0" style="-fx-background-color: transparent;" />
-               </children>
-            </AnchorPane>
-        </content>
-      </ScrollPane>
+      <TableView fx:id="charTable" layoutX="195.0" layoutY="173.0" prefHeight="510.0" prefWidth="830.0">
+        <columns>
+          <TableColumn fx:id="charNameCol" prefWidth="200.0" text="Name" />
+          <TableColumn fx:id="charHeightCol" prefWidth="90.0" text="Height" />
+            <TableColumn fx:id="charWeightCol" prefWidth="90.0" text="Weight" />
+            <TableColumn fx:id="charStrCol" prefWidth="90.0" text="Strength" />
+            <TableColumn fx:id="charAbiCol" prefWidth="90.0" text="Ability" />
+            <TableColumn fx:id="charIntCol" prefWidth="90.0" text="Intelligence" />
+            <TableColumn fx:id="charCoorCol" prefWidth="90.0" text="Coordination" />
+            <TableColumn fx:id="charLeadCol" prefWidth="90.0" text="Leadership" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>
