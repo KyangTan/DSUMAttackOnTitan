@@ -5,25 +5,41 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.VBox;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 
 public class searchPageController implements Initializable, ControlledScreen {
 
     @FXML
-    private ImageView searchButton;
+    private TableColumn<?, ?> charAbiCol;
 
     @FXML
-    private VBox searchCardVBox;
+    private TableColumn<?, ?> charCoorCol;
+
+    @FXML
+    private TableColumn<?, ?> charHeightCol;
+
+    @FXML
+    private TableColumn<?, ?> charIntCol;
+
+    @FXML
+    private TableColumn<?, ?> charLeadCol;
+
+    @FXML
+    private TableColumn<?, ?> charNameCol;
+
+    @FXML
+    private TableColumn<?, ?> charStrCol;
+
+    @FXML
+    private TableView<?> charTable;
+
+    @FXML
+    private TableColumn<?, ?> charWeightCol;
 
     @FXML
     private TextField searchTextField;
 
-    @FXML
-    private ImageView smallToLargeSortingButton;
-    
-    @FXML
-    private ImageView largeToSmallSortingButton;
     
     ScreenController myController;
 
