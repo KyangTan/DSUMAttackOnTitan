@@ -14,6 +14,10 @@ import java.util.List;
 public class Provider {
     private static LinkedList<Member> memberList = new LinkedList<>();
     private static int currentI = 0;
+    
+    // graph
+    private static ArrayList<ArrayList<Integer>> adjMatrix;
+    
 
     public static LinkedList<Member> getMemberList() {
         return memberList;
@@ -41,6 +45,18 @@ public class Provider {
     
     public static void setMember(Member oldM, Member newM){
         memberList.replace(oldM, newM);
+    }
+    
+    public static void setGraphMatrix(ArrayList<ArrayList<Integer>> adjMatrix){
+        Provider.adjMatrix = adjMatrix;
+    }
+    
+    public static ArrayList<ArrayList<Integer>> getGraphMatrix(){
+        if(Provider.adjMatrix == null){
+            System.out.println("No graph stored in provider");
+            return null;
+        }
+        return Provider.adjMatrix;
     }
     
     

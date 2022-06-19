@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="700.0" stylesheets="@../../../stylesheet/root.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.magiconch.controllers.deMychiperToParadisController">
+   <children>
+      <ImageView fitHeight="720.0" fitWidth="700.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/images/decipher_background_square.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="262.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h1" text="Decipher" />
+      <Text layoutX="252.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" text="Enter Mychiper Sentence" />
+      <Button fx:id="toParadisButton" layoutX="235.0" layoutY="411.0" mnemonicParsing="false" onAction="#toParadisSentence" prefHeight="55.0" prefWidth="233.0" text="Dechiper" />
+      <TextField fx:id="paradisSentenceTextbox" alignment="CENTER" layoutX="102.0" layoutY="333.0" styleClass="largeTextField" />
+      <TextField fx:id="marleyOutputTextBox" alignment="CENTER" layoutX="34.0" layoutY="517.0" prefHeight="55.0" prefWidth="636.0" styleClass="transparentTextField" />
+      <ImageView fitHeight="43.0" fitWidth="45.0" layoutX="36.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/images/back_button.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="backButton" layoutX="23.0" layoutY="41.0" mnemonicParsing="false" onAction="#back" prefHeight="42.0" prefWidth="71.0" styleClass="button-transparent" />
+   </children>
+</AnchorPane>

@@ -10,10 +10,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 
 
 @font-face{
-  -fx-font-family: "Poppins", sans-serif;
-/*  src: './Poppins-Light.ttf' format('truetype');
-  src: './Poppins-Light.ttf' format('truetype');
-  src: './Poppins-Light.ttf' format('truetype');*/
+    -fx-font-family: "Poppins", sans-serif;
+    /*  src: './Poppins-Light.ttf' format('truetype');
+      src: './Poppins-Light.ttf' format('truetype');
+      src: './Poppins-Light.ttf' format('truetype');*/
 }
 
 
@@ -24,6 +24,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-red: #EC6450;
     -fx-beige: #EAD6C4;
     -fx-yellow: #FDDA99;
+    -fx-radio-radius: 10px;
 }
 
 .h1{
@@ -174,7 +175,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 .toggle-button {
     -fx-background-color: -fx-dark-red;
     -fx-border-color: -fx-beige;
-    -fx-border-radius: 2px; 
+    -fx-border-radius: 2px;
     -fx-font-family: "Poppins", sans-serif;
     -fx-font-size: 12.8px;
     -fx-text-fill: -fx-beige;
@@ -188,7 +189,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 
 .nav-toggle-button {
     -fx-background-color: -fx-yellow;
-    -fx-border-radius: 0px; 
+    -fx-border-radius: 0px;
     -fx-font-family: "Poppins", sans-serif;
     -fx-font-size: 12.8px;
     -fx-text-fill: -fx-beige;
@@ -212,4 +213,34 @@ scrollPane.setVbarPolicy(ScrollBarPolicy.NEVER);*/
 
 .scroll-pane .viewport {
     -fx-background-color: transparent;
+}
+
+.graphNode{
+    -fx-background-insets: 0;
+    -fx-background-color: -fx-dark-brown;
+    -fx-background-radius: 40px;
+    -fx-border-width: 4;
+    -fx-border-radius: 25px;
+    -fx-cursor : hand;
+}
+
+.graphNode:selected{
+    -fx-background-color: -fx-red;
+}
+
+.graphNode > .radio{
+    -fx-background-color:transparent;
+}
+
+.graphNode > .radio > .dot{
+    -fx-background-color:transparent;
+}
+
+.edges{
+    -fx-stroke: #FDDA99;
+    -fx-stroke-width: 5px;
+}
+
+.edges:hover{
+    -fx-stroke:#EC6450;
 }

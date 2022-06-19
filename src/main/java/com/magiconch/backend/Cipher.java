@@ -1,8 +1,16 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package com.magiconch.backend;
 
 import java.util.Random;
 
-public class Cipher {
+/**
+ *
+ * @author kuckn
+ */
+public class cipher {
     //////////////////////// My Own Cipher Useful Functions ////////////////////
     // Encrypt
     public static String myEncrypt(String sentence){

@@ -135,7 +135,8 @@ public class App extends Application {
 
     public static void main(String[] args) throws Exception {
         String jsonString = fileReader.readFile("src\\main\\resources\\com\\magiconch\\attackontitan\\json\\map.json");
-        Graph graph = fileReader.readGraphFromJSON(jsonString, WeightMode.DIFFER_BY_INDEX);
+        Graph graph = fileReader.readGraphFromJSON(jsonString, WeightMode.NO_WEIGHT);
+        Provider.setGraphMatrix(graph.getAdjacencyMatrix());
 //        graph.printGraph();
 //        Djikstra.dijkstra(graph.getAdjacencyMatrix(), 2);
 //        ArrayList<String> paths = new HamiltonianCycle().hamCycle(graph.getAdjacencyMatrix(), 0);

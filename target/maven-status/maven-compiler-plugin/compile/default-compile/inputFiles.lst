@@ -1,47 +1,56 @@
-C:\Users\Ming\Documents\NetBeansProjects\attackontitan\src\main\java\com\magiconch\backend\GraphRelated\VertexType.java
-C:\Users\Ming\Documents\NetBeansProjects\attackontitan\src\main\java\com\magiconch\controllers\ControlledScreen.java
-C:\Users\Ming\Documents\NetBeansProjects\attackontitan\src\main\java\com\magiconch\controllers\SceneController.java
-C:\Users\Ming\Documents\NetBeansProjects\attackontitan\src\main\java\com\magiconch\controllers\ScreenController.java
-C:\Users\Ming\Documents\NetBeansProjects\attackontitan\src\main\java\com\magiconch\backend\Member.java
-C:\Users\Ming\Documents\NetBeansProjects\attackontitan\src\main\java\com\magiconch\controllers\characterCardComponent.java
-C:\Users\Ming\Documents\NetBeansProjects\attackontitan\src\main\java\com\magiconch\controllers\decipherPageController.java
-C:\Users\Ming\Documents\NetBeansProjects\attackontitan\src\main\java\com\magiconch\controllers\addNewCharacterController.java
-C:\Users\Ming\Documents\NetBeansProjects\attackontitan\src\main\java\com\magiconch\controllers\characterDetailsViewPageController.java
-C:\Users\Ming\Documents\NetBeansProjects\attackontitan\src\main\java\com\magiconch\backend\GraphRelated\Graph.java
-C:\Users\Ming\Documents\NetBeansProjects\attackontitan\src\main\java\com\magiconch\backend\Speech.java
-C:\Users\Ming\Documents\NetBeansProjects\attackontitan\src\main\java\com\magiconch\backend\GraphRelated\Djikstra.java
-C:\Users\Ming\Documents\NetBeansProjects\attackontitan\src\main\java\com\magiconch\backend\WallMaria.java
-C:\Users\Ming\Documents\NetBeansProjects\attackontitan\src\main\java\com\magiconch\backend\GraphRelated\HamiltonianCycle.java
-C:\Users\Ming\Documents\NetBeansProjects\attackontitan\src\main\java\com\magiconch\backend\GraphRelated\WeightMode.java
-C:\Users\Ming\Documents\NetBeansProjects\attackontitan\src\main\java\com\magiconch\backend\LinkedList.java
-C:\Users\Ming\Documents\NetBeansProjects\attackontitan\src\main\java\com\magiconch\backend\NormalTitan.java
-C:\Users\Ming\Documents\NetBeansProjects\attackontitan\src\main\java\com\magiconch\controllers\wallLayersOverlayController.java
-C:\Users\Ming\Documents\NetBeansProjects\attackontitan\src\main\java\com\magiconch\backend\AbnormalTitan.java
-C:\Users\Ming\Documents\NetBeansProjects\attackontitan\src\main\java\com\magiconch\backend\AttributeComparator.java
-C:\Users\Ming\Documents\NetBeansProjects\attackontitan\src\main\java\com\magiconch\controllers\characterPageController.java
-C:\Users\Ming\Documents\NetBeansProjects\attackontitan\src\main\java\com\magiconch\controllers\titansLocationOverlayController.java
-C:\Users\Ming\Documents\NetBeansProjects\attackontitan\src\main\java\com\magiconch\backend\ZDummy.java
-C:\Users\Ming\Documents\NetBeansProjects\attackontitan\src\main\java\com\magiconch\backend\BGMPlayer.java
-C:\Users\Ming\Documents\NetBeansProjects\attackontitan\src\main\java\com\magiconch\controllers\searchCardComponentController.java
-C:\Users\Ming\Documents\NetBeansProjects\attackontitan\src\main\java\com\magiconch\controllers\killTitansPageController.java
-C:\Users\Ming\Documents\NetBeansProjects\attackontitan\src\main\java\com\magiconch\backend\LinkedListNode.java
-C:\Users\Ming\Documents\NetBeansProjects\attackontitan\src\main\java\com\magiconch\backend\Titan.java
-C:\Users\Ming\Documents\NetBeansProjects\attackontitan\src\main\java\com\magiconch\backend\HashMap.java
-C:\Users\Ming\Documents\NetBeansProjects\attackontitan\src\main\java\com\magiconch\controllers\searchPageController.java
-C:\Users\Ming\Documents\NetBeansProjects\attackontitan\src\main\java\com\magiconch\backend\Music.java
-C:\Users\Ming\Documents\NetBeansProjects\attackontitan\src\main\java\com\magiconch\controllers\titansCardComponentController.java
-C:\Users\Ming\Documents\NetBeansProjects\attackontitan\src\main\java\com\magiconch\controllers\navBarController.java
-C:\Users\Ming\Documents\NetBeansProjects\attackontitan\src\main\java\com\magiconch\attackontitan\App.java
-C:\Users\Ming\Documents\NetBeansProjects\attackontitan\src\main\java\com\magiconch\backend\Attribute.java
-C:\Users\Ming\Documents\NetBeansProjects\attackontitan\src\main\java\com\magiconch\controllers\mariaWallPageController.java
-C:\Users\Ming\Documents\NetBeansProjects\attackontitan\src\main\java\com\magiconch\utility\CommonMethod.java
-C:\Users\Ming\Documents\NetBeansProjects\attackontitan\src\main\java\com\magiconch\controllers\scoutingPageController.java
-C:\Users\Ming\Documents\NetBeansProjects\attackontitan\src\main\java\com\magiconch\utility\fileReader.java
-C:\Users\Ming\Documents\NetBeansProjects\attackontitan\src\main\java\com\magiconch\controllers\messageOverlayController.java
-C:\Users\Ming\Documents\NetBeansProjects\attackontitan\src\main\java\com\magiconch\backend\AOTBruh.java
-C:\Users\Ming\Documents\NetBeansProjects\attackontitan\src\main\java\com\magiconch\backend\TitanFactory.java
-C:\Users\Ming\Documents\NetBeansProjects\attackontitan\src\main\java\com\magiconch\backend\GraphRelated\Vertex.java
-C:\Users\Ming\Documents\NetBeansProjects\attackontitan\src\main\java\com\magiconch\backend\Operations.java
-C:\Users\Ming\Documents\NetBeansProjects\attackontitan\src\main\java\com\magiconch\backend\NineTitan.java
-C:\Users\Ming\Documents\NetBeansProjects\attackontitan\src\main\java\com\magiconch\controllers\characterCardContainerController.java
-C:\Users\Ming\Documents\NetBeansProjects\attackontitan\src\main\java\com\magiconch\controllers\titansCardPageController.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\controllers\dechiperToMarleyController.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\controllers\wallLayersOverlayController.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\controllers\scoutingPageController.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\controllers\characterCardComponentController.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\backend\Member.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\backend\WallMaria.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\controllers\wallComponentControllers.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\controllers\titansCardPageController.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\backend\Music.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\controllers\killTitansPageController.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\backend\GraphRelated\Vertex.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\controllers\mariaWallPageOneController.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\utility\fileReader.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\backend\BGMPlayer.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\controllers\messageOverlayController.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\backend\LinkedListNode.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\backend\cipher.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\backend\ZDummy.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\backend\Operations.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\controllers\searchCardComponentController.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\utility\CommonMethod.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\controllers\ControlledScreen.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\controllers\deMychiperToParadisController.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\backend\Speech.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\attackontitan\App.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\backend\HashMap.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\backend\NineTitan.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\backend\LinkedList.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\backend\GraphRelated\WeightMode.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\controllers\titansCardComponentController.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\backend\Titan.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\controllers\mariaWallPageController.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\backend\Attribute.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\controllers\navBarController.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\model\wallComponentModel.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\backend\GraphRelated\Djikstra.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\controllers\characterCardContainerController.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\controllers\dechiperToParadisController.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\backend\GraphRelated\Graph.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\controllers\addNewCharacterController.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\controllers\ScreenController.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\controllers\characterDetailsViewPageController.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\backend\GraphRelated\HamiltonianCycle.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\backend\paradis.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\backend\TitanFactory.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\controllers\SceneController.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\backend\marley.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\backend\GraphRelated\VertexType.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\controllers\searchPageController.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\backend\AttributeComparator.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\backend\Provider.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\controllers\decipherPageController.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\controllers\characterPageController.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\controllers\titansLocationOverlayController.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\backend\AbnormalTitan.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\backend\NormalTitan.java

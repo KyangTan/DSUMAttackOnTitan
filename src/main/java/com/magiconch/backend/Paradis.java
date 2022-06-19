@@ -1,8 +1,16 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package com.magiconch.backend;
 
 import java.util.Stack;
 
-public class Paradis {
+/**
+ *
+ * @author kuckn
+ */
+public class paradis {
     //////////////////// Paradis To Marley Useful Functions ////////////////////
     
     /**

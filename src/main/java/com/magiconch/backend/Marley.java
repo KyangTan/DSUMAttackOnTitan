@@ -10,7 +10,7 @@ import java.util.Stack;
  *
  * @author kuckn
  */
-public class Marley {
+public class marley {
     //////////////////// Marley To Paradis Useful Functions ////////////////////
     /**
      * 
@@ -36,9 +36,9 @@ public class Marley {
     
     /**
      * 
-     * @param marley unprocessed Marley sentence
-     * @return processed Marley sentence
- Note this is used to simplify all functions created to process Marley
+     * @param marley unprocessed marley sentence
+     * @return processed marley sentence
+     * Note this is used to simplify all functions created to process Marley
      */
     public static String marleyToParadis(String marley){
         return inverter(marleyTranslator(caesarProcessor(marley)));
@@ -46,8 +46,8 @@ public class Marley {
     
     /**
      * 
-     * @param marley is the raw Marley sentence that is not processed by any functions 
-     * @return return processed Marley function that restore the meaning of sentence using caesar cipher
+     * @param marley is the raw marley sentence that is not processed by any functions 
+     * @return return processed marley function that restore the meaning of sentence using caesar cipher
      */
     public static String caesarProcessor(String marley){
         Stack<Integer> st = new Stack<>();
@@ -79,7 +79,7 @@ public class Marley {
      * 
      * @param n is num in &num{} this num should be less than 3 so that '}' in ASCII code won't confuse the code 
      * ['x', 'y' & 'z' has ASCII of 120, 121, 122 while '}' has ASCII of 125] 
-     * @param s is the Marley code
+     * @param s is the marley code
      * @param start is the starting sentence after the first curly bracket of &num{}
      * @param end is the index of closing curly bracket of $num{}
      * @return 
@@ -106,7 +106,7 @@ public class Marley {
     
     /**
      * 
-     * @param marley is the Marley sentence that is processed using caesarProcessor()
+     * @param marley is the marley sentence that is processed using caesarProcessor()
      * @return translated paradis sentence but keep the parentheses for inverting purposes
      */
     public static String marleyTranslator(String marley){
