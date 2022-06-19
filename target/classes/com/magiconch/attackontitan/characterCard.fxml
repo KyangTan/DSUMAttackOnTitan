@@ -5,7 +5,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="75.0" prefWidth="885.0" style="-fx-background-color: transparent;" stylesheets="@../../../stylesheet/root.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.magiconch.controllers.characterCardComponentController">
+<AnchorPane id="AnchorPane" prefHeight="75.0" prefWidth="885.0" style="-fx-background-color: transparent;" stylesheets="@../../../stylesheet/root.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.magiconch.controllers.characterCardComponentController">
    <children>
       <Button fx:id="charButton" mnemonicParsing="false" prefHeight="75.0" prefWidth="885.0" styleClass="button-transparent" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="75.0" stroke="BLACK" strokeType="INSIDE" styleClass="card" width="885.0" />
