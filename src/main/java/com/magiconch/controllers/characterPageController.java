@@ -25,41 +25,39 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
 public class characterPageController implements Initializable, ControlledScreen {
-    
+
     @FXML
     private AnchorPane characterScreen;
-    
+
     @FXML
     private AnchorPane scollAPane;
-    
+
     @FXML
     private ToggleButton bgmToggleButton;
-    
+
     @FXML
     private Button addNewCharButton;
 
     @FXML
     private VBox characterVBox;
-    
+
     @FXML
     private ScrollPane scroll;
-    
+
     ScreenController myController = new ScreenController();
     private static List<Member> characters = new ArrayList<>();
     LinkedListNode<Member> tempNode = new LinkedListNode<>();
     ScreenController displayScreenController = new ScreenController();
 
-    
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         scroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         characterVBox.getChildren().clear();
         characters.clear();
-        
-        
+
         tempNode = Provider.getMemberList().getHead();
-        
-        int boxHeight = Provider.getMemberList().getSize()*95 +20;
+
+        int boxHeight = Provider.getMemberList().getSize() * 95 + 20;
         scollAPane.setPrefHeight(boxHeight);
         characterVBox.setPrefHeight(boxHeight);
         try {
@@ -71,12 +69,12 @@ public class characterPageController implements Initializable, ControlledScreen 
                 nodes[j] = contentLoader.load();
                 final int h = j;
                 characterCardComponentController charController = contentLoader.getController();
-                charController.setContentInfo("", tempNode.getData().getName(), j);               
-                    Provider.setCurrentI(h);
-                    final String name = "Page " + Provider.getCurrentI();
-                    System.out.println("added :" + Provider.getCurrentI());
-                    displayScreenController.loadScreen(name, "/com/magiconch/attackontitan/characterDetailsViewPage.fxml");
-                
+                charController.setContentInfo("", tempNode.getData().getName(), j);
+                Provider.setCurrentI(h);
+                final String name = "Page " + Provider.getCurrentI();
+//                    System.out.println("added :" + Provider.getCurrentI());
+                displayScreenController.loadScreen(name, "/com/magiconch/attackontitan/characterDetailsViewPage.fxml");
+
 //                System.out.println(displayScreenController.getScreen(name) + " \n\n\n\n\nasdfsadfasdfasdfsa");
                 nodes[h].setOnMousePressed(evt -> {
                     //add code here when clicked
@@ -91,7 +89,7 @@ public class characterPageController implements Initializable, ControlledScreen 
             Logger.getLogger(wallLayersOverlayController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     @FXML
     void addNewChar(ActionEvent event) {
         myController.showPopupStage(characterScreen, "/com/magiconch/attackontitan/addNewCharacterOverlay.fxml");
@@ -100,10 +98,5 @@ public class characterPageController implements Initializable, ControlledScreen 
     @Override
     public void setScreenParent(ScreenController screenParent) {
         myController = screenParent; //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    @FXML
-    public void toggleBGM(ActionEvent event) throws IOException{
-        BGMPlayer.togglePlayer();
     }
 }

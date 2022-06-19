@@ -17,7 +17,7 @@
          </image>
       </ImageView>
       <Text fx:id="title" layoutX="447.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h1" text="Scouting Mission" />
-      <Button fx:id="scoutButton" layoutX="492.0" layoutY="620.0" mnemonicParsing="false" onAction="#getHamiltonianCycle" prefHeight="48.0" prefWidth="236.0" text="Scout" />
+      <Button fx:id="scoutButton" layoutX="492.0" layoutY="620.0" mnemonicParsing="false" onAction="#scoutButton" prefHeight="48.0" prefWidth="236.0" text="Scout" />
       <StackPane fx:id="node11" layoutX="1080.0" layoutY="499.0">
          <children>
             <RadioButton mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" styleClass="graphNode">

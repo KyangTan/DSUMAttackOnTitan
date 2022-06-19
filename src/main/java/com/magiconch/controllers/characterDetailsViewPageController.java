@@ -46,12 +46,12 @@ public class characterDetailsViewPageController implements Initializable, Contro
     
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        System.out.println("after: " + index);
+//        System.out.println("after: " + index);
         tempNode = Provider.getMemberList().getHead();
         for (int i = 0; i < index; i++) {
             tempNode = tempNode.getNext();
         }
-        System.out.println(tempNode.getData().toString());
+//        System.out.println(tempNode.getData().toString());
         setContent();
     }
     

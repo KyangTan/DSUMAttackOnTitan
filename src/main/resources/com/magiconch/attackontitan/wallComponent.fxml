@@ -5,7 +5,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="40.0" prefWidth="381.0" stylesheets="@../../../stylesheet/root.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.magiconch.controllers.wallComponentControllers">
+<AnchorPane id="AnchorPane" prefHeight="40.0" prefWidth="381.0" stylesheets="@../../../stylesheet/root.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.magiconch.controllers.wallComponentControllers">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#462c2a" height="40.0" stroke="#462c2a" strokeType="INSIDE" strokeWidth="0.0" styleClass="darkCard" width="381.0" />
       <Text fx:id="wallText" layoutX="40.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="Wall 1" textAlignment="CENTER" />

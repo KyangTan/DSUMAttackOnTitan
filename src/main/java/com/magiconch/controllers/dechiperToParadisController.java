@@ -1,6 +1,6 @@
 package com.magiconch.controllers;
 
-import com.magiconch.backend.Marley;
+import com.magiconch.backend.MarleyClass;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -44,7 +44,7 @@ public class dechiperToParadisController implements Initializable, ControlledScr
 
     @FXML
     void toParadisSentence(ActionEvent event) {
-        marleyOutputTextBox.setText(Marley.marleyToParadis(paradisSentenceTextbox.getText()));
+        marleyOutputTextBox.setText(MarleyClass.marleyToParadis(paradisSentenceTextbox.getText()));
     }
 
 }

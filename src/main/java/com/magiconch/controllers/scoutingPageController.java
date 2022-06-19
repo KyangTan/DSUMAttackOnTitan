@@ -40,16 +40,17 @@ public class scoutingPageController implements Initializable, ControlledScreen {
     private ToggleGroup startNode;
 
     ScreenController myController;
-
-    @FXML
-    void scout(ActionEvent event) {
-
-    }
+    private boolean isScouted = false;
+    private ArrayList<ArrayList<Integer>> adjMatrix = Provider.getGraphMatrix();
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // draw initial line
-        ArrayList<ArrayList<Integer>> adjMatrix = Provider.getGraphMatrix();
+        drawOriGraph(adjMatrix);
+
+    }
+
+    private void drawOriGraph(ArrayList<ArrayList<Integer>> adjMatrix) {
         for (int i = 0; i < adjMatrix.size(); i++) {
             for (int j = i + 1; j < adjMatrix.size(); j++) {
                 if (adjMatrix.get(i).get(j) > 0) {
@@ -57,7 +58,6 @@ public class scoutingPageController implements Initializable, ControlledScreen {
                 }
             }
         }
-
     }
 
     // draw line between nodes
@@ -109,6 +109,28 @@ public class scoutingPageController implements Initializable, ControlledScreen {
 //        timeline.play();
 //    }
     @FXML
+    public void scoutButton() throws InterruptedException {
+        if (!this.isScouted) {
+            scoutButton.setText("Reset");
+            body.getChildren().forEach(node -> {
+                if (node.getId().startsWith("node")) {
+                    node.setDisable(true);
+                }
+            });
+            getHamiltonianCycle();
+        } else {
+            scoutButton.setText("Start Scouting");
+            body.getChildren().forEach(node -> {
+                if (node.getId().startsWith("node")) {
+                    node.setDisable(false);
+                }
+            });
+            drawOriGraph(adjMatrix);
+
+        }
+        this.isScouted = !this.isScouted;
+    }
+
     public void getHamiltonianCycle() throws InterruptedException {
         Node selected = (Node) startNode.getSelectedToggle();
         String src = ((Text) selected.getParent().getChildrenUnmodifiable().get(1)).getText();

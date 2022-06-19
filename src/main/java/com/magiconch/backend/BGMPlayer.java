@@ -46,7 +46,10 @@ public class BGMPlayer {
         });     
     }
     
-    public static void togglePlayer() {
+    public static boolean togglePlayer() {
+        if(BGMPlayer.player == null){
+            startPlayer();
+        }
         if (paused) {
             BGMPlayer.player.play();
             paused = false;
@@ -54,6 +57,8 @@ public class BGMPlayer {
             BGMPlayer.player.pause();
             paused = true;
         }
+        
+        return paused;
     }
     
 }

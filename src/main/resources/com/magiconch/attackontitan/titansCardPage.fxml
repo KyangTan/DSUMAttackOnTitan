@@ -7,7 +7,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1220.0" stylesheets="@../../../stylesheet/root.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1220.0" stylesheets="@../../../stylesheet/root.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#462c2a" height="720.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1220.0" />
       <Text layoutX="552.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h1" text="Titans" />
