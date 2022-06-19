@@ -15,4 +15,11 @@ public class searchCardComponentController {
     @FXML
     private Text charDescText;
 
+    public void setContentInfo(String imagePath, String charName, String desc){
+//        this.charImage.setImage(imagePath);
+        this.charNameText.setText(charName);
+        this.charDescText.setText(desc);
+        
+    }
+    
 }

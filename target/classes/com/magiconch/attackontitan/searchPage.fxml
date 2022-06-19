@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1220.0" stylesheets="@../../../stylesheet/root.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.magiconch.controllers.searchPageController">
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1220.0" stylesheets="@../../../stylesheet/root.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.magiconch.controllers.searchPageController">
    <children>
       <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -33,9 +33,9 @@
             <Image url="@assets/images/sort_descending.png" />
          </image>
       </ImageView>
-      <ScrollPane layoutX="225.0" layoutY="187.0" prefHeight="490.0" prefWidth="770.0">
+      <ScrollPane fx:id="scroll" layoutX="225.0" layoutY="187.0" prefHeight="490.0" prefWidth="770.0">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="2000.0" prefWidth="754.0">
+          <AnchorPane fx:id="scrollAPane" minHeight="0.0" minWidth="0.0" prefHeight="2000.0" prefWidth="754.0">
                <children>
                   <VBox fx:id="searchCardVBox" layoutX="8.0" prefHeight="2000.0" prefWidth="754.0" spacing="45.0" style="-fx-background-color: transparent;" />
                </children>

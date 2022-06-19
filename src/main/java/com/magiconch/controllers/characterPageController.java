@@ -47,7 +47,7 @@ public class characterPageController implements Initializable, ControlledScreen 
     ScreenController myController = new ScreenController();
     private static List<Member> characters = new ArrayList<>();
     LinkedListNode<Member> tempNode = new LinkedListNode<>();
-
+    ScreenController displayScreenController = new ScreenController();
 
     
     @Override
@@ -70,15 +70,17 @@ public class characterPageController implements Initializable, ControlledScreen 
                 contentLoader.setLocation(getClass().getResource("/com/magiconch/attackontitan/characterCard.fxml"));
                 nodes[j] = contentLoader.load();
                 final int h = j;
-
                 characterCardComponentController charController = contentLoader.getController();
                 charController.setContentInfo("", tempNode.getData().getName(), j);               
-
+                    Provider.setCurrentI(h);
+                    final String name = "Page " + Provider.getCurrentI();
+                    System.out.println("added :" + Provider.getCurrentI());
+                    displayScreenController.loadScreen(name, "/com/magiconch/attackontitan/characterDetailsViewPage.fxml");
+                
+//                System.out.println(displayScreenController.getScreen(name) + " \n\n\n\n\nasdfsadfasdfasdfsa");
                 nodes[h].setOnMousePressed(evt -> {
                     //add code here when clicked
-                    Provider.setCurrentI(h);
-                    System.out.println("added :" + Provider.getCurrentI());
-                    myController.showPopupStage(characterScreen, "/com/magiconch/attackontitan/characterDetailsViewPage.fxml");
+                    myController.showPopupStage(characterScreen, name, displayScreenController);
                 });
 
                 characterVBox.getChildren().add(nodes[j]);

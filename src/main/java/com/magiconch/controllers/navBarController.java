@@ -73,7 +73,10 @@ public class navBarController implements Initializable, ControlledScreen{
     
     @FXML
     private void goToCharacterPage(ActionEvent event) throws IOException{
+        myController.loadScreen("characterPage", "/com/magiconch/attackontitan/characterPage.fxml");
+        
         swapScreen("/com/magiconch/attackontitan/characterPage.fxml");
+        
     }
     
     @FXML

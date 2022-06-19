@@ -1,7 +1,7 @@
 package com.magiconch.controllers;
 
-import static com.magiconch.backend.cipher.myDecrypt;
-import static com.magiconch.backend.marley.marleyToParadis;
+import static com.magiconch.backend.Cipher.myDecrypt;
+import static com.magiconch.backend.Marley.marleyToParadis;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;

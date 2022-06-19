@@ -18,6 +18,7 @@ import javafx.beans.property.DoubleProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -39,6 +40,7 @@ import javafx.stage.StageStyle;
 public class ScreenController extends StackPane{
     boolean showing;
     
+    private HashMap<String, Node> displayScreens = new HashMap<>();
     
     
     private HashMap<String, Node> screens = new HashMap<>();
@@ -65,11 +67,10 @@ public class ScreenController extends StackPane{
             addScreen(name,loadScreen);
             return true;
         }catch(Exception e){
-        System.out.println(resource + " bruh :" + e.getMessage());
-        return false;
-    }
-        
-    }
+            System.out.println(resource + " bruh :" + e.getMessage());
+            return false;
+        }
+    }   
         
         public boolean setStage (final String name) throws IOException{
          if (screens.get(name)!= null){
@@ -104,6 +105,7 @@ public class ScreenController extends StackPane{
             }
 //           
         }
+    
 
     public boolean unloadScreen(String name){
         if(screens.remove(name) == null){
@@ -147,6 +149,53 @@ public class ScreenController extends StackPane{
                     screen.setEffect(null);
                 }
                 
+            }catch (Exception e) {
+                System.out.println(e);
+            }
+        }
+    }
+    
+    public void showPopupStage(AnchorPane screen, String name, ScreenController dsc){
+        if (showing) {
+            return;
+        }
+        else if (!showing){
+            try {
+                BoxBlur boxBlur = new BoxBlur();
+                boxBlur.setHeight(10);
+                boxBlur.setWidth(10);
+                boxBlur.setIterations(3);
+                screen.setEffect(boxBlur);
+                setShowing(true);
+                System.out.println(showing);
+                FXMLLoader loader = new FXMLLoader();
+//                loader.setLocation(getClass().getResource(resource));
+                
+                Group root = new Group();
+//                Parent root = loader.load();
+//                root.getChildrenUnmodifiable().add(dsc);
+                System.out.println("This is the name: " + name);
+                System.out.println(dsc.getScreen(name));
+                System.out.println(dsc.screens + " HAshsed");
+                System.out.println("\n\n\nzxcvzxcvzxc");
+//                root.getChildren().removeAll();
+                root.getChildren().addAll(dsc);
+                System.out.println("\n\n\n\n\n123123412z");
+                dsc.setScreen(name);
+                System.out.println("\n\n\n\n\nbsadfgasdfsaz");
+//                root.getChildrenUnmodifiable().add(dsc);
+                Stage stage = new Stage();
+                System.out.println("\n\n\n\n\n9999999999999999999");
+                stage.initStyle(StageStyle.UNDECORATED);
+                
+                stage.setScene(new Scene(root));
+                System.out.println("\n\n\n\n\n88888888888888888888888");
+                stage.setAlwaysOnTop(true);
+                stage.show();
+                setShowing(false);
+                if (!showing) {
+                    screen.setEffect(null);
+                }
             }catch (Exception e) {
                 System.out.println(e);
             }
