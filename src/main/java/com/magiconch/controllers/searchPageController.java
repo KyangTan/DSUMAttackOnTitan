@@ -18,33 +18,54 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
+//<<<<<<< HEAD
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import org.apache.commons.lang3.math.NumberUtils; 
+//=======
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+//>>>>>>> origin/main
 
 public class searchPageController implements Initializable, ControlledScreen {
 
     @FXML
-    private ImageView searchButton;
+    private TableColumn<Member, Integer> charAbiCol;
 
     @FXML
-    private VBox searchCardVBox;
+    private TableColumn<Member, Integer> charCoorCol;
+
+    @FXML
+    private TableColumn<Member, Integer>charHeightCol;
+
+    @FXML
+    private TableColumn<Member, Integer> charIntCol;
+
+    @FXML
+    private TableColumn<Member, Integer>charLeadCol;
+
+    @FXML
+    private TableColumn<Member, String> charNameCol;
+
+    @FXML
+    private TableColumn<Member, Integer> charStrCol;
+
+    @FXML
+    private TableColumn<Member, Integer> charWeightCol;
+    
+    @FXML
+    private TableView<Member> charTable;
 
     @FXML
     private TextField searchTextField;
 
-    @FXML
-    private ImageView smallToLargeSortingButton;
     
-    @FXML
-    private ImageView largeToSmallSortingButton;
+//    @FXML
+//    private AnchorPane scrollAPane;
     
-    @FXML
-    private AnchorPane scrollAPane;
-    
-    @FXML
-    private ScrollPane scroll;
+//    @FXML
+//    private ScrollPane scroll;
     
     ObservableList<Member> memberModelObservableList = FXCollections.observableArrayList();
     
@@ -55,16 +76,16 @@ public class searchPageController implements Initializable, ControlledScreen {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        scroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+//        scroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         
         tempNode = Provider.getMemberList().getHead();
-        for (int i = 0; i < Provider.getMemberList().getSize(); i++) {
-            memberModelObservableList.add(tempNode.getData());
-            tempNode = tempNode.getNext();
-        }
+//        for (int i = 0; i < Provider.getMemberList().getSize(); i++) {
+//            memberModelObservableList.add(tempNode.getData());
+//            tempNode = tempNode.getNext();
+//        }
         int boxHeight = Provider.getMemberList().getSize()*95 +20;
-        scrollAPane.setPrefHeight(boxHeight);
-        searchCardVBox.setPrefHeight(boxHeight);
+//        scrollAPane.setPrefHeight(boxHeight);
+//        searchCardVBox.setPrefHeight(boxHeight);
         try {
             Node[] nodes = new Node[Provider.getMemberList().getSize()];
 
@@ -85,7 +106,7 @@ public class searchPageController implements Initializable, ControlledScreen {
 
 //                characterVBox.getChildren().add(nodes[j]);
                 tempNode = tempNode.getNext();
-
+                search();
             }
         } catch (IOException ex) {
             Logger.getLogger(wallLayersOverlayController.class.getName()).log(Level.SEVERE, null, ex);
@@ -127,37 +148,21 @@ public class searchPageController implements Initializable, ControlledScreen {
 //        }
 //        else{}
 //    
-////        // Initialise filtered list
-//        FilteredList<Member> filteredData = new FilteredList<>(memberModelObservableList, b -> true);
-//
-//        searchTextField.textProperty().addListener((observable, oldValue, newValue) -> {
-//            filteredData.setPredicate(memberSearchModel -> {
-//                memberSearchModel.
-//                // If no values input, no change to the list
-//                if (newValue.isEmpty() || newValue.isEmpty() || newValue == null) {
-//                    return true;
-//                }
-//                
-//                int attribute = 0;
-//                String searchKeyword = newValue.toLowerCase();
-//                if (NumberUtils.isParsable(searchKeyword)) {
-//                    attribute = Integer.parseInt(searchKeyword);
-//                }
-//                
-//                if (memberSearchModel.getName().toLowerCase().indexOf(searchKeyword) > -1) {
-//                    return true; // Found a match in course name
-//                } else if (memberSearchModel.toLowerCase().indexOf(searchKeyword) > -1) {
-//                    return true; // Found a match in course name
-//                } else if (memberSearchModel.getOccName().toLowerCase().indexOf(searchKeyword) > -1) {
-//                    return true; // Found a match in occ
-//                } else {
-//                    return false;
-//                }
-                
-//                double unsimilarity = 0;
-//                String searchKeyword = newValue.toLowerCase();
-////                System.out.println("Seach keyword is: " + searchKeyword);
-////                System.out.println("The coursename is: " +courseSearchModel.getCourseName().toLowerCase());
+        // Initialise filtered list
+        FilteredList<Member> filteredData = new FilteredList<>(memberModelObservableList, b -> true);
+
+        searchTextField.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredData.setPredicate(memberSearchModel -> {
+
+                // If no values input, no change to the list
+                if (newValue.isEmpty() || newValue.isEmpty() || newValue == null) {
+                    return true;
+                }
+
+                double unsimilarity = 0;
+                String searchKeyword = newValue.toLowerCase();
+//                System.out.println("Seach keyword is: " + searchKeyword);
+//                System.out.println("The coursename is: " +courseSearchModel.getCourseName().toLowerCase());
 //                char[] courseNameCheckerArray = courseSearchModel.getCourseName().toLowerCase().toCharArray();
 //                if (searchKeyword.length() <= courseSearchModel.getCourseName().toLowerCase().length() ) {
 //                    for (int k = 0; k < searchKeyword.length(); k++) {
@@ -171,16 +176,33 @@ public class searchPageController implements Initializable, ControlledScreen {
 //                    unsimilarity = searchKeyword.length();
 //                }
                 
-//                unsimilarity = (unsimilarity / searchKeyword.length())*100.00;
+                unsimilarity = (unsimilarity / searchKeyword.length())*100.00;
 //                System.out.println("Unsimilarity%: " + unsimilarity);
-                
-//            });
-//        });
-//
-//        SortedList<Member> sortedData = new SortedList<>(filteredData);
-//
-//        //Bind sorted result with Table View
-//        sortedData.comparatorProperty().bind(courseTableView.comparatorProperty());
-//        courseTableView.setItems(sortedData);
+                if (memberSearchModel.getName().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true; // Found a match in course name
+                } else if (Integer.toString(memberSearchModel.getAgility()).indexOf(searchKeyword) > -1) {
+                    return true; // Found a match in course name
+//                } else if (memberSearchModel.getOccName().toLowerCase().indexOf(searchKeyword) > -1) {
+//                    return true; // Found a match in occ
+                } else {
+                    return false;
+                }
+//                if (courseSearchModel.getCourseName().toLowerCase().indexOf(searchKeyword) > -1 || unsimilarity <=30) {
+//                    return true; // Found a match in course name
+//                } else if (courseSearchModel.getCourseID().toLowerCase().indexOf(searchKeyword) > -1) {
+//                    return true; // Found a match in course name
+//                } else if (courseSearchModel.getOccName().toLowerCase().indexOf(searchKeyword) > -1) {
+//                    return true; // Found a match in occ
+//                } else {
+//                    return false;
+//                }
+            });
+        });
+
+        SortedList<Member> sortedData = new SortedList<>(filteredData);
+
+        //Bind sorted result with Table View
+        sortedData.comparatorProperty().bind(charTable.comparatorProperty());
+        charTable.setItems(sortedData);
     }
 }

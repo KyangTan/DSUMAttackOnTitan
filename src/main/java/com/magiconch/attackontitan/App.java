@@ -101,7 +101,7 @@ public class App extends Application {
             String jsonString = fileReader.readFile("src\\main\\resources\\com\\magiconch\\attackontitan\\json\\bgmList.json");
             LinkedList<Music> queue = fileReader.getBGMQueueFromJSON(jsonString);
             BGMPlayer.initPlayer(queue);
-            BGMPlayer.startPlayer();
+//            BGMPlayer.startPlayer();
 //            root.setOnMouseClicked();
             mainContainer.setScreen(brain);
             System.out.println("\n\n\n removing");
