@@ -10,7 +10,7 @@ import java.util.Stack;
  *
  * @author kuckn
  */
-public class marley {
+public class MarleyClass {
     //////////////////// Marley To Paradis Useful Functions ////////////////////
     /**
      * 

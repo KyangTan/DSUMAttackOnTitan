@@ -13,7 +13,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class characterDetailsViewPageController implements Initializable{
+public class characterDetailsViewPageController implements Initializable, ControlledScreen{
 
     @FXML
     private Button backButton;
@@ -38,6 +38,8 @@ public class characterDetailsViewPageController implements Initializable{
 
     @FXML
     private Button previousButton;
+    
+    ScreenController characterDetailsViewPageController = new ScreenController();
     
     LinkedListNode<Member> tempNode = new LinkedListNode<>();
     int index = Provider.getCurrentI();
@@ -80,11 +82,16 @@ public class characterDetailsViewPageController implements Initializable{
     
     @FXML
     public void nextChar(ActionEvent event) {
-        
+        characterDetailsViewPageController.setScreen("Page " + (index+1));
     }
     
     @FXML
     public void prevChar(ActionEvent event) {
+        characterDetailsViewPageController.setScreen("Page " + (index-1));
+    }
 
+    @Override
+    public void setScreenParent(ScreenController screenPage) {
+        characterDetailsViewPageController = screenPage;
     }
 }

@@ -1,7 +1,7 @@
 package com.magiconch.controllers;
 
-import static com.magiconch.backend.cipher.myDecrypt;
-import static com.magiconch.backend.marley.marleyToParadis;
+//import static com.magiconch.backend.Cipher.myDecrypt;
+//import static com.magiconch.backend.Marley.marleyToParadis;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -45,7 +45,7 @@ public class deMychiperToParadisController implements Initializable, ControlledS
 
     @FXML
     void toParadisSentence(ActionEvent event) {
-        marleyOutputTextBox.setText(marleyToParadis(myDecrypt(paradisSentenceTextbox.getText())));
+//        marleyOutputTextBox.setText(marleyToParadis(myDecrypt(paradisSentenceTextbox.getText())));
     }
 
 }
