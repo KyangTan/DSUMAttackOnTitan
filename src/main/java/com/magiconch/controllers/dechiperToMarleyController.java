@@ -1,12 +1,12 @@
 package com.magiconch.controllers;
 
-//import static com.magiconch.backend.Cipher.myDecrypt;
-//import static com.magiconch.backend.Cipher.myEncrypt;
-//import static com.magiconch.backend.Marley.marleyToParadis;
-//import com.magiconch.backend.Paradis;
-//import static com.magiconch.backend.Paradis.caesarEncrypt;
-//import static com.magiconch.backend.Paradis.paradisConverter;
-//import static com.magiconch.backend.Paradis.paradisInverter;
+import static com.magiconch.backend.CipherClass.myDecrypt;
+import static com.magiconch.backend.CipherClass.myEncrypt;
+import static com.magiconch.backend.MarleyClass.marleyToParadis;
+import com.magiconch.backend.ParadisClass;
+import static com.magiconch.backend.ParadisClass.caesarEncrypt;
+import static com.magiconch.backend.ParadisClass.paradisConverter;
+import static com.magiconch.backend.ParadisClass.paradisInverter;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -97,7 +97,7 @@ public class dechiperToMarleyController implements Initializable, ControlledScre
 
     @FXML
     void toMarleySentence(ActionEvent event) {
-//        paradis = paradisConverter(paradisInverter(paradisSentenceTextBox.getText()));
+        paradis = paradisConverter(paradisInverter(paradisSentenceTextBox.getText()));
         marleyOutputTextBox.setText(paradis);
         
         paradisInputPane.setVisible(true);
@@ -112,7 +112,7 @@ public class dechiperToMarleyController implements Initializable, ControlledScre
             int caesarI = Integer.parseInt(caesarIndexTextBox.getText());
             int startI = Integer.parseInt(startIndex.getText());
             int endI = Integer.parseInt(endIndex.getText());
-//            paradis = caesarEncrypt(paradis, caesarI, startI, endI);
+            paradis = caesarEncrypt(paradis, caesarI, startI, endI);
         } catch (NumberFormatException e) {
             errorMsg.setText("Please input the following type: String Int Int Int");
         }
@@ -137,7 +137,7 @@ public class dechiperToMarleyController implements Initializable, ControlledScre
 
     @FXML
     void discontinueCaeser(ActionEvent event) {
-//        marleyToParadis(paradis);
+        marleyToParadis(paradis);
         marleyOutputTextBox.setText(paradis);
         
         paradisInputPane.setVisible(false);
@@ -148,7 +148,7 @@ public class dechiperToMarleyController implements Initializable, ControlledScre
     }
     
     void mychiper(){
-//        paradis = myEncrypt(paradis);
+        paradis = myEncrypt(paradis);
     }
     
     //Want continue Mychiper
@@ -178,7 +178,7 @@ public class dechiperToMarleyController implements Initializable, ControlledScre
             
         caesarPressedOnce = false;
         
-//        System.out.println("Proof: "+marleyToParadis(myDecrypt(paradis)));
+        System.out.println("Proof: "+marleyToParadis(myDecrypt(paradis)));
     }
 
 }
