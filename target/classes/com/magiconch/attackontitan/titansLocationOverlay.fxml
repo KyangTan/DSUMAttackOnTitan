@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="560.0" style="-fx-background-color: transparent;" stylesheets="@../../../stylesheet/root.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="560.0" style="-fx-background-color: transparent;" stylesheets="@../../../stylesheet/root.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="600.0" stroke="BLACK" strokeType="INSIDE" styleClass="darkCard" width="560.0" />
       <Text layoutX="62.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h1" text="Enter location of titans" />

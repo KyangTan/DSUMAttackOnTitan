@@ -6,6 +6,7 @@ C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\b
 C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\backend\WallMaria.java
 C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\controllers\wallComponentControllers.java
 C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\controllers\titansCardPageController.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\backend\MarleyClass.java
 C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\backend\Music.java
 C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\controllers\killTitansPageController.java
 C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\backend\GraphRelated\Vertex.java
@@ -14,7 +15,6 @@ C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\u
 C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\backend\BGMPlayer.java
 C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\controllers\messageOverlayController.java
 C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\backend\LinkedListNode.java
-C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\backend\cipher.java
 C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\backend\ZDummy.java
 C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\backend\Operations.java
 C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\controllers\searchCardComponentController.java
@@ -31,8 +31,10 @@ C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\c
 C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\backend\Titan.java
 C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\controllers\mariaWallPageController.java
 C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\backend\Attribute.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\backend\ParadisClass.java
 C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\controllers\navBarController.java
 C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\model\wallComponentModel.java
+C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\backend\CipherClass.java
 C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\backend\GraphRelated\Djikstra.java
 C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\controllers\characterCardContainerController.java
 C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\controllers\dechiperToParadisController.java
@@ -41,10 +43,8 @@ C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\c
 C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\controllers\ScreenController.java
 C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\controllers\characterDetailsViewPageController.java
 C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\backend\GraphRelated\HamiltonianCycle.java
-C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\backend\paradis.java
 C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\backend\TitanFactory.java
 C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\controllers\SceneController.java
-C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\backend\marley.java
 C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\backend\GraphRelated\VertexType.java
 C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\controllers\searchPageController.java
 C:\Users\User\Documents\Git Netbeans\attackontitan\src\main\java\com\magiconch\backend\AttributeComparator.java

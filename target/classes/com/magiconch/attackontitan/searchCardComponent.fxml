@@ -6,7 +6,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="90.0" prefWidth="754.0" style="-fx-background-color: transparent;" stylesheets="@../../../stylesheet/root.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="90.0" prefWidth="754.0" style="-fx-background-color: transparent;" stylesheets="@../../../stylesheet/root.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
    <children>
       <Rectangle arcHeight="30.0" arcWidth="30.0" fill="DODGERBLUE" height="90.0" stroke="BLACK" strokeType="INSIDE" styleClass="card" width="754.0" />
       <ImageView fx:id="charEyeImage" fitHeight="50.0" fitWidth="308.0" layoutX="40.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
