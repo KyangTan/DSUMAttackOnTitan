@@ -24,7 +24,7 @@ public class HashMap<K, V>{
      * Used linked list approach to avoid the collisions
      */
     
-    class Entry <K, V>{
+    public class Entry <K, V>{
         final K key;
         V value;
         Entry next;
@@ -55,7 +55,7 @@ public class HashMap<K, V>{
      * @return the Entry Bucket
      * Note: use .getValue() to get value of the key
      */
-    public Entry get(K k){
+    public Entry<K,V> get(K k){
         /**
         * Returns a hash code for this string. The hash code for a
         * {@code String} object is computed as
@@ -70,7 +70,7 @@ public class HashMap<K, V>{
         * @return  a hash code value for this object.
         */
         int hash = k.hashCode() % SIZE;
-        Entry e = table[hash];
+        Entry e = table[Math.abs(hash)];
         
         // Bucket is identified by hashCode and traversed the bucket
         // till element is not found
@@ -90,7 +90,7 @@ public class HashMap<K, V>{
         }
         
         int hash = k.hashCode() % SIZE;
-        Entry e = table[hash];
+        Entry<K,V> e = table[Math.abs(hash)];
         
         if(e != null){
             // If we will insert duplicate key-value pair,
@@ -103,13 +103,13 @@ public class HashMap<K, V>{
                 while(e.next != null) {
                     e = e.next;
                 }
-                Entry entryInOldBucket = new Entry(k, v);
+                Entry<K,V> entryInOldBucket = new Entry<>(k, v);
                 e.next = entryInOldBucket;
             }
         } else {
             // create new bucket for new element in the map.
-            Entry entryInNewBucket = new Entry(k, v);
-            table[hash] = entryInNewBucket;
+            Entry<K,V> entryInNewBucket = new Entry<>(k, v);
+            table[Math.abs(hash)] = entryInNewBucket;
         }
     }
     

@@ -11,10 +11,12 @@ package com.magiconch.backend.GraphRelated;
 public class Vertex {
 
     private VertexType type = VertexType.UNDEFINED;
-    
-    public Vertex(){
+    private int dangerRisk = 0;
+
+    public Vertex() {
         setType(type);
     }
+
     public Vertex(VertexType type) {
         setType(type);
     }
@@ -25,5 +27,27 @@ public class Vertex {
 
     public VertexType getType() {
         return this.type;
+    }
+
+    public void setDangerRisk(int dangerRisk) {
+        this.dangerRisk = dangerRisk;
+    }
+
+    ;
+    
+    public int getDangerRisk() {
+        return this.dangerRisk;
+    }
+
+    public void increDangerRisk(int n) {
+        this.dangerRisk += n;
+    }
+
+    public void decreDangerRisk(int n) {
+        if (this.dangerRisk - n < 0) {
+            this.dangerRisk = 0;
+        } else {
+            this.dangerRisk -= n;
+        }
     }
 }

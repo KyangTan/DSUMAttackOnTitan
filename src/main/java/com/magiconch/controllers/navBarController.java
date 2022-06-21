@@ -124,11 +124,11 @@ public class navBarController implements Initializable, ControlledScreen {
     @FXML
     public void toggleBGM(ActionEvent event) throws IOException {
         if (isBGMOn) {
-            ((ImageView)bgmToggleButton.getChildrenUnmodifiable().get(0)).setImage(new Image(App.class.getResource("/com/magiconch/attackontitan/assets/images/unmute.png").toString()));
+            ((ImageView)bgmToggleButton.getChildrenUnmodifiable().get(0)).setImage(new Image(App.class.getResource("/com/magiconch/attackontitan/assets/images/mute.png").toString()));
             ((ImageView)bgmToggleButton.getChildrenUnmodifiable().get(0)).setFitHeight(17);
             ((ImageView)bgmToggleButton.getChildrenUnmodifiable().get(0)).setFitWidth(20);
         } else {
-                        ((ImageView)bgmToggleButton.getChildrenUnmodifiable().get(0)).setImage(new Image(App.class.getResource("/com/magiconch/attackontitan/assets/images/mute.png").toString()));
+                        ((ImageView)bgmToggleButton.getChildrenUnmodifiable().get(0)).setImage(new Image(App.class.getResource("/com/magiconch/attackontitan/assets/images/unmute.png").toString()));
             ((ImageView)bgmToggleButton.getChildrenUnmodifiable().get(0)).setFitHeight(17);
             ((ImageView)bgmToggleButton.getChildrenUnmodifiable().get(0)).setFitWidth(20);
         }

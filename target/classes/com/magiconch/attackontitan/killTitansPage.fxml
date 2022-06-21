@@ -1,22 +1,189 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="721.0" prefWidth="1220.0" stylesheets="@../../../stylesheet/root.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.magiconch.controllers.killTitansPageController">
+<AnchorPane id="AnchorPane" fx:id="body" prefHeight="720.0" prefWidth="1220.0" stylesheets="@../../../stylesheet/root.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.magiconch.controllers.killTitansPageController">
    <children>
-      <ImageView fitHeight="721.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@assets/images/kill_titans_background.png" />
          </image>
       </ImageView>
-      <Text layoutX="411.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h1" text="Let's kill some Titans!" />
-      <Text layoutX="413.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="Enter the numbers of titans to be killed..." />
-      <TextField fx:id="titansNumberTextBox" layoutX="362.0" layoutY="367.0" styleClass="largeTextField" />
-      <Button fx:id="killButton" layoutX="503.0" layoutY="453.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="215.0" text="Button" />
+      <StackPane fx:id="node11" layoutX="1090.0" layoutY="438.0">
+         <children>
+            <RadioButton mnemonicParsing="false" onAction="#checkIsTitan" prefHeight="20.0" prefWidth="20.0" styleClass="graphNode">
+               <toggleGroup>
+                  <ToggleGroup fx:id="killNode" />
+               </toggleGroup>
+            </RadioButton>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="11" textOrigin="BOTTOM" StackPane.alignment="CENTER" />
+         </children>
+      </StackPane>
+      <StackPane fx:id="node13" layoutX="1090.0" layoutY="249.0">
+         <children>
+            <RadioButton mnemonicParsing="false" onAction="#checkIsTitan" prefHeight="20.0" prefWidth="20.0" styleClass="graphNode" toggleGroup="$killNode" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="13" textOrigin="BOTTOM" StackPane.alignment="CENTER" />
+         </children>
+      </StackPane>
+      <StackPane fx:id="node14" layoutX="1090.0" layoutY="74.0">
+         <children>
+            <RadioButton mnemonicParsing="false" onAction="#checkIsTitan" prefHeight="20.0" prefWidth="20.0" styleClass="graphNode" toggleGroup="$killNode" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="14" textOrigin="BOTTOM" StackPane.alignment="CENTER" />
+         </children>
+      </StackPane>
+      <StackPane fx:id="node3" layoutX="885.0" layoutY="322.0">
+         <children>
+            <RadioButton mnemonicParsing="false" onAction="#checkIsTitan" prefHeight="20.0" prefWidth="20.0" styleClass="graphNode" toggleGroup="$killNode" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="3" textOrigin="BOTTOM" StackPane.alignment="CENTER" />
+         </children>
+      </StackPane>
+      <StackPane fx:id="node2" layoutX="885.0" layoutY="438.0">
+         <children>
+            <RadioButton mnemonicParsing="false" onAction="#checkIsTitan" prefHeight="20.0" prefWidth="20.0" styleClass="graphNode" toggleGroup="$killNode" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="2" textOrigin="BOTTOM" StackPane.alignment="CENTER" />
+         </children>
+      </StackPane>
+      <StackPane fx:id="node10" layoutX="885.0" layoutY="205.0">
+         <children>
+            <RadioButton mnemonicParsing="false" onAction="#checkIsTitan" prefHeight="20.0" prefWidth="20.0" styleClass="graphNode" toggleGroup="$killNode" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="10" textOrigin="BOTTOM" StackPane.alignment="CENTER" />
+         </children>
+      </StackPane>
+      <StackPane fx:id="node8" layoutX="762.0" layoutY="137.0">
+         <children>
+            <RadioButton mnemonicParsing="false" onAction="#checkIsTitan" prefHeight="20.0" prefWidth="20.0" styleClass="graphNode" toggleGroup="$killNode" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="8" textOrigin="BOTTOM" StackPane.alignment="CENTER" />
+         </children>
+      </StackPane>
+      <StackPane fx:id="node4" layoutX="706.0" layoutY="322.0">
+         <children>
+            <RadioButton mnemonicParsing="false" onAction="#checkIsTitan" prefHeight="20.0" prefWidth="20.0" styleClass="graphNode" toggleGroup="$killNode" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="4" textOrigin="BOTTOM" StackPane.alignment="CENTER" />
+         </children>
+      </StackPane>
+      <StackPane fx:id="node1" layoutX="587.0" layoutY="438.0">
+         <children>
+            <RadioButton mnemonicParsing="false" onAction="#checkIsTitan" prefHeight="20.0" prefWidth="20.0" styleClass="graphNode" toggleGroup="$killNode" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="1" textOrigin="BOTTOM" StackPane.alignment="CENTER" />
+         </children>
+      </StackPane>
+      <StackPane fx:id="node15" layoutX="414.0" layoutY="74.0">
+         <children>
+            <RadioButton mnemonicParsing="false" onAction="#checkIsTitan" prefHeight="20.0" prefWidth="20.0" styleClass="graphNode" toggleGroup="$killNode" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="15" textOrigin="BOTTOM" StackPane.alignment="CENTER" />
+         </children>
+      </StackPane>
+      <StackPane fx:id="node6" layoutX="586.0" layoutY="205.0">
+         <children>
+            <RadioButton mnemonicParsing="false" onAction="#checkIsTitan" prefHeight="20.0" prefWidth="20.0" styleClass="graphNode" toggleGroup="$killNode" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="6" textOrigin="BOTTOM" StackPane.alignment="CENTER" />
+         </children>
+      </StackPane>
+      <StackPane fx:id="node0" layoutX="380.0" layoutY="438.0">
+         <children>
+            <RadioButton disable="true" mnemonicParsing="false" onAction="#checkIsTitan" prefHeight="20.0" prefWidth="20.0" styleClass="graphNode" toggleGroup="$killNode" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="0" textOrigin="BOTTOM" StackPane.alignment="CENTER" />
+         </children>
+      </StackPane>
+      <StackPane fx:id="node5" layoutX="237.0" layoutY="316.0">
+         <children>
+            <RadioButton mnemonicParsing="false" onAction="#checkIsTitan" prefHeight="20.0" prefWidth="20.0" styleClass="graphNode" toggleGroup="$killNode" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="5" textOrigin="BOTTOM" StackPane.alignment="CENTER" />
+         </children>
+      </StackPane>
+      <StackPane fx:id="node12" layoutX="237.0" layoutY="205.0">
+         <children>
+            <RadioButton mnemonicParsing="false" onAction="#checkIsTitan" prefHeight="20.0" prefWidth="20.0" styleClass="graphNode" toggleGroup="$killNode" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="12" textOrigin="BOTTOM" StackPane.alignment="CENTER" />
+         </children>
+      </StackPane>
+      <StackPane fx:id="node7" layoutX="90.0" layoutY="438.0">
+         <children>
+            <RadioButton layoutX="80.0" layoutY="499.0" mnemonicParsing="false" onAction="#checkIsTitan" prefHeight="20.0" prefWidth="20.0" styleClass="graphNode" toggleGroup="$killNode" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="7" textOrigin="BOTTOM" StackPane.alignment="CENTER" />
+         </children>
+      </StackPane>
+      <StackPane fx:id="node9" layoutX="90.0" layoutY="74.0">
+         <children>
+            <RadioButton mnemonicParsing="false" onAction="#checkIsTitan" prefHeight="20.0" prefWidth="20.0" styleClass="graphNode" toggleGroup="$killNode" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="9" textOrigin="BOTTOM" StackPane.alignment="CENTER" />
+         </children>
+      </StackPane>
+      <StackPane fx:id="node91" layoutX="100.0" layoutY="546.0" prefHeight="152.0" prefWidth="1020.0" styleClass="controlTerminalContainer">
+         <children>
+            <VBox>
+               <StackPane.margin>
+                  <Insets />
+               </StackPane.margin>
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="showNodeDetails" mnemonicParsing="false" onAction="#toggleNodeDetails" text="Show node details" />
+                        <Region prefHeight="14.0" prefWidth="200.0" />
+                        <Button fx:id="findShortestPath" mnemonicParsing="false" onAction="#toggleFinder" text="Find shortest path" />
+                        <Region prefHeight="14.0" prefWidth="200.0" />
+                        <Button fx:id="getPriorityKill" mnemonicParsing="false" onAction="#getPriorityKill" text="Get Priority Kill" />
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" left="30.0" right="30.0" top="20.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Text fx:id="outputText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </StackPane>
+      <StackPane fx:id="titanCard" layoutX="343.0" layoutY="120.0" prefHeight="494.0" prefWidth="476.0" translateX="1000.0">
+         <children>
+            <VBox prefHeight="494.0" prefWidth="457.0" styleClass="titanCard">
+               <children>
+                  <HBox prefHeight="235.0" prefWidth="385.0">
+                     <children>
+                        <VBox>
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="Titan Information">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" />
+                                 </VBox.margin>
+                              </Text>
+                              <Text fx:id="titanInfoText" fill="WHITE" lineSpacing="5.0" opacity="0.6" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h4" text="Height: 185cm&#10;Weight: 95kg&#10;Strength: 9&#10;Agility: 7&#10;Intelligence: 7&#10;Coordination: 10&#10;Leadership: 8&#10;" wrappingWidth="219.89784240722656" />
+                           </children>
+                        </VBox>
+                        <ImageView fx:id="titanPic" fitHeight="204.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets left="30.0" right="10.0" top="15.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Text fx:id="closeNodeDetail" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="X" translateY="-10.0" />
+                     </children>
+                  </HBox>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="Description">
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Text>
+                  <Text fx:id="titanDescText" fill="WHITE" lineSpacing="5.0" opacity="0.6" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h4" text="Eren Yeager was a former member of the Survey Corps. He was the main protagonist of Attack on Titan. He lived in Shiganshina District with his parents until the fall of Wall Maria, where he impotently witnessed his mother being eaten by a Titan. This event would lead to Eren's intense hatred towards the Titans as he swore to wipe all of them off the face of the Earth.&#10;&#10;" wrappingWidth="384.633056640625" />
+               </children>
+               <padding>
+                  <Insets bottom="25.0" left="20.0" right="20.0" top="25.0" />
+               </padding>
+            </VBox>
+         </children>
+      </StackPane>
    </children>
 </AnchorPane>

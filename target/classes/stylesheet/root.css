@@ -75,6 +75,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-stroke: -fx-yellow;
 }
 
+.titanCard{
+    -fx-background-color: -fx-dark-red;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-border-width: 3;
+    -fx-border-color: -fx-yellow;
+}
+
 .darkCard{
     -fx-fill: -fx-dark-brown;
     -fx-arc-height: 20;
@@ -244,3 +252,24 @@ scrollPane.setVbarPolicy(ScrollBarPolicy.NEVER);*/
 .edges:hover{
     -fx-stroke:#EC6450;
 }
+
+.controlTerminalContainer{
+    -fx-font-size: 20px;
+    -fx-text-fill: -fx-yellow;
+    -fx-font-weight: 400;
+    -fx-text-alignment: center;
+    -fx-background-color: -fx-dark-brown;
+    -fx-border-color: -fx-yellow;
+    -fx-border-width: 4;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+}
+
+.thumbnail-container{
+    -fx-background-color: -fx-dark-brown;
+    -fx-border-width: 4;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-border-color: -fx-yellow;
+}
+

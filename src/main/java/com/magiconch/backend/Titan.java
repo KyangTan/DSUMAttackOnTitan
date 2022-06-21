@@ -13,6 +13,7 @@ public abstract class Titan extends Vertex {
     static int normalTitanCount = 0;
     static int abnormalTitanCount = 0;
     private final VertexType vertexType = VertexType.TITAN;
+    private String titanUrl;
 
     enum type {
         Normal,
@@ -29,7 +30,8 @@ public abstract class Titan extends Vertex {
     private type Titantype;
     private WalkingPattern wp;
     private boolean climb;
-    private int height, walkingLegs, runningSpeed, dangerRisk, position;
+    private int height, walkingLegs, runningSpeed, position;
+    private String titanDesc;
 
     public String getName() {
         return name;
@@ -64,11 +66,11 @@ public abstract class Titan extends Vertex {
         this.wp = wp;
         if (Titantype.equals(type.Normal)) {
             if (wp.equals(WalkingPattern.Normal_Pattern)) {
-                dangerRisk += 1;
+                super.increDangerRisk(1);
             } else if (wp.equals(WalkingPattern.Repeated)) {
-                dangerRisk += 2;
+                super.increDangerRisk(2);
             } else if (wp.equals(WalkingPattern.Not_Repeated)) {
-                dangerRisk += 3;
+                super.increDangerRisk(3);
             }
         }
     }
@@ -81,9 +83,9 @@ public abstract class Titan extends Vertex {
         this.climb = climb;
         if (Titantype.equals(type.Normal)) {
             if (climb) {
-                dangerRisk += 3;
+                super.increDangerRisk(3);
             } else {
-                dangerRisk += 1;
+                super.increDangerRisk(1);
             }
         }
     }
@@ -96,11 +98,11 @@ public abstract class Titan extends Vertex {
         this.height = height;
         if (Titantype.equals(type.Normal)) {
             if (height < 10) {
-                dangerRisk += 1;
+                super.increDangerRisk(1);
             } else if (height >= 10) {
-                dangerRisk += 2;
+                super.increDangerRisk(2);
             } else if (height > 20) {
-                dangerRisk += 3;
+                super.increDangerRisk(3);
             }
         }
     }
@@ -113,11 +115,11 @@ public abstract class Titan extends Vertex {
         this.walkingLegs = walkingLegs;
         if (Titantype.equals(type.Normal)) {
             if (this.walkingLegs == 4) {
-                dangerRisk += 3;
+                super.increDangerRisk(3);
             } else if (this.walkingLegs == 2) {
-                dangerRisk += 2;
+                super.increDangerRisk(2);
             } else if (this.walkingLegs == 0) {
-                dangerRisk += 1;
+                super.increDangerRisk(1);
             }
         }
     }
@@ -130,21 +132,36 @@ public abstract class Titan extends Vertex {
         this.runningSpeed = runningSpeed;
         if (Titantype.equals(type.Normal)) {
             if (this.runningSpeed > 20) {
-                dangerRisk += 3;
+                super.increDangerRisk(3);
             } else if (this.runningSpeed > 10) {
-                dangerRisk += 2;
+                super.increDangerRisk(2);
             } else if (this.runningSpeed < 10) {
-                dangerRisk += 1;
+                super.increDangerRisk(1);
             }
         }
     }
 
     public int getDangerRisk() {
-        return dangerRisk;
+        return super.getDangerRisk();
     }
 
     public void setDangerRisk(int dangerRisk) {
-        this.dangerRisk = dangerRisk;
+        super.setDangerRisk(dangerRisk);
+    }
+    
+    public String getTitanImageUrl() {
+        return titanUrl;
+    }
+
+    public void setTitanImageUrl(String titanUrl) {
+        this.titanUrl = titanUrl;
+    }
+    public String getTitanDesc() {
+        return titanDesc;
+    }
+
+    public void setTitanDesc(String titanDesc) {
+        this.titanDesc = titanDesc;
     }
 
     public WalkingPattern randomWP() {
@@ -164,7 +181,7 @@ public abstract class Titan extends Vertex {
 
     @Override
     public String toString() {
-        return "Titan{" + "name=" + name + ", Titantype=" + Titantype + ", wp=" + wp + ", climb=" + climb + ", height=" + height + ", walkingLegs=" + walkingLegs + ", runningSpeed=" + runningSpeed + ", dangerRisk=" + dangerRisk + ", position=" + position + '}';
+        return "Titan{" + "name=" + name + ", Titantype=" + Titantype + ", wp=" + wp + ", climb=" + climb + ", height=" + height + ", walkingLegs=" + walkingLegs + ", runningSpeed=" + runningSpeed + ", dangerRisk=" + super.getDangerRisk() + ", position=" + position + ", description=" + titanDesc + '}';
     }
 
 }

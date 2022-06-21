@@ -22,5 +22,8 @@ public class AbnormalTitan extends Titan {
         setWalkingLegs(ran.nextInt(3) * 2);
         setRunningSpeed(ran.nextInt(26));
         setDangerRisk(15);
+        setTitanImageUrl("assets/images/abnormal.png");
+        setTitanDesc("Pure Titans that displayed abnormal behavior or intelligence were classed as Abnormal. Abnormals often ignored nearby humans and charge to more important locations where they could do more damage. The Colossus Titans found inside the Walls were unusually large, similar to the actual Colossus Titan, and had hardening abilities.");
+
     }
 }
