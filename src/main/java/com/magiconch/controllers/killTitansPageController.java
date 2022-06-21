@@ -6,6 +6,7 @@ import com.magiconch.backend.GraphRelated.Djikstra;
 import com.magiconch.backend.GraphRelated.Graph;
 import com.magiconch.backend.GraphRelated.Vertex;
 import com.magiconch.backend.GraphRelated.VertexType;
+import com.magiconch.backend.GraphRelated.WeightMode;
 import com.magiconch.backend.HashMap;
 import com.magiconch.backend.LinkedList;
 import com.magiconch.backend.LinkedListNode;
@@ -13,6 +14,7 @@ import com.magiconch.backend.Provider;
 import com.magiconch.backend.Titan;
 import com.magiconch.utility.Animator;
 import com.magiconch.utility.GraphDrawer;
+import com.magiconch.utility.fileReader;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.PriorityQueue;
@@ -68,7 +70,10 @@ public class killTitansPageController implements Initializable, ControlledScreen
 
     @FXML
     private Button getPriorityKill;
-
+    
+    @FXML
+    private Button resetButton;
+    
     @FXML
     private AnchorPane body;
 
@@ -109,6 +114,19 @@ public class killTitansPageController implements Initializable, ControlledScreen
             Animator.lineAnimation(0, 1000, titanCard);
         }
         isNodeDetailsShown = !isNodeDetailsShown;
+    }
+    
+    @FXML
+    public void resetGraph() {
+        String jsonString = fileReader.readFile("src\\main\\resources\\com\\magiconch\\attackontitan\\json\\map.json");
+        Graph graph = fileReader.readGraphFromJSON(jsonString, WeightMode.DIFFER_BY_INDEX);
+        Provider.setGraph(graph);
+        adjMatrix = Provider.getGraphMatrix();
+        
+        draw.removeAllEdges();
+        draw.removeAllThumb();
+        draw.drawOriGraph(adjMatrix);
+        draw.drawThumbnail(Provider.getGraph());
     }
 
     @FXML

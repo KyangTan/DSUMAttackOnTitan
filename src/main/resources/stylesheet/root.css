@@ -100,6 +100,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-font-weight: 300;
     -fx-text-alignment: left;
     -fx-padding: 0 20;
+    -fx-cursor: default;
+}
+
+.smallTextField:hover{
+    -fx-cursor: hand;
 }
 
 .largeTextField {
@@ -111,6 +116,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-font-weight: 500;
     -fx-text-alignment: center;
     -fx-padding: 0 20;
+    -fx-cursor: default;
+}
+
+.largeTextField:hover{
+    -fx-cursor: hand;
 }
 
 .transparentTextField {
@@ -136,6 +146,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-border-color: -fx-yellow;
     -fx-border-radius: 100;
     -fx-text-fill: -fx-beige;
+    -fx-cursor: default;
+}
+
+.button:hover{
+    -fx-cursor:hand;
 }
 
 .button-transparent {
@@ -150,6 +165,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-border-radius: 1;
     -fx-text-alignment: center;
     -fx-text-fill: -fx-beige;
+    -fx-cursor: default;
+}
+
+.button-transparent:hover{
+    -fx-cursor:hand;
 }
 
 .nav-button-container {

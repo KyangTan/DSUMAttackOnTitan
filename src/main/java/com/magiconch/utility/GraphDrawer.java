@@ -10,6 +10,7 @@ import com.magiconch.backend.GraphRelated.Vertex;
 import com.magiconch.backend.GraphRelated.VertexType;
 import com.magiconch.backend.Titan;
 import java.util.ArrayList;
+import javafx.scene.control.RadioButton;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -46,7 +47,7 @@ public class GraphDrawer {
         if (!bodyChecker()) {
             return;
         }
-        
+
         double[] from = getCoord(src);
         double[] to = getCoord(dest);
 
@@ -81,7 +82,7 @@ public class GraphDrawer {
         if (!bodyChecker()) {
             return;
         }
-        
+
         ArrayList<Vertex> vertices = graph.getVertices();
         int i = 0;
         for (Vertex v : vertices) {
@@ -92,6 +93,9 @@ public class GraphDrawer {
                 String imageUrl = casted.getTitanImageUrl();
 
                 ImageView thumbnail = new ImageView(new Image(App.class.getResource(imageUrl).toString()));
+                // set Id
+                thumbnail.setId("thumbnail" + i);
+
                 // make aspect ratio always 1:1
                 thumbnail.setPreserveRatio(true);
 
@@ -124,8 +128,31 @@ public class GraphDrawer {
             return;
         }
         body.getChildren().removeIf((node) -> {
-            
-            return node.getId()==null?false:node.getId().startsWith("edge");
+
+            return node.getId() == null ? false : node.getId().startsWith("edge");
+        });
+    }
+
+    public void removeAllThumb() {
+        if (!bodyChecker()) {
+            return;
+        }
+        body.getChildren().forEach((node) -> {
+            try {
+                ((RadioButton)((StackPane)node).getChildren().get(0)).setSelected(false);
+            } catch (Exception e) {
+                //
+            } finally {
+                if (node.getId() != null && node.getId().startsWith("node")) {
+                    ((StackPane) node).getChildren().removeIf(
+                            (n) -> {
+                                return n.getId() == null ? false : n.getId().startsWith(("thumbnail"));
+                            }
+                    );
+                }
+
+            }
+
         });
     }
 
