@@ -84,7 +84,7 @@ public class characterPageController implements Initializable, ControlledScreen 
                 charController.setContentInfo("", tempNode.getData().getName(), j);               
                     Provider.setCurrentI(h);
                     final String name = "Page " + Provider.getCurrentI();
-                    System.out.println("added :" + Provider.getCurrentI());
+//                    System.out.println("added :" + Provider.getCurrentI());
                     displayScreenController.loadScreen(name, "/com/magiconch/attackontitan/characterDetailsViewPage.fxml");
                 
 //                System.out.println(displayScreenController.getScreen(name) + " \n\n\n\n\nasdfsadfasdfasdfsa");

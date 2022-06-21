@@ -17,6 +17,7 @@ import com.magiconch.controllers.ScreenController;
 import com.magiconch.utility.CommonMethod;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.event.EventType;
@@ -29,6 +30,9 @@ import javafx.stage.Stage;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.json.JSONTokener;
 
 public class App extends Application {
 
@@ -43,7 +47,19 @@ public class App extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         
-        
+//        String resourceName = "/com/magiconch/attackontitan/json/members.json";
+//        InputStream is = App.class.getResourceAsStream(resourceName);
+//        if (is == null) {
+//            throw new NullPointerException("Cannot find resource file " + resourceName);
+//        }
+//
+//        JSONTokener tokener = new JSONTokener(is);
+//        JSONArray WholeThing = new JSONArray(tokener);
+//        for (int i = 0; i < WholeThing.length(); i++) {
+//            JSONObject object = WholeThing.getJSONObject(i);
+//            Provider.addMember(new Member(object.getString("Name"), object.getInt("Height"),object.getInt("Weight"),object.getInt("Strength"),object.getInt("Agility"),object.getInt("Intelligence"),object.getInt("Coordination"),object.getInt("Leadership")));
+//        }
+
         
         //Initialise all the fxml file
         ScreenController mainContainer = new ScreenController();
