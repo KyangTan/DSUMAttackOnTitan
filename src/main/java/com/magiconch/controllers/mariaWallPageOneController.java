@@ -61,22 +61,24 @@ public class mariaWallPageOneController implements Initializable {
     @FXML
     private AnchorPane scrollAPane;
     
+    @FXML
+    private Button randomWallButton;
+    
+    @FXML
+    private Text wallText;
+    
     int height;
     int width;
     List<wallComponentModel> wallLayers = new ArrayList<>();
     WallMaria wall = new WallMaria();
+    
+    int whichButtonClicked = -1;
 
 
     @FXML
     void input(ActionEvent event) {
-        try {
-            wallLayersVbox.getChildren().clear();
-            wallLayers.clear();
-            height = Integer.parseInt(wallHeightTextBox.getText());
-            width = Integer.parseInt(wallWidthTextBox.getText());
-        } catch (NumberFormatException e) {
-            errorMsg.setVisible(true);
-        }
+        whichButtonClicked = 1;
+        getWidthHeight();
         
         wall.loadWall(height, width);
         
@@ -115,10 +117,15 @@ public class mariaWallPageOneController implements Initializable {
     
     @FXML
     void breakIt(ActionEvent event) {
-        getTexts();
+        if (whichButtonClicked == 1) {
+            getTexts();
+        }else{
+            
+        }
         wall.printWall();
         System.out.println("the weakest part of the wall is at position: " + wall.weakestPart());
         weakestAnsText.setText("the weakest part of the wall is at position: " + wall.weakestPart());
+        whichButtonClicked = -1;
     }
     
     @FXML 
@@ -135,6 +142,27 @@ public class mariaWallPageOneController implements Initializable {
         }
         System.out.println("End");
         wall.printWall();
+    }
+    
+    @FXML
+    void randomWall(){
+        wall.cleanWall();
+        whichButtonClicked = 2;
+        getWidthHeight();
+        
+        wall.loadWall(height, width);
+        wallText.setText(wall.randomWallOut());
+    }
+    
+    void getWidthHeight(){
+        try {
+            wallLayersVbox.getChildren().clear();
+            wallLayers.clear();
+            height = Integer.parseInt(wallHeightTextBox.getText());
+            width = Integer.parseInt(wallWidthTextBox.getText());
+        } catch (NumberFormatException e) {
+            errorMsg.setVisible(true);
+        }
     }
 
 }

@@ -14,7 +14,7 @@ import java.util.Random;
  */
 public class NineTitan extends Titan {
 
-    static ArrayList<String> available = new ArrayList<>(Arrays.asList("Founding Titan", "Armored Titan", "Attack Titan", "Beast Titan", "Cart Titan", "Colossus Titan", "Female Titan", "Jaw Titan", "War Hammer Titan"));
+    static ArrayList<String> available = new ArrayList<>(Arrays.asList("Founding Titan", "Armored Titan", "Attack Titan", "Beast Titan", "Cart Titan", "Colossal Titan", "Female Titan", "Jaw Titan", "War Hammer Titan"));
 
     public NineTitan() {
         if (!available.isEmpty()) {
@@ -44,7 +44,7 @@ public class NineTitan extends Titan {
                     setWalkingLegs(2);
                     setRunningSpeed(100);
                     setDangerRisk(19);
-                    setTitanImageUrl("assets/images/armored_titan.png");
+                    setTitanImageUrl("assets/images/armored.png");
                     setTitanDesc("The Armored Titan (鎧の巨人 Yoroi no Kyojin?) was one of the Nine Titans that possessed armored plates of skin across its body.");
                     break;
                 case "Attack Titan":
@@ -92,7 +92,7 @@ public class NineTitan extends Titan {
                     setWalkingLegs(2);
                     setRunningSpeed(50);
                     setDangerRisk(19);
-                    setTitanImageUrl("assets/images/colossal.png");
+                    setTitanImageUrl("assets/images/collosal.png");
                     setTitanDesc("The Colossus Titan (超大型巨人 Chō ōgata Kyojin?) was one of the Nine Titans and the early main antagonist of the Attack on Titan series. It was notable for its incredible size and significant control over the steam emitted by its Titan body along with the user being able to successfully control its transformation's power.");
                     break;
                 case "Female Titan":

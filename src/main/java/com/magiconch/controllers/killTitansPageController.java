@@ -70,10 +70,10 @@ public class killTitansPageController implements Initializable, ControlledScreen
 
     @FXML
     private Button getPriorityKill;
-    
+
     @FXML
     private Button resetButton;
-    
+
     @FXML
     private AnchorPane body;
 
@@ -82,7 +82,7 @@ public class killTitansPageController implements Initializable, ControlledScreen
     private GraphDrawer draw;
     private boolean isNodeDetailsShown = false;
     private boolean isFound = false;
-    private boolean isPriority = false;
+    private boolean isPriority = true;
     private VertexType currentSelecting = null;
 
     @FXML
@@ -92,6 +92,8 @@ public class killTitansPageController implements Initializable, ControlledScreen
 
             findShortestPath.setDisable(true);
             showNodeDetails.setDisable(true);
+            resetButton.setDisable(true);
+            getPriorityKill.setDisable(true);
 
             // set titanCard content
             HashMap<String, String> nodeDetails = getNodeDetails();
@@ -111,18 +113,20 @@ public class killTitansPageController implements Initializable, ControlledScreen
         } else {
             findShortestPath.setDisable(false);
             showNodeDetails.setDisable(false);
+            resetButton.setDisable(false);
+            getPriorityKill.setDisable(false);
             Animator.lineAnimation(0, 1000, titanCard);
         }
         isNodeDetailsShown = !isNodeDetailsShown;
     }
-    
+
     @FXML
     public void resetGraph() {
         String jsonString = fileReader.readFile("src\\main\\resources\\com\\magiconch\\attackontitan\\json\\map.json");
         Graph graph = fileReader.readGraphFromJSON(jsonString, WeightMode.DIFFER_BY_INDEX);
         Provider.setGraph(graph);
         adjMatrix = Provider.getGraphMatrix();
-        
+
         draw.removeAllEdges();
         draw.removeAllThumb();
         draw.drawOriGraph(adjMatrix);
@@ -132,6 +136,9 @@ public class killTitansPageController implements Initializable, ControlledScreen
     @FXML
     public void getPriorityKill() {
         if (isPriority) {
+            findShortestPath.setDisable(true);
+            showNodeDetails.setDisable(true);
+            resetButton.setDisable(true);
             draw.removeAllEdges();
             getPriorityKill.setText("Reset");
             ArrayList<Vertex> vertices = Provider.getGraph().getVertices();
@@ -145,9 +152,9 @@ public class killTitansPageController implements Initializable, ControlledScreen
                 i++;
             }
             LinkedList<Titan> sorted = new LinkedList<>();
-            
+
             int k = pQueue.size();
-            for (int j = 0; j < k ; j++) {
+            for (int j = 0; j < k; j++) {
                 sorted.add(pQueue.poll());
             }
             // display Kill route
@@ -181,9 +188,18 @@ public class killTitansPageController implements Initializable, ControlledScreen
                 i++;
             }
             path += tempTitan.getData().getPosition();
-            outputText.setText(path);
+            
+            String[] stop = path.split(" -> ");
+            int total = 0;
+            for(int l = 0 ; l < stop.length -1 ;l++){
+                total += Math.abs(Integer.parseInt(stop[l+1])-Integer.parseInt(stop[l]));
+            }
+            outputText.setText("Total Distance by Index Difference: "+ total + "\n" + path);
 
         } else {
+            findShortestPath.setDisable(false);
+            showNodeDetails.setDisable(false);
+            resetButton.setDisable(false);
             getPriorityKill.setText("Get Priority Kill");
             draw.removeAllEdges();
             draw.drawOriGraph(adjMatrix);
@@ -229,6 +245,15 @@ public class killTitansPageController implements Initializable, ControlledScreen
 
         Vertex v = graph.getVertices().get(Integer.parseInt(src));
 
+        draw.removeAllEdges();
+        draw.drawOriGraph(adjMatrix);
+        if(isFound){
+            findShortestPath.setText("Find shortest path");
+        }
+        if(outputText.getText().length() > 0){
+            outputText.setText("");
+        }
+        
         if (v.getType().equals(VertexType.TITAN)) {
             showNodeDetails.setDisable(false);
             findShortestPath.setDisable(false);
@@ -267,7 +292,7 @@ public class killTitansPageController implements Initializable, ControlledScreen
                 temp = temp.getNext();
             }
             path += temp.getData();
-            outputText.setText(path);
+            outputText.setText("Total Distance: " + steps.getSize() + "\n" + path);
 
         }
         isFound = !isFound;
