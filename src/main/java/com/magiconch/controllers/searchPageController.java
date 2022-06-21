@@ -12,6 +12,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -26,12 +27,14 @@ import org.apache.commons.lang3.math.NumberUtils;
 //=======
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 //>>>>>>> origin/main
 
 public class searchPageController implements Initializable, ControlledScreen {
 
     @FXML
-    private TableColumn<Member, Integer> charAbiCol;
+    private TableColumn<Member, Integer> charAgiCol;
 
     @FXML
     private TableColumn<Member, Integer> charCoorCol;
@@ -86,31 +89,64 @@ public class searchPageController implements Initializable, ControlledScreen {
         int boxHeight = Provider.getMemberList().getSize()*95 +20;
 //        scrollAPane.setPrefHeight(boxHeight);
 //        searchCardVBox.setPrefHeight(boxHeight);
-        try {
-            Node[] nodes = new Node[Provider.getMemberList().getSize()];
+Node[] nodes = new Node[Provider.getMemberList().getSize()];
+for (int j = 0; j < nodes.length; j++) {
+//                FXMLLoader contentLoader = new FXMLLoader();
+//                contentLoader.setLocation(getClass().getResource("/com/magiconch/attackontitan/searchCardComponent.fxml"));
+//                nodes[j] = contentLoader.load();
+//                final int h = j;
+//
+//                characterCardComponentController charController = contentLoader.getController();
+//                charController.setContentInfo("", tempNode.getData().getName(), j);               
+//                searchCardComponentController sccController = contentLoader.getController();
+//
+//                
+//                nodes[h].setOnMousePressed(evt -> {
+//                    //add code here when clicked
+//                });
+//
+////                characterVBox.getChildren().add(nodes[j]);
+//                tempNode = tempNode.getNext();
+//
+memberModelObservableList.add(new Member(tempNode.getData().getName(), tempNode.getData().getHeight(), tempNode.getData().getWeight(), tempNode.getData().getStrength(), tempNode.getData().getAgility(), tempNode.getData().getIntelligence(), tempNode.getData().getCoordination(), tempNode.getData().getLeadership()));
+tempNode = tempNode.getNext();
+}
+charCoorCol.setCellValueFactory(new PropertyValueFactory<>("Coordination"));
+charCoorCol.setResizable(false);
+charHeightCol.setCellValueFactory(new PropertyValueFactory<>("Height"));
+charHeightCol.setResizable(false);
+charIntCol.setCellValueFactory(new PropertyValueFactory<>("Intelligence"));
+charIntCol.setResizable(false);
+charLeadCol.setCellValueFactory(new PropertyValueFactory<>("Leadership"));
+charLeadCol.setResizable(false);
+charNameCol.setCellValueFactory(new PropertyValueFactory<>("Name"));
+charNameCol.setResizable(false);
+charStrCol.setCellValueFactory(new PropertyValueFactory<>("Strength"));
+charStrCol.setResizable(false);
+charWeightCol.setCellValueFactory(new PropertyValueFactory<>("Weight"));
+charWeightCol.setResizable(false);
+charAgiCol.setCellValueFactory(new PropertyValueFactory<>("Agility"));
+charAgiCol.setResizable(false);
 
-            for (int j = 0; j < nodes.length; j++) {
-                FXMLLoader contentLoader = new FXMLLoader();
-                contentLoader.setLocation(getClass().getResource("/com/magiconch/attackontitan/searchCardComponent.fxml"));
-                nodes[j] = contentLoader.load();
-                final int h = j;
+search();
 
-                characterCardComponentController charController = contentLoader.getController();
-                charController.setContentInfo("", tempNode.getData().getName(), j);               
-                searchCardComponentController sccController = contentLoader.getController();
-                
-                
-                nodes[h].setOnMousePressed(evt -> {
-                    //add code here when clicked
-                });
+charTable.setOnMousePressed(new EventHandler<MouseEvent>() {
+                @Override
+                public void handle(MouseEvent event) {
+//                    if (!charTable.getSelectionModel().equals(null)) {
+//                        charNameCol.setText(charTable.getSelectionModel().getSelectedItem().getName());
+//                        charCoorCol.setText(Integer.toString(charTable.getSelectionModel().getSelectedItem().getCoordination()));
+//                        charHeightCol.setText(Integer.toString(charTable.getSelectionModel().getSelectedItem().getHeight()));
+//                        charIntCol.setText(Integer.toString(charTable.getSelectionModel().getSelectedItem().getIntelligence()));
+//                        charLeadCol.setText(Integer.toString(charTable.getSelectionModel().getSelectedItem().getLeadership()));
+//                        charStrCol.setText(Integer.toString(charTable.getSelectionModel().getSelectedItem().getStrength()));
+//                        charWeightCol.setText(Integer.toString(charTable.getSelectionModel().getSelectedItem().getWeight()));   
+//                        charAgiCol.setText(Integer.toString(charTable.getSelectionModel().getSelectedItem().getAgility()));   
+//                    }
+                }
+            });
 
-//                characterVBox.getChildren().add(nodes[j]);
-                tempNode = tempNode.getNext();
-                search();
-            }
-        } catch (IOException ex) {
-            Logger.getLogger(wallLayersOverlayController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+
     }
 
     @Override
@@ -159,7 +195,7 @@ public class searchPageController implements Initializable, ControlledScreen {
                     return true;
                 }
 
-                double unsimilarity = 0;
+//                double unsimilarity = 0;
                 String searchKeyword = newValue.toLowerCase();
 //                System.out.println("Seach keyword is: " + searchKeyword);
 //                System.out.println("The coursename is: " +courseSearchModel.getCourseName().toLowerCase());
@@ -176,7 +212,7 @@ public class searchPageController implements Initializable, ControlledScreen {
 //                    unsimilarity = searchKeyword.length();
 //                }
                 
-                unsimilarity = (unsimilarity / searchKeyword.length())*100.00;
+//                unsimilarity = (unsimilarity / searchKeyword.length())*100.00;
 //                System.out.println("Unsimilarity%: " + unsimilarity);
                 if (memberSearchModel.getName().toLowerCase().indexOf(searchKeyword) > -1) {
                     return true; // Found a match in course name
