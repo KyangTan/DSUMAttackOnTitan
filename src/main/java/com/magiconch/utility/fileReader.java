@@ -69,19 +69,22 @@ public class fileReader {
     public static LinkedList<Member> getMembersFromJSON(String jsonString) {
         JSONArray json = new JSONArray(jsonString);
         LinkedList<Member> characterList = new LinkedList<>();
-        
+
         for (Object obj : json) {
             JSONObject jObj = (JSONObject) obj;
-            characterList.add(new Member(jObj.get("Name").toString(), 
-                    Integer.parseInt(jObj.get("Height").toString()), 
-                    Integer.parseInt(jObj.get("Weight").toString()), 
-                    Integer.parseInt(jObj.get("Strength").toString()), 
-                    Integer.parseInt(jObj.get("Agility").toString()), 
-                    Integer.parseInt(jObj.get("Intelligence").toString()), 
-                    Integer.parseInt(jObj.get("Coordination").toString()), 
-                    Integer.parseInt(jObj.get("Leadership").toString())));
+            characterList.add(new Member(jObj.get("Name").toString(),
+                    Integer.parseInt(jObj.get("Height").toString()),
+                    Integer.parseInt(jObj.get("Weight").toString()),
+                    Integer.parseInt(jObj.get("Strength").toString()),
+                    Integer.parseInt(jObj.get("Agility").toString()),
+                    Integer.parseInt(jObj.get("Intelligence").toString()),
+                    Integer.parseInt(jObj.get("Coordination").toString()),
+                    Integer.parseInt(jObj.get("Leadership").toString()),
+                    jObj.get("Description").toString(),
+                    jObj.get("imageUrl").toString()));
+
         }
-        
+
         return characterList;
     }
 

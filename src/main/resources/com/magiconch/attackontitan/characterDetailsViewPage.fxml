@@ -4,10 +4,11 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1220.0" stylesheets="@../../../stylesheet/root.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.magiconch.controllers.characterDetailsViewPageController">
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1220.0" stylesheets="@../../../stylesheet/root.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.magiconch.controllers.characterDetailsViewPageController">
    <children>
       <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -21,11 +22,11 @@
       <Text layoutX="677.0" layoutY="387.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="Description" />
       <Text fx:id="charDescText" fill="WHITE" layoutX="677.0" layoutY="407.0" lineSpacing="5.0" opacity="0.6" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h4" text="Eren Yeager was a former member of the Survey Corps. He was the main protagonist of Attack on Titan. He lived in Shiganshina District with his parents until the fall of Wall Maria, where he impotently witnessed his mother being eaten by a Titan. This event would lead to Eren's intense hatred towards the Titans as he swore to wipe all of them off the face of the Earth.&#10;&#10;" wrappingWidth="384.633056640625" />
       <Text fx:id="counterButton" layoutX="594.0" layoutY="676.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h1" text="1/10" />
-      <ImageView fx:id="charFullImage" fitHeight="500.0" fitWidth="463.0" layoutX="119.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@assets/images/eren_full.png" />
-         </image>
-      </ImageView>
+      <StackPane layoutX="119.0" layoutY="110.0" prefHeight="500.0" prefWidth="463.0">
+         <children>
+            <ImageView fx:id="charFullImage" fitHeight="500.0" fitWidth="290.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </StackPane>
       <ImageView fitHeight="50.0" fitWidth="49.0" layoutX="488.0" layoutY="640.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@assets/images/next_previous.png" />

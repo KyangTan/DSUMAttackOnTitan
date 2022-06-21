@@ -108,7 +108,7 @@ for (int j = 0; j < nodes.length; j++) {
 ////                characterVBox.getChildren().add(nodes[j]);
 //                tempNode = tempNode.getNext();
 //
-memberModelObservableList.add(new Member(tempNode.getData().getName(), tempNode.getData().getHeight(), tempNode.getData().getWeight(), tempNode.getData().getStrength(), tempNode.getData().getAgility(), tempNode.getData().getIntelligence(), tempNode.getData().getCoordination(), tempNode.getData().getLeadership()));
+memberModelObservableList.add(new Member(tempNode.getData().getName(), tempNode.getData().getHeight(), tempNode.getData().getWeight(), tempNode.getData().getStrength(), tempNode.getData().getAgility(), tempNode.getData().getIntelligence(), tempNode.getData().getCoordination(), tempNode.getData().getLeadership(), tempNode.getData().getDesc(), tempNode.getData().getImageUrl()));
 tempNode = tempNode.getNext();
 }
 charCoorCol.setCellValueFactory(new PropertyValueFactory<>("Coordination"));

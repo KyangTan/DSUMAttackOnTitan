@@ -1,5 +1,6 @@
 package com.magiconch.controllers;
 
+import com.magiconch.attackontitan.App;
 import com.magiconch.backend.LinkedListNode;
 import com.magiconch.backend.Member;
 import com.magiconch.backend.Provider;
@@ -9,6 +10,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -58,7 +60,10 @@ public class characterDetailsViewPageController implements Initializable, Contro
     public void setContent(){
         charNameText.setText(tempNode.getData().getName());
         setAttr();
-        charDescText.setText(tempNode.getData().getName() + " was a former member of the Survey Corps. He was the main protagonist of Attack on Titan. He lived in Shiganshina District with his parents until the fall of Wall Maria, where he impotently witnessed his mother being eaten by a Titan. This event would lead to Eren's intense hatred towards the Titans as he swore to wipe all of them off the face of the Earth.\n");
+        charDescText.setText(tempNode.getData().getDesc());
+        charFullImage.setImage(new Image(App.class.getResource(tempNode.getData().getImageUrl()).toString()));
+        charFullImage.setFitHeight(500);
+        charFullImage.setPreserveRatio(true);
     }
     
     public void setAttr(){

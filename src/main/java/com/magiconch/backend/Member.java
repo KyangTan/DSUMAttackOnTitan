@@ -10,8 +10,8 @@ package com.magiconch.backend;
  */
 public class Member {
 //***************************************************************************
-    private String name;
-    private int height,weight,strength,agility,intelligence,coordination,leadership; 
+    private String name, desc, imgUrl;
+    private int height,weight,strength,agility,intelligence,coordination,leadership;
 //***************************************************************************
     enum statusEnum{
         idle,
@@ -28,7 +28,7 @@ public class Member {
     }
     
     //Character initializer constructor
-    public Member(String name, int height, int weight, int strength, int agility, int intelligence, int coordination, int leadership) {
+    public Member(String name, int height, int weight, int strength, int agility, int intelligence, int coordination, int leadership, String desc, String imgUrl) {
         this.name = name;
         this.height = height;
         this.weight = weight;
@@ -37,6 +37,8 @@ public class Member {
         this.intelligence = intelligence;
         this.coordination = coordination;
         this.leadership = leadership;
+        this.desc = desc;
+        this.imgUrl = imgUrl;
     }
 
 
@@ -133,6 +135,22 @@ public class Member {
 
     public void setKillcount(int killcount) {
         this.killcount = killcount;
+    }
+    
+    public String getDesc() {
+        return this.desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+    
+    public String getImageUrl() {
+        return this.imgUrl;
+    }
+    
+    public void setImageUrl(String imgUrl){
+        this.imgUrl = imgUrl;
     }
 
     public statusEnum getStatus() {

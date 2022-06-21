@@ -1,4 +1,4 @@
-package     com.magiconch.controllers;
+package com.magiconch.controllers;
 
 import com.magiconch.backend.LinkedListNode;
 import com.magiconch.backend.Member;
@@ -20,14 +20,14 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class addNewCharacterController implements Initializable{
+public class addNewCharacterController implements Initializable {
 
     @FXML
     private TextField abilityTextField;
 
     @FXML
     private Button addCharButton;
-    
+
     @FXML
     private Button backButton;
 
@@ -54,15 +54,15 @@ public class addNewCharacterController implements Initializable{
 
     @FXML
     private TextField weightTextField;
-    
+
     @FXML
     private Text successMsg;
-    
+
     @FXML
     private Text errorMsg;
-    
-    
+
     String name;
+    String desc;
     int height;
     int weight;
     int strength;
@@ -70,7 +70,7 @@ public class addNewCharacterController implements Initializable{
     int intelligence;
     int coordination;
     int leadership;
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         errorMsg.setVisible(false);
@@ -83,7 +83,7 @@ public class addNewCharacterController implements Initializable{
         Stage stage = (Stage) backButton.getScene().getWindow();
         stage.close();
     }
-    
+
     @FXML
     void addChar(ActionEvent event) {
         errorMsg.setVisible(false);
@@ -97,16 +97,15 @@ public class addNewCharacterController implements Initializable{
             intelligence = Integer.parseInt(intelligenceTextField.getText());
             coordination = Integer.parseInt(coordinationTextField.getText());
             leadership = Integer.parseInt(leadershipTextField.getText());
+            desc = animeRatingTextField.getText();
+            Provider.addMember(new Member(name, height, weight, strength, ability, intelligence, coordination, leadership, desc, "assets/character/eren_yeager.png"));
 
-            Provider.addMember(new Member(name,height,weight,strength,ability,intelligence,coordination,leadership));
-            
             LinkedListNode tempNode = new LinkedListNode();
             tempNode = Provider.getMemberList().getHead();
-            
+
             JSONArray jsonArray = new JSONArray();
-            
-        
-            while (tempNode!= null) {
+
+            while (tempNode != null) {
                 try {
                     JSONObject memberJSON = new JSONObject();
                     JSONObject memberAttributesJSON = new JSONObject();
@@ -119,7 +118,9 @@ public class addNewCharacterController implements Initializable{
                     memberAttributesJSON.put("Agility", mem.getAgility());
                     memberAttributesJSON.put("Intelligence", mem.getIntelligence());
                     memberAttributesJSON.put("Coordination", mem.getCoordination());
-                    memberAttributesJSON.put("Leadership", mem.getLeadership()); 
+                    memberAttributesJSON.put("Leadership", mem.getLeadership());
+                    memberAttributesJSON.put("Description", mem.getDesc());
+                    memberAttributesJSON.put("imageUrl", mem.getImageUrl());
                     jsonArray.put(memberAttributesJSON);
                     tempNode = tempNode.getNext();
 
@@ -127,21 +128,20 @@ public class addNewCharacterController implements Initializable{
 //                    Logger.getLogger(AOTBruh.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-        
-        
+
 //            File dir = new File("/com/magiconch/attackontitan/json");
 //            File dir = new File("src\\main\\resources\\com\\magiconch\\attackontitan\\json\\members.json");
             File dir = new File(("C:\\Users\\kwany\\Documents\\NetBeansProjects\\attackontitan\\src\\main\\resources\\com\\magiconch\\attackontitan\\json"));
-            File actualFile = new File(dir,"members.json" );
-        try (FileWriter file = new FileWriter(actualFile)) {
-            file.write(jsonArray.toString());
-            System.out.println("Successfully Copied JSON Object to File...");
-            System.out.println("\nJSON Object: " + jsonArray);
-        } catch(Exception e){
-            System.out.println(e);
+            File actualFile = new File(dir, "members.json");
+            try ( FileWriter file = new FileWriter(actualFile)) {
+                file.write(jsonArray.toString());
+                System.out.println("Successfully Copied JSON Object to File...");
+                System.out.println("\nJSON Object: " + jsonArray);
+            } catch (Exception e) {
+                System.out.println(e);
 
-        }
-            
+            }
+
             successMsg.setVisible(true);
         } catch (NumberFormatException e) {
             errorMsg.setVisible(true);
